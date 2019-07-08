@@ -123,14 +123,14 @@
 
 
     //مصفوفة التجهيز
-    <array name="التجهيز">
+    <array name="Spinner1">
         <item>أطباق مغلفة</item>
         <item>أكياس</item>
         <item>أكياس بدون هواء</item>
     </array>
 
     //مصفوفة التجهيز
-    <array name="التقطيع">
+    <array name="Spinner2">
         <item>أرباع</item>
         <item>أنصاف</item>
         <item>كامل</item>
@@ -140,13 +140,11 @@
     </array>
 
     //مصفوفة التجهيز
-    <array name="الحجم">
-        <item>1</item>
-        <item>2</item>
-        <item>3</item>
-        <item>4</item>
-        <item>5</item>
-        <item>6</item>
+    <array name="Spinner3">
+        <item>ربع</item>
+        <item>نص</item>
+        <item>كامل</item>
+        <item>5كيو</item>
     </array>
 
 </resources>

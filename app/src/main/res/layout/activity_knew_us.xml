@@ -239,6 +239,7 @@
 
 
     <ImageView
+        android:id="@+id/KnewUs_IV_BackIcon"
         android:layout_width="@dimen/dimen_50"
         android:layout_height="@dimen/dimen_50"
         android:layout_alignParentLeft="true"

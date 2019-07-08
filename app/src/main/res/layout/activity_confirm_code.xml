@@ -83,29 +83,60 @@
         android:id="@+id/SendConfirmCode_BT"
         android:layout_width="match_parent"
         android:layout_height="@dimen/album_dp_45"
+        android:layout_marginStart="60dp"
         android:layout_marginTop="@dimen/dimen_50"
+        android:layout_marginEnd="60dp"
         android:background="@drawable/red_button"
         android:text="@string/send"
-        android:layout_marginStart="60dp"
-        android:layout_marginEnd="60dp"
         android:textColor="@color/white"
         android:textSize="@dimen/dimen_text_20"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/LL1_Code" />
 
-    <ImageView
-        android:id="@+id/ConfirmCode_Back_IB"
-        android:layout_width="@dimen/dimen_50"
-        android:layout_height="@dimen/dimen_50"
-        android:layout_marginStart="@dimen/dimen_8"
-        android:layout_marginLeft="@dimen/dimen_8"
-        android:layout_marginBottom="56dp"
-        android:shadowColor="#41ff4800"
-        android:src="@drawable/back_icon"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.03"
-        app:layout_constraintStart_toStartOf="parent" />
+    <!--<ImageView-->
+    <!--android:id="@+id/ConfirmCode_Back_IB"-->
+    <!--android:layout_width="@dimen/dimen_50"-->
+    <!--android:layout_height="@dimen/dimen_50"-->
+    <!--android:layout_marginStart="@dimen/dimen_8"-->
+    <!--android:layout_marginLeft="@dimen/dimen_8"-->
+    <!--android:layout_marginBottom="56dp"-->
+    <!--android:shadowColor="#41ff4800"-->
+    <!--android:src="@drawable/back_icon"-->
+    <!--app:layout_constraintBottom_toBottomOf="parent"-->
+    <!--app:layout_constraintEnd_toEndOf="parent"-->
+    <!--app:layout_constraintHorizontal_bias="0.03"-->
+    <!--app:layout_constraintStart_toStartOf="parent" />-->
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/album_dp_80"
+        android:layout_marginStart="@dimen/dimen_16"
+        android:layout_marginEnd="@dimen/dimen_16"
+        app:layout_constraintBottom_toBottomOf="parent">
+
+        <ImageView
+            android:id="@+id/ConfirmCode_Back_IB"
+            android:layout_width="@dimen/dimen_50"
+            android:layout_height="@dimen/dimen_50"
+            android:layout_marginStart="@dimen/dimen_16"
+            android:layout_marginLeft="@dimen/dimen_16"
+            android:layout_marginTop="@dimen/dimen_2"
+            android:layout_marginBottom="@dimen/dimen_2"
+            android:src="@drawable/back_icon" />
+
+        <ImageView
+            android:id="@+id/ConfirmCode_Menue_IB"
+            android:layout_width="@dimen/dimen_50"
+            android:layout_height="@dimen/dimen_50"
+            android:layout_alignParentRight="true"
+            android:layout_marginTop="@dimen/dimen_4"
+            android:layout_marginEnd="@dimen/dimen_16"
+            android:layout_marginRight="@dimen/dimen_16"
+            android:src="@drawable/menue_icon" />
+
+    </RelativeLayout>
+
 
 </android.support.constraint.ConstraintLayout>

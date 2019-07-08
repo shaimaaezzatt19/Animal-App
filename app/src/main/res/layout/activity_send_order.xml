@@ -58,10 +58,10 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="32dp"
-                android:gravity="center"
                 android:layout_marginTop="@dimen/dimen_16"
                 android:layout_marginEnd="32dp"
                 android:fontFamily="@font/details_font"
+                android:gravity="center"
                 android:text="هذا النص بمثابة نص توضيحي لتفاصيل الصورة(الخدمة) التي تم اختيارها وعرضها "
                 android:textColor="@color/black"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -119,14 +119,14 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/dimen_24"
+                android:layout_marginEnd="@dimen/dimen_16"
+                android:layout_marginRight="@dimen/dimen_16"
                 android:layout_marginBottom="8dp"
                 android:text="@string/OrderKilo"
-                android:layout_marginEnd="@dimen/dimen_16"
                 android:textColor="@color/black"
                 android:textSize="@dimen/dimen_text_25"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/view"
-                android:layout_marginRight="@dimen/dimen_16" />
+                app:layout_constraintTop_toBottomOf="@+id/view" />
 
             <EditText
                 android:id="@+id/SendMyOrder_Count_ET"
@@ -153,7 +153,8 @@
                 <Spinner
                     android:id="@+id/SpinnerOne"
                     android:layout_width="170dp"
-                    android:layout_height="48dp">
+                    android:layout_height="48dp"
+                    android:entries="@array/Spinner1">
 
                 </Spinner>
             </RelativeLayout>
@@ -171,7 +172,8 @@
                 <Spinner
                     android:id="@+id/SpinnerTWO"
                     android:layout_width="170dp"
-                    android:layout_height="48dp">
+                    android:layout_height="48dp"
+                    android:entries="@array/Spinner2">
 
                 </Spinner>
             </RelativeLayout>
@@ -181,14 +183,14 @@
                 android:id="@+id/Notes_TV"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/dimen_16"
+                android:layout_marginRight="@dimen/dimen_16"
                 android:layout_marginBottom="228dp"
                 android:text="@string/Notes"
                 android:textColor="@color/black"
                 android:textSize="30dp"
-                android:layout_marginEnd="@dimen/dimen_16"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/RL1_SpinerTWO"
-                android:layout_marginRight="@dimen/dimen_16" />
+                app:layout_constraintTop_toBottomOf="@+id/RL1_SpinerTWO" />
 
             <EditText
                 android:id="@+id/WriteYourNotes_ET"
@@ -207,10 +209,10 @@
                 android:id="@+id/totalPriceTextView"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/album_dp_10"
                 android:text="@string/OrderTotal"
                 android:textColor="@color/red"
                 android:textSize="@dimen/dimen_text_25"
-                android:layout_marginTop="@dimen/album_dp_10"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/WriteYourNotes_ET" />

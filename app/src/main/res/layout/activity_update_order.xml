@@ -153,7 +153,8 @@
                 <Spinner
                     android:id="@+id/SpinnerOne"
                     android:layout_width="170dp"
-                    android:layout_height="48dp">
+                    android:layout_height="48dp"
+                    android:entries="@array/Spinner1">
 
                 </Spinner>
             </RelativeLayout>
@@ -169,6 +170,7 @@
                 app:layout_constraintTop_toBottomOf="@+id/RL1_SpinerOne">
 
                 <Spinner
+                    android:entries="@array/Spinner2"
                     android:id="@+id/SpinnerTWO"
                     android:layout_width="170dp"
                     android:layout_height="48dp">

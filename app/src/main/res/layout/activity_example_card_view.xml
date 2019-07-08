@@ -101,7 +101,7 @@
             android:layout_marginLeft="20dp"
             android:layout_marginTop="@dimen/dimen_text_20"
 
-            android:src="@drawable/editicon" />
+            android:src="@drawable/edit_icon" />
     </RelativeLayout>
 
     <Button

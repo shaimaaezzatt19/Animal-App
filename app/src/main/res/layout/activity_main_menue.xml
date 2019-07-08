@@ -18,19 +18,17 @@
 
     <ImageView
         android:id="@+id/Main_MenuE_munueIcon_IV"
-        android:layout_width="@dimen/album_dp_100"
-        android:layout_height="100dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginLeft="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginRight="8dp"
+        android:layout_width="@dimen/album_dp_80"
+        android:layout_height="@dimen/album_dp_80"
+        android:layout_marginStart="@dimen/dimen_8"
+        android:layout_marginLeft="@dimen/dimen_8"
+        android:layout_marginEnd="@dimen/dimen_8"
+        android:layout_marginRight="@dimen/dimen_8"
         android:layout_marginBottom="136dp"
-        android:src="@drawable/menue_icon"
+        android:src="@drawable/main_menue_icon"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent"
-
-        />
+        app:layout_constraintStart_toStartOf="parent" />
 
 </android.support.constraint.ConstraintLayout>

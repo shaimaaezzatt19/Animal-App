@@ -73,7 +73,7 @@
             android:layout_alignParentTop="true"
             android:layout_marginStart="20dp"
             android:layout_marginTop="@dimen/dimen_text_20"
-            android:src="@drawable/editicon"
+            android:src="@drawable/edit_icon"
 
             android:layout_marginLeft="20dp" />
     </RelativeLayout>

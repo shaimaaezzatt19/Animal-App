@@ -29,14 +29,15 @@
 
             <ImageView
                 android:id="@+id/Main_Menue_Icon_IV"
-                android:layout_width="@dimen/album_dp_80"
-                android:layout_height="@dimen/album_dp_80"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
                 android:layout_gravity="center"
                 android:layout_marginTop="@dimen/album_dp_30"
                 android:src="@drawable/menue_icon" />
 
             <LinearLayout
                 android:id="@+id/shape1"
+                android:gravity="center"
                 android:layout_width="match_parent"
                 android:layout_height="60dp"
                 android:layout_marginStart="32dp"
@@ -46,19 +47,20 @@
 
                 <ImageView
                     android:id="@+id/MainIcons_CallUs_IV"
-                    android:layout_width="@dimen/dimen_50"
-                    android:layout_height="@dimen/dimen_50"
+                    android:layout_width="@dimen/album_dp_45"
+                    android:layout_height="@dimen/album_dp_45"
                     android:src="@drawable/connectus_icon" />
 
                 <ImageView
                     android:id="@+id/KnewUs_IV_Icon"
-                    android:layout_width="@dimen/dimen_50"
-                    android:layout_height="@dimen/dimen_50"
+                    android:layout_width="@dimen/album_dp_45"
+                    android:layout_height="@dimen/album_dp_45"
                     android:layout_marginLeft="190dp"
                     android:src="@drawable/knewus_icon" />
             </LinearLayout>
 
             <LinearLayout
+                android:gravity="center"
                 android:id="@+id/shape2"
                 android:layout_width="match_parent"
                 android:layout_height="60dp"
@@ -68,14 +70,14 @@
 
                 <ImageView
                     android:id="@+id/DialogIcon_IV"
-                    android:layout_width="@dimen/dimen_50"
-                    android:layout_height="@dimen/dimen_50"
+                    android:layout_width="@dimen/album_dp_45"
+                    android:layout_height="@dimen/album_dp_45"
                     android:src="@drawable/dialog_icon" />
 
                 <ImageView
                     android:id="@+id/OurWayStyle_IV_Icon"
-                    android:layout_width="@dimen/dimen_50"
-                    android:layout_height="@dimen/dimen_50"
+                    android:layout_width="@dimen/album_dp_45"
+                    android:layout_height="@dimen/album_dp_45"
                     android:layout_marginLeft="120dp"
                     android:src="@drawable/ourway_icon" />
             </LinearLayout>
@@ -85,14 +87,15 @@
                 android:layout_height="@dimen/album_dp_80">
 
                 <ImageView
+
                     android:id="@+id/Servies_Icon_IV"
-                    android:layout_width="@dimen/dimen_50"
-                    android:layout_height="@dimen/dimen_50"
+                    android:layout_width="@dimen/album_dp_45"
+                    android:layout_height="@dimen/album_dp_45"
                     android:layout_gravity="center"
+                    android:layout_marginStart="173dp"
+                    android:layout_marginLeft="180dp"
                     android:layout_marginTop="-18dp"
-                    android:layout_marginStart="160dp"
-                    android:src="@drawable/servicess_icon"
-                    android:layout_marginLeft="180dp" />
+                    android:src="@drawable/servicess_icon" />
             </LinearLayout>
         </LinearLayout>
     </RelativeLayout>
