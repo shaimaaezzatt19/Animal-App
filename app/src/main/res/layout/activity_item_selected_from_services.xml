@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+    <include
+        android:id="@+id/include"
+        layout="@layout/toolbar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/Service_Selected_Toolbar_title_TV"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:fontFamily="@font/cairo"
+        android:gravity="center"
+        android:text="@string/ServiceSelected"
+        android:textColor="@color/white"
+        android:textSize="@dimen/dimen_text_20"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <LinearLayout
+        android:id="@+id/LL1_Item_Selected"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="80dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginBottom="8dp"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/include"
+        app:layout_constraintVertical_bias="0.933">
+
+        <ImageView
+            android:id="@+id/Pic_Selected_Service_IV"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/album_dp_200"
+            android:background="@drawable/rectangleredshape"
+            android:src="@drawable/animal_example2" />
+
+        <Button
+            android:id="@+id/Service_Selected_Option1_BT"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/album_dp_45"
+            android:layout_marginStart="@dimen/durban_dp_70"
+            android:layout_marginTop="@dimen/dimen_text_20"
+            android:layout_marginEnd="@dimen/durban_dp_70"
+            android:background="@drawable/red_button"
+            android:text="@string/ServiceSelecteNameOption1"
+            android:textColor="@color/white"
+            android:textSize="@dimen/dimen_text_20" />
+
+        <Button
+            android:id="@+id/Service_Selected_Option2_BT"
+
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/album_dp_45"
+            android:layout_marginStart="@dimen/durban_dp_70"
+            android:layout_marginTop="@dimen/album_dp_10"
+            android:layout_marginEnd="@dimen/durban_dp_70"
+            android:background="@drawable/red_button"
+            android:text="@string/ServiceSelecteNameOption2"
+            android:textColor="@color/white"
+            android:textSize="@dimen/dimen_text_20" />
+
+        <Button
+            android:id="@+id/Service_Selected_Option3_BT"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/album_dp_45"
+            android:layout_marginStart="@dimen/durban_dp_70"
+            android:layout_marginTop="@dimen/album_dp_10"
+            android:layout_marginEnd="@dimen/durban_dp_70"
+            android:background="@drawable/red_button"
+            android:text="@string/ServiceSelecteNameOption3"
+            android:textColor="@color/white"
+            android:textSize="@dimen/dimen_text_20" />
+    </LinearLayout>
+
+
+    <ImageView
+        android:id="@+id/Selected_item_Back_IB"
+        android:layout_width="@dimen/dimen_50"
+        android:layout_height="@dimen/dimen_50"
+        android:layout_marginStart="@dimen/dimen_16"
+        android:layout_marginLeft="@dimen/dimen_16"
+        android:layout_marginEnd="@dimen/dimen_8"
+        android:layout_marginRight="@dimen/dimen_8"
+        android:layout_marginBottom="@dimen/dimen_24"
+        android:shadowColor="#41ff4800"
+        android:src="@drawable/back_icon"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent" />
+
+</android.support.constraint.ConstraintLayout>

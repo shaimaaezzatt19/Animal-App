@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <include
+            android:id="@+id/Conectus_toolbar"
+            layout="@layout/toolbar">
+
+        </include>
+
+        <android.support.constraint.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dimen_50">
+
+            <TextView
+                android:id="@+id/ConnectUs_Title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginLeft="8dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginRight="8dp"
+                android:fontFamily="@font/cairo"
+                android:gravity="center"
+                android:text="@string/ConnectUs"
+                android:textColor="@color/white"
+                android:textSize="@dimen/dimen_text_20"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+        </android.support.constraint.ConstraintLayout>
+
+        <LinearLayout
+            android:id="@+id/Main_LL1"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@id/Conectus_toolbar"
+            android:layout_marginStart="@dimen/dimen_16"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="@dimen/dimen_16"
+            android:layout_marginBottom="10dp"
+            android:orientation="vertical">
+
+            <android.support.design.widget.TextInputEditText
+                android:id="@+id/ConnectUs_Name"
+                android:layout_width="match_parent"
+                android:layout_height="35dp"
+                android:layout_marginStart="@dimen/dimen_text_20"
+                android:layout_marginTop="@dimen/dimen_text_20"
+                android:layout_marginEnd="@dimen/dimen_text_20"
+                android:background="@drawable/connectus_rectangle"
+                android:hint="@string/Name"
+                android:textSize="@dimen/dimen_text_20" />
+
+
+            <android.support.design.widget.TextInputEditText
+                android:id="@+id/ConnectUs_phone"
+                android:layout_width="match_parent"
+                android:layout_height="35dp"
+                android:layout_marginStart="@dimen/dimen_text_20"
+                android:layout_marginTop="@dimen/dimen_text_20"
+                android:layout_marginEnd="@dimen/dimen_text_20"
+                android:background="@drawable/connectus_rectangle"
+                android:hint="@string/phone"
+                android:textSize="@dimen/dimen_text_20" />
+
+            <android.support.design.widget.TextInputEditText
+                android:id="@+id/ConnectUs_Message"
+                android:layout_width="match_parent"
+                android:layout_height="80dp"
+                android:layout_marginStart="@dimen/dimen_text_20"
+                android:layout_marginTop="@dimen/dimen_text_20"
+                android:layout_marginEnd="@dimen/dimen_text_20"
+                android:background="@drawable/connectus_rectangle"
+                android:hint="@string/Message"
+                android:textSize="@dimen/dimen_text_20" />
+
+            <Button
+                android:id="@+id/SendConnectUs_BT"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginStart="80dp"
+                android:layout_marginTop="@dimen/dimen_text_20"
+                android:layout_marginEnd="80dp"
+                android:background="@drawable/red_button"
+                android:text="@string/send"
+                android:textColor="@color/white"
+                android:textSize="@dimen/dimen_text_25" />
+
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:id="@+id/splash_LL_socilImages"
+
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/Main_LL1"
+            android:layout_margin="@dimen/dim_xl"
+            android:gravity="center"
+            android:orientation="horizontal"
+            tools:layout_editor_absoluteX="60dp"
+            tools:layout_editor_absoluteY="436dp">
+
+            <ImageView
+                android:id="@+id/ConnectUs_Insteghram"
+                style="@style/SocialImages"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_marginStart="@dimen/dim_xl"
+                android:layout_marginLeft="@dimen/dim_xl"
+                android:src="@drawable/insteghram_icon" />
+
+            <ImageView
+                android:id="@+id/connectUs-Facbook"
+                style="@style/SocialImages"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_marginStart="@dimen/dim_xl"
+                android:layout_marginLeft="@dimen/dim_xl"
+                android:src="@drawable/facebook_icon" />
+
+            <ImageView
+                android:id="@+id/onnectUs_Whatsapp"
+                style="@style/SocialImages"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:src="@drawable/whatsapp_icon" />
+        </LinearLayout>
+
+        <android.support.constraint.ConstraintLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/splash_LL_socilImages">
+
+            <ImageView
+                android:layout_width="@dimen/dimen_50"
+                android:layout_height="@dimen/dimen_50"
+                android:layout_marginStart="44dp"
+                android:layout_marginLeft="44dp"
+                android:src="@drawable/back_icon"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
+
+        </android.support.constraint.ConstraintLayout>
+    </RelativeLayout>
+</ScrollView>
+
+

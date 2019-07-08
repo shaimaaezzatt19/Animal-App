@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <dimen name="dimen_text_8">8sp</dimen>
+    <dimen name="dimen_text_16">16sp</dimen>
+
+    <dimen name="activity_horizontal_margin">16dp</dimen>
+    <dimen name="activity_vertical_margin">16dp</dimen>
+    <dimen name="dimens_shplash_logo">250dp</dimen>
+    <dimen name="nav_header_vertical_spacing">8dp</dimen>
+    <dimen name="nav_header_height">176dp</dimen>
+    <dimen name="fab_margin">16dp</dimen>
+    <dimen name="Buttons">50dp</dimen>
+    <dimen name="edittext">40dp</dimen>
+    <dimen name="textview">40dp</dimen>
+    <dimen name="descreption">80dp</dimen>
+
+
+
+    <dimen name="logotop">80dp</dimen>
+    <dimen name="imagesocial">80dp</dimen>
+
+
+    <dimen name="dim_sss">1dp</dimen>
+    <dimen name="dim_ss">2dp</dimen>
+    <dimen name="dim_s">4dp</dimen>
+    <dimen name="dim_m">8dp</dimen>
+    <dimen name="dim_l">16dp</dimen>
+    <dimen name="dim_xl">24dp</dimen>
+    <dimen name="dim_xxl">32dp</dimen>
+    <dimen name="dim_xxxl">40dp</dimen>
+    <dimen name="dim_xxxxl">48dp</dimen>
+
+    <dimen name="txt_size_sss">8sp</dimen>
+    <dimen name="txt_size_ss">10sp</dimen>
+    <dimen name="txt_size_s">12sp</dimen>
+    <dimen name="txt_size_m">16sp</dimen>
+    <dimen name="txt_size_l">20sp</dimen>
+
+
+
+    <dimen name="dim_et_hight">40dp</dimen>
+    <dimen name="dim_iv_logo">250dp</dimen>
+    <dimen name="dim_iv_worrning">20dp</dimen>
+    <dimen name="start_end">16dp</dimen>
+    <dimen name="toolbarhight">55dp</dimen>
+    <dimen name="weitgh_rectangle">40dp</dimen>
+    <dimen name="IV_hight">180dp</dimen>
+    <dimen name="IV_margintop">19dp</dimen>
+    <dimen name="top_margin">58dp</dimen>
+
+    <dimen name="dimens_sss">1dp</dimen>
+    <dimen name="dimens_ss">2dp</dimen>
+    <dimen name="dimens_s">4dp</dimen>
+    <dimen name="dimens_m">8dp</dimen>
+    <dimen name="dimens_l">16dp</dimen>
+    <dimen name="dimens_xl">24dp</dimen>
+    <dimen name="dimens_xxl">32dp</dimen>
+    <dimen name="dimens_xxxl">40dp</dimen>
+
+    <dimen name="dimens_xxxxl">48dp</dimen>
+    <dimen name="dimens_5xl">50dp</dimen>
+
+    <dimen name="dimens_6xl">55dp</dimen>
+    <dimen name="dimens_7xl">90dp</dimen>
+    <dimen name="dimens_8xl">120dp</dimen>
+    <dimen name="dimen_4">4dp</dimen>
+    <dimen name="dimen_8">8dp</dimen>
+    <dimen name="dimen_16">16dp</dimen>
+    <dimen name="dimen_24">24dp</dimen>
+    <dimen name="dimen_34">34dp</dimen>
+    <dimen name="dimen_42">42dp</dimen>
+    <dimen name="dimen_50">50dp</dimen>
+    <dimen name="dimen_66">66dp</dimen>
+    <dimen name="dimen_74">74dp</dimen>
+    <dimen name="dimen_82">82dp</dimen>
+    <dimen name="dimen_90">90dp</dimen>
+    <dimen name="dimen_text_24">24sp</dimen>
+    <dimen name="dimen_2">2dp</dimen>
+    <dimen name="dimen_text_20">20sp</dimen>
+    <dimen name="dimen_130">130dp</dimen>
+    <dimen name="dimen_text_25">25sp</dimen>
+    <dimen name="txt_size_xl">24sp</dimen>
+    <dimen name="txt_size_xxl">28sp</dimen>
+    <dimen name="txt_size_xxxl">32sp</dimen>
+    <dimen name="txt_size_xxxxl">36sp</dimen>
+    <dimen name="txt_size_xxxxxl">70sp</dimen>
+
+</resources>

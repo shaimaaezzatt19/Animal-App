@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+
+    tools:context=".ui.activites.CartAfterOrderingActivity">
+
+    <include
+        android:id="@+id/Services_toolbar"
+        layout="@layout/toolbar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+    </include>
+
+    <TextView
+        android:id="@+id/OurServices_Title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:fontFamily="@font/cairo"
+        android:gravity="center"
+        android:text="@string/ShoppingCart"
+        android:textColor="@color/white"
+        android:textSize="@dimen/dimen_text_20"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/Card_Timer_Image"
+        android:layout_width="222dp"
+        android:layout_height="@dimen/album_dp_200"
+        android:layout_marginStart="@dimen/dimen_8"
+        android:layout_marginLeft="@dimen/dimen_8"
+        android:layout_marginTop="@dimen/dimen_8"
+        android:background="@drawable/card_button"
+        android:gravity="center"
+        android:text="@string/Timer"
+        android:textColor="@color/white"
+        android:textSize="@dimen/dimen_50"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/CardCancleOrder"
+        android:layout_width="222dp"
+        android:layout_height="54dp"
+        android:layout_marginStart="@dimen/dimen_8"
+        android:layout_marginLeft="@dimen/dimen_8"
+        android:background="@drawable/card_red_button"
+        android:text="@string/Cancle"
+        android:textSize="30dp"
+        app:layout_constraintBottom_toBottomOf="@+id/Card_Timer_Image"
+        app:layout_constraintEnd_toEndOf="@+id/Card_Timer_Image"
+        app:layout_constraintStart_toStartOf="@+id/Card_Timer_Image" />
+
+
+    <TextView
+        android:id="@+id/Card_after_ordering_DoneOrder__Msg_"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="8dp"
+        android:text="@string/OrderDone"
+        android:textColor="@color/white"
+        android:textSize="30dp"
+        app:layout_constraintBottom_toBottomOf="@+id/CardCancleOrder"
+        app:layout_constraintEnd_toEndOf="@+id/Card_Timer_Image"
+        app:layout_constraintStart_toStartOf="@+id/Card_Timer_Image"
+        app:layout_constraintTop_toTopOf="@+id/Card_Timer_Image"
+        app:layout_constraintVertical_bias="0.17000002" />
+
+
+    <ImageView
+        android:id="@+id/CardAfterOrdering_Back_IV"
+        android:layout_width="@dimen/dimen_50"
+        android:layout_height="@dimen/dimen_50"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginBottom="24dp"
+        android:shadowColor="#41ff4800"
+        android:src="@drawable/back_icon"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.024"
+        app:layout_constraintStart_toStartOf="parent" />
+</android.support.constraint.ConstraintLayout>

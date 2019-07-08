@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.khatab.animalapp">
+
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/jpglogo"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity android:name=".ui.activites.UpdateOrderActivity"></activity>
+        <activity android:name=".ui.activites.ShowTotalServiceActivity" />
+        <activity android:name=".ui.activites.SendOrderActivity" />
+        <activity android:name=".ui.activites.OrderTotalService" />
+        <activity android:name=".ui.activites.OptionSelectedDeatailsActivity" />
+        <activity android:name=".ui.activites.MyCardActivity" />
+        <activity android:name=".ui.activites.ItemSelectedFromServicesActivity" />
+        <activity android:name=".ui.activites.ExampleCardViewActivity" />
+        <activity android:name=".ui.activites.ConfirmRequestActivity" />
+        <activity android:name=".ui.activites.ConfirmCodeActivity" />
+        <activity android:name=".ui.activites.CartAfterOrderingActivity" />
+        <activity android:name=".ui.activites.AskTypeOfOrederActivity" />
+        <activity android:name=".ui.activites.KnewUsActivity" />
+        <activity android:name=".ui.activites.ServicesActivity" />
+        <activity android:name=".ui.activites.OurWayStyleActivity" />
+        <activity android:name=".ui.activites.ConnectUsActivity" />
+        <activity android:name=".ui.activites.FullMenueWithIcons" />
+        <activity android:name=".ui.activites.MainMenueActivity" />
+        <activity android:name=".ui.activites.MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+    </application>
+
+</manifest>

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#EB0000</color>
+    <color name="colorPrimaryDark">#FFAD0101</color>
+    <color name="colorAccent">#FFC9ACAC</color>
+
+
+    //white color
+    <color name="white">#FFFFFF</color>
+
+    //black color
+    <color name="black">#000</color>
+
+    //red color
+    <color name="red">#EB0000</color>
+
+    //color gray
+    <color name="gray">#CEC8C8</color>
+
+    //color Bettwen white ang gray
+    <color name="white_gray">#FFEFEF</color>
+
+    //color whitegray
+    <color name="whitegray">#ebe5e5</color>
+
+
+
+
+
+
+</resources>

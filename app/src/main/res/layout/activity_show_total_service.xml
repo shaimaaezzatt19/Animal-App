@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <include
+            android:id="@+id/SendMyOrder_toolbar"
+            layout="@layout/toolbar">
+
+        </include>
+
+        <android.support.constraint.ConstraintLayout
+            android:id="@+id/Constrain"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dimen_50">
+
+            <TextView
+                android:id="@+id/SendMyOrder_Title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dimen_16"
+                android:layout_marginEnd="180dp"
+                android:layout_marginRight="180dp"
+                android:fontFamily="@font/cairo"
+                android:gravity="center"
+                android:text="@string/OrderTitle"
+                android:textColor="@color/white"
+                android:textSize="@dimen/dimen_text_25"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+        </android.support.constraint.ConstraintLayout>
+
+        <RelativeLayout
+            android:id="@+id/RL_ShowTotalServices"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@id/Constrain"
+            android:layout_marginStart="@dimen/album_dp_10"
+            android:layout_marginTop="@dimen/album_dp_40"
+            android:layout_marginEnd="@dimen/album_dp_10">
+
+
+            <ImageView
+                android:id="@+id/ImageService_IV"
+                android:layout_width="match_parent"
+                android:layout_height="150dp"
+                android:layout_marginStart="@dimen/dimen_text_20"
+                android:layout_marginEnd="@dimen/dimen_text_20"
+                android:background="@drawable/rectangleredshape"
+                android:src="@drawable/animal_example" />
+
+            <TextView
+                android:id="@+id/ShowService_NameOnImage_TV"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="160dp"
+                android:layout_marginLeft="160dp"
+                android:layout_marginTop="60dp"
+                android:fontFamily="@font/cairo"
+                android:gravity="center"
+                android:text="@string/ServiceSelecteName"
+                android:textColor="@color/white"
+                android:textSize="@dimen/dimen_text_25" />
+
+            <TextView
+                android:id="@+id/ShowService_ServiceNotes_TV"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/ImageService_IV"
+                android:layout_marginStart="@dimen/dimen_16"
+                android:layout_marginTop="@dimen/album_dp_10"
+                android:layout_marginEnd="@dimen/dimen_16"
+                android:gravity="center"
+                android:text="هنا يتم التعبير عن التفاصيل الخاصة بالصورة التي تم اختيارها والتي تعبر عن الخدمة اللي تم اختيارها مسبقا "
+                android:textColor="@color/black"
+                android:textSize="15dp" />
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="300dp"
+                android:layout_below="@id/ShowService_ServiceNotes_TV"
+                android:layout_marginStart="@dimen/dimen_16"
+                android:layout_marginTop="@dimen/dimen_text_20"
+                android:layout_marginEnd="@dimen/dimen_16"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+
+                    android:layout_marginLeft="250dp"
+                    android:layout_marginTop="@dimen/album_dp_10"
+                    android:text="@string/size"
+                    android:textColor="@color/black"
+                    android:textSize="22dp" />
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="-360dp"
+                    android:layout_marginTop="@dimen/dimen_4"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/ShowTotsalServices_1_TV"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="180dp"
+                        android:layout_marginLeft="140dp"
+                        android:layout_marginTop="@dimen/dimens_5xl"
+                        android:text="@string/size1"
+                        android:textColor="@color/red"
+                        android:textSize="22dp" />
+
+                    <TextView
+                        android:id="@+id/ShowTotsalServices_2_TV"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="180dp"
+                        android:layout_marginLeft="140dp"
+                        android:layout_marginTop="@dimen/dimen_2"
+                        android:text="@string/size2"
+                        android:textColor="@color/red"
+                        android:textSize="22dp" />
+
+
+                    <TextView
+                        android:id="@+id/ShowTotsalServices_3_TV"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="180dp"
+                        android:layout_marginLeft="140dp"
+                        android:layout_marginTop="@dimen/dimen_2"
+                        android:text="@string/size3"
+                        android:textColor="@color/red"
+                        android:textSize="22dp" />
+
+                    <Button
+                        android:id="@+id/ShowTotalServices_BT_Requset"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/dimen_50"
+                        android:layout_marginStart="@dimen/album_dp_100"
+                        android:layout_marginLeft="90dp"
+                        android:layout_marginTop="@dimen/album_dp_30"
+                        android:layout_marginEnd="@dimen/dimen_50"
+                        android:layout_marginRight="30dp"
+                        android:background="@drawable/red_button"
+                        android:gravity="center"
+
+                        android:text="@string/request"
+                        android:textColor="@color/white"
+                        android:textSize="25dp" />
+
+
+                </LinearLayout>
+
+
+            </LinearLayout>
+
+            <ImageView
+                android:layout_width="@dimen/dimen_50"
+                android:layout_height="@dimen/dimen_50"
+                android:layout_alignParentLeft="true"
+                android:layout_marginStart="@dimen/dimen_2"
+                android:layout_marginLeft="@dimen/dimen_2"
+                android:layout_marginTop="450dp"
+                android:src="@drawable/back_icon" />
+        </RelativeLayout>
+    </RelativeLayout>
+</ScrollView>

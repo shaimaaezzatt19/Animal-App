@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.activites.FullMenueWithIcons">
+
+
+    <VideoView
+        android:id="@+id/main-Vedio"
+        android:layout_width="match_parent"
+        android:layout_height="250dp"
+        android:layout_marginStart="@dimen/album_dp_10"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="@dimen/album_dp_10" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/main-Vedio"
+        android:layout_marginTop="@dimen/album_dp_10"
+        android:background="@drawable/main_splash">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/Main_Menue_Icon_IV"
+                android:layout_width="@dimen/album_dp_80"
+                android:layout_height="@dimen/album_dp_80"
+                android:layout_gravity="center"
+                android:layout_marginTop="@dimen/album_dp_30"
+                android:src="@drawable/menue_icon" />
+
+            <LinearLayout
+                android:id="@+id/shape1"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:layout_marginStart="32dp"
+                android:layout_marginTop="@dimen/dimen_text_20"
+                android:layout_marginEnd="32dp"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:id="@+id/MainIcons_CallUs_IV"
+                    android:layout_width="@dimen/dimen_50"
+                    android:layout_height="@dimen/dimen_50"
+                    android:src="@drawable/connectus_icon" />
+
+                <ImageView
+                    android:id="@+id/KnewUs_IV_Icon"
+                    android:layout_width="@dimen/dimen_50"
+                    android:layout_height="@dimen/dimen_50"
+                    android:layout_marginLeft="190dp"
+                    android:src="@drawable/knewus_icon" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/shape2"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:layout_marginStart="64dp"
+                android:layout_marginEnd="64dp"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:id="@+id/DialogIcon_IV"
+                    android:layout_width="@dimen/dimen_50"
+                    android:layout_height="@dimen/dimen_50"
+                    android:src="@drawable/dialog_icon" />
+
+                <ImageView
+                    android:id="@+id/OurWayStyle_IV_Icon"
+                    android:layout_width="@dimen/dimen_50"
+                    android:layout_height="@dimen/dimen_50"
+                    android:layout_marginLeft="120dp"
+                    android:src="@drawable/ourway_icon" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/album_dp_80">
+
+                <ImageView
+                    android:id="@+id/Servies_Icon_IV"
+                    android:layout_width="@dimen/dimen_50"
+                    android:layout_height="@dimen/dimen_50"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="-18dp"
+                    android:layout_marginStart="160dp"
+                    android:src="@drawable/servicess_icon"
+                    android:layout_marginLeft="180dp" />
+            </LinearLayout>
+        </LinearLayout>
+    </RelativeLayout>
+
+
+</RelativeLayout>

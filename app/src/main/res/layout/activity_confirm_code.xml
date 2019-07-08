@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+    <include
+        android:id="@+id/Code_toolbar"
+        layout="@layout/toolbar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+    </include>
+
+    <TextView
+        android:id="@+id/CofirmOrder_Title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dimen_16"
+        android:gravity="center"
+        android:text="@string/Code"
+        android:textColor="@color/white"
+        android:textSize="@dimen/dimen_text_20"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <LinearLayout
+        android:id="@+id/LL1_Code"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/album_dp_80"
+        android:layout_marginTop="@dimen/album_dp_80"
+        android:gravity="center"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/CofirmOrder_Title">
+
+
+        <EditText
+            android:id="@+id/CodeNumber1"
+            android:layout_width="@dimen/album_dp_40"
+            android:layout_height="@dimen/album_dp_40"
+            android:layout_marginStart="@dimen/album_dp_10"
+            android:layout_marginLeft="@dimen/album_dp_10"
+            android:layout_marginTop="@dimen/album_dp_10"
+            android:background="@drawable/rectangleredshape" />
+
+        <EditText
+            android:id="@+id/CodeNumber2"
+            android:layout_width="@dimen/album_dp_40"
+            android:layout_height="@dimen/album_dp_40"
+            android:layout_marginStart="@dimen/album_dp_10"
+            android:layout_marginLeft="@dimen/album_dp_10"
+            android:layout_marginTop="@dimen/album_dp_10"
+            android:background="@drawable/rectangleredshape" />
+
+        <EditText
+            android:id="@+id/CodeNumber3"
+            android:layout_width="@dimen/album_dp_40"
+            android:layout_height="@dimen/album_dp_40"
+            android:layout_marginStart="@dimen/album_dp_10"
+            android:layout_marginLeft="@dimen/album_dp_10"
+            android:layout_marginTop="@dimen/album_dp_10"
+            android:background="@drawable/rectangleredshape" />
+
+        <EditText
+            android:id="@+id/CodeNumber4"
+            android:layout_width="@dimen/album_dp_40"
+            android:layout_height="@dimen/album_dp_40"
+            android:layout_marginStart="@dimen/album_dp_10"
+            android:layout_marginLeft="@dimen/album_dp_10"
+            android:layout_marginTop="@dimen/album_dp_10"
+            android:background="@drawable/rectangleredshape" />
+
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/SendConfirmCode_BT"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/album_dp_45"
+        android:layout_marginTop="@dimen/dimen_50"
+        android:background="@drawable/red_button"
+        android:text="@string/send"
+        android:layout_marginStart="60dp"
+        android:layout_marginEnd="60dp"
+        android:textColor="@color/white"
+        android:textSize="@dimen/dimen_text_20"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/LL1_Code" />
+
+    <ImageView
+        android:id="@+id/ConfirmCode_Back_IB"
+        android:layout_width="@dimen/dimen_50"
+        android:layout_height="@dimen/dimen_50"
+        android:layout_marginStart="@dimen/dimen_8"
+        android:layout_marginLeft="@dimen/dimen_8"
+        android:layout_marginBottom="56dp"
+        android:shadowColor="#41ff4800"
+        android:src="@drawable/back_icon"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.03"
+        app:layout_constraintStart_toStartOf="parent" />
+
+</android.support.constraint.ConstraintLayout>

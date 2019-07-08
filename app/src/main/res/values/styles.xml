@@ -1,0 +1,38 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+    </style>
+
+
+    <style name="descreption">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">@dimen/descreption</item>
+        <item name="android:layout_marginStart">@dimen/start_end</item>
+        <item name="android:layout_marginEnd">@dimen/start_end</item>
+        <item name="android:textSize">@dimen/dim_xl</item>
+        <item name="android:textColor">@color/gray</item>
+    </style>
+
+
+    <style name="Buttons">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">@dimen/Buttons</item>
+        <item name="android:layout_margin">@dimen/dim_m</item>
+        <item name="android:textSize">@dimen/dim_xl</item>
+        <item name="android:layout_marginStart">@dimen/album_dp_40</item>
+        <item name="android:layout_marginEnd">@dimen/album_dp_40</item>
+    </style>
+
+
+    <style name="SocialImages">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_margin">@dimen/dim_m</item>
+    </style>
+
+</resources>

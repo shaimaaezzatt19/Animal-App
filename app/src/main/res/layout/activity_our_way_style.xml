@@ -1,0 +1,215 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+        <include
+            android:id="@+id/Way_toolbar"
+            layout="@layout/toolbar">
+
+        </include>
+
+        <android.support.constraint.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dimen_50">
+
+            <TextView
+                android:id="@+id/Way_Title"
+                android:layout_width="wrap_content"
+                android:layout_height="27dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginRight="8dp"
+                android:fontFamily="@font/cairo"
+                android:gravity="center"
+                android:text="@string/Way"
+                android:textColor="@color/white"
+                android:textSize="20dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.51"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+
+        </android.support.constraint.ConstraintLayout>
+
+
+        <RelativeLayout
+            android:id="@+id/MyWay_RL1_Pic"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/Way_toolbar"
+            android:layout_marginTop="@dimen/dimen_text_20">
+
+            <ImageView
+                android:id="@+id/MyWay_MainPIC_IV"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/album_dp_200"
+                android:layout_marginTop="-20dp"
+                android:layout_marginStart="@dimen/dimen_16"
+                android:layout_marginEnd="@dimen/dimen_16"
+                android:src="@drawable/knewus1" />
+        </RelativeLayout>
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@id/MyWay_RL1_Pic"
+            android:layout_marginStart="@dimen/dimen_16"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="@dimen/dimen_16"
+            android:layout_marginBottom="@dimen/dimen_16">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:id="@+id/MyWay_TextOne"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginStart="@dimen/dimen_text_20"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginEnd="@dimen/dimen_text_20"
+                    android:text="@string/MyWayOne"
+                    android:textColor="@color/black" />
+
+                <TextView
+                    android:id="@+id/MyWay_TexTWO"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/MyWay_TextOne"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginStart="@dimen/dimen_text_20"
+                    android:layout_marginTop="@dimen/album_dp_15"
+                    android:layout_marginEnd="@dimen/dimen_text_20"
+                    android:text="@string/MyWayTWO"
+                    android:textColor="@color/black" />
+
+                <TextView
+                    android:id="@+id/MYway_TexThree"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/MyWay_TexTWO"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginStart="@dimen/dimen_text_20"
+                    android:layout_marginTop="@dimen/album_dp_15"
+                    android:layout_marginEnd="@dimen/dimen_text_20"
+                    android:text="@string/MyWayTthree"
+                    android:textColor="@color/black" />
+
+
+                <TextView
+                    android:id="@+id/MYway_Four"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/MYway_TexThree"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginStart="@dimen/dimen_text_20"
+                    android:layout_marginTop="@dimen/album_dp_15"
+                    android:layout_marginEnd="@dimen/dimen_text_20"
+                    android:text="@string/MyWayFour"
+                    android:textColor="@color/black" />
+
+                <TextView
+                    android:id="@+id/MYway_Five"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/MYway_Four"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginStart="@dimen/dimen_text_20"
+                    android:layout_marginTop="@dimen/album_dp_15"
+                    android:layout_marginEnd="@dimen/dimen_text_20"
+                    android:text="@string/MyWayFive"
+                    android:textColor="@color/black" />
+
+                <TextView
+                    android:id="@+id/MYway_Six"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/MYway_Five"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginStart="@dimen/dimen_text_20"
+                    android:layout_marginTop="@dimen/album_dp_15"
+                    android:layout_marginEnd="@dimen/dimen_text_20"
+                    android:text="@string/MyWaySix"
+                    android:textColor="@color/black" />
+
+
+                <TextView
+                    android:id="@+id/MYway_Seven"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/MYway_Six"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginStart="@dimen/dimen_text_20"
+                    android:layout_marginTop="@dimen/album_dp_15"
+                    android:layout_marginEnd="@dimen/dimen_text_20"
+                    android:text="@string/MyWaySeven"
+                    android:textColor="@color/black" />
+
+                <TextView
+                    android:id="@+id/MYway_Eight"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/MYway_Seven"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginStart="@dimen/dimen_text_20"
+                    android:layout_marginTop="@dimen/album_dp_15"
+                    android:layout_marginEnd="@dimen/dimen_text_20"
+                    android:text="@string/MyWayEight"
+                    android:textColor="@color/black" />
+
+                <TextView
+                    android:id="@+id/MYway_Nine"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/MYway_Eight"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginStart="@dimen/dimen_text_20"
+                    android:layout_marginTop="@dimen/album_dp_15"
+                    android:layout_marginEnd="@dimen/dimen_text_20"
+                    android:text="@string/MyWayNine"
+                    android:textColor="@color/black" />
+
+                <TextView
+                    android:id="@+id/MYway_Ten"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/MYway_Nine"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginStart="@dimen/dimen_text_20"
+                    android:layout_marginTop="@dimen/album_dp_15"
+                    android:layout_marginEnd="@dimen/dimen_text_20"
+                    android:text="@string/MyWayTeen"
+                    android:textColor="@color/black" />
+
+                <TextView
+                    android:id="@+id/MYway_Eleven"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/MYway_Ten"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginStart="@dimen/dimen_text_20"
+                    android:layout_marginTop="@dimen/album_dp_15"
+                    android:layout_marginEnd="@dimen/dimen_text_20"
+                    android:text="@string/MyWayEleven"
+                    android:textColor="@color/black" />
+            </RelativeLayout>
+
+
+        </ScrollView>
+
+    </RelativeLayout>
+
+
+</ScrollView>

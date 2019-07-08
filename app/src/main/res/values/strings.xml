@@ -1,0 +1,152 @@
+<resources>
+    <string name="app_name">غنى الشام</string>
+
+
+    //خدماتنا
+    <string name="OurServices">خدماتنا</string>
+
+    <string name="Anima1">حاشي</string>
+    <string name="Animal2">نعيمي</string>
+    <string name="Animal3">حري</string>
+    <string name="Animal4">نجدي بلدي</string>
+    <string name="Animal5">تيس</string>
+    <string name="Animal6">عجل</string>
+    <string name="Animal7">مفروم غنم </string>
+    <string name="Animal8">برجر  </string>
+
+
+    //الخدمة المختارة
+    <string name="ServiceSelected">حاشي </string>
+    <string name="ServiceSelecteName">حاشي</string>
+    <string name="ServiceSelecteNameOption1">حاشي لباني</string>
+    <string name="ServiceSelecteNameOption2">حاشي مفروم</string>
+    <string name="ServiceSelecteNameOption3">حاشي كامل</string>
+
+
+    //تفاصيل الخدمة المختاره
+    <string name="ServiceSelectedDeatils">حاشي </string>
+    <string name="ServiceSelectedDeatilsName">حاشي </string>
+    <string name="ServiceSelectedDeatilsSeeAllDealis">حاشي</string>
+    <string name="Kilo">الكيلو</string>
+    <string name="Price">500ريال سعودي</string>
+    <string name="Request">اطلب</string>
+
+    //ارسال طلب
+    <string name="RequestNameTitleinToolbar">حاشي </string>
+    <string name="RequestName">حاشي </string>
+    <string name="RequestDeatilsSeeAllDealis">حاشي</string>
+    <string name="RequestKilo">الكيلو</string>
+    <string name="RequestPrice">500ريال سعودي</string>
+    <string name="count">500الكمية</string>
+    <string name="TypeofSplinner1">التقطيع</string>
+    <string name="TypeofSplinner2">التجهيز</string>
+    <string name="Notes">الملاحظات</string>
+    <string name="Total">الاجمالي 500</string>
+    <string name="AddtoCard">أضف للسلة</string>
+
+    //سلة الشراء
+    <string name="Card"> سلة الشراء</string>
+    <string name="OK"> اتمام الشراء</string>
+
+    //Item of card
+    <string name="cardOrder">حاشي</string>
+    <!--<string name="aftertibs">اجمالي قبل الضريبة 300</string>-->
+    <!--<string name="adder">القيمة المضافة 100</string>-->
+    <string name="TotalCard">الاجمالي الكلي 500</string>
+
+    //ConfirmRequest
+    <string name="ConfirmRequest"> اتمام الطلب</string>
+    <string name="phone">الجوال</string>
+    <string name="name">الاسم </string>
+    <string name="address">العنوان</string>
+    <string name="ConfirmRequestSure">تأكيد الشراء</string>
+
+
+    //Code
+    <string name="Code">كود التفعيل</string>
+    <string name="send">ارسال</string>
+
+    //ourWayStyle طريقتنا
+    <string name="Way">طريقتنا</string>
+
+    //Call Us اتصل بنا
+    <string name="Name">الاسم</string>
+    <string name="Phone">الجوال</string>
+    <string name="Message">الرسالة</string>
+    <string name="sendMsg">ارسال</string>
+    <string name="ConnectUs">اتصل بنا</string>
+
+    //card after ordering
+    <string name="ShoppingCart">سلة الشراء</string>
+    <string name="OrderDone">تم الطلب </string>
+    <string name="Timer">1:00</string>
+    <string name="Cancle">إلغاء</string>
+
+
+    //send order
+    <string name="OrderKilo">الكمية</string>
+    <string name="OrderPrice">500 ريال سعودي </string>
+    <string name="OrderTitle">حاشي </string>
+
+    <string name="WriteNote">ملاحظات</string>
+    <string name="OrderTotal">الاجمالي 500</string>
+    <string name="AddToCard">أضف للسلة</string>
+
+    //update
+    <string name="Save">حفظ</string>
+
+    //show allservice
+    <string name="size">الحجم</string>
+    <string name="size1">صغير 500</string>
+    <string name="size2">متوسط 800</string>
+    <string name="size3">كبير 1200</string>
+    <string name="request">اطلب</string>
+
+    //Dialog
+    <string name="Dialog">قيم الآن</string>
+    <string name="DialogDone">تم إضافة الطلب إلى السلةاذهب لاتمام الطلب </string>
+
+
+    //My Way
+    <string name="MyWayOne"> للتميز عنوان وعنوان تميزنا ذبائحُنا ونكتفي بأننا التطبيق والاسم الأول في عالم اللحوم على مستوى الخليج</string>
+    <string name="MyWayTWO">يقوم العميل بطلب الذبيحة من شاشة الطلبات</string>
+    <string name="MyWayTthree">دفع التكلفة عند الاستلام</string>
+    <string name="MyWayFour">يتم التواصل مع العميل لانهاء الطلب وتأكيده وأخذ ملاحظاته</string>
+    <string name="MyWayFive">استلام الطلب في الوقت المتفق عليه مع العميل</string>
+    <string name="MyWaySix">نقوم بجميع أنواع التقطيع والفرم</string>
+    <string name="MyWaySeven">نقدم لك اللحوم في أطباق أو أكياس أو أكياس مفرغ منها الهواء</string>
+    <string name="MyWayEight">التوصيل بسيارات مبردة</string>
+    <string name="MyWayNine">الذبح تحت اشراف طبي </string>
+    <string name="MyWayTeen">في حالة وجود عيب في الذبيحة يتم تعويض العميل بما يرغب </string>
+    <string name="MyWayEleven">رضائكم غايتنا ومحبتكم دعم لنا </string>
+    <string name="title_activity_maps">Map</string>
+
+
+    //مصفوفة التجهيز
+    <array name="التجهيز">
+        <item>أطباق مغلفة</item>
+        <item>أكياس</item>
+        <item>أكياس بدون هواء</item>
+    </array>
+
+    //مصفوفة التجهيز
+    <array name="التقطيع">
+        <item>أرباع</item>
+        <item>أنصاف</item>
+        <item>كامل</item>
+        <item>ثلاجة</item>
+        <item>تفضيل كبير</item>
+        <item>تفضيل صغير</item>
+    </array>
+
+    //مصفوفة التجهيز
+    <array name="الحجم">
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+        <item>5</item>
+        <item>6</item>
+    </array>
+
+</resources>

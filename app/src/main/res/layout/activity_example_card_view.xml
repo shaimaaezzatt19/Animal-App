@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginStart="@dimen/start_end"
+    android:layout_marginTop="10dp"
+    android:layout_marginEnd="@dimen/start_end"
+    android:layout_marginBottom="@dimen/dimen_16"
+    android:background="@drawable/rectangleredshape"
+    tools:context=".ui.activites.ExampleCardViewActivity">
+
+    <include
+        android:id="@+id/Toolvar"
+        layout="@layout/toolbar" />
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="70dp"
+            android:layout_marginLeft="@dimen/album_dp_100"
+            android:layout_marginTop="@dimen/dimen_16"
+            android:text="مثال على سلة المشتريات"
+            android:textColor="@color/white"
+            android:textSize="@dimen/dimen_text_20" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/RL1"
+        android:layout_width="match_parent"
+        android:layout_height="280dp"
+        android:layout_below="@id/Toolvar"
+        android:layout_marginTop="@dimen/dimen_text_20"
+        tools:layout_editor_absoluteX="4dp"
+        tools:layout_editor_absoluteY="170dp">
+
+        <ImageView
+            android:id="@+id/Items_Card_IV_MainPic"
+            android:layout_width="match_parent"
+            android:layout_height="180dp"
+            android:layout_marginStart="@dimen/dimen_16"
+            android:layout_marginTop="@dimen/dimen_text_20"
+            android:layout_marginEnd="@dimen/dimen_16"
+            android:background="@drawable/rectangleredshape"
+            android:src="@drawable/animal_example2" />
+
+        <TextView
+            android:id="@+id/items-card_deatilsinTV"
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:layout_below="@id/Items_Card_IV_MainPic"
+            android:layout_alignParentTop="false"
+            android:layout_alignParentBottom="true"
+            android:layout_marginStart="60dp"
+            android:layout_marginTop="-40dp"
+            android:layout_marginEnd="60dp"
+            android:layout_marginBottom="10dp"
+            android:background="@drawable/red_button"
+            android:textAlignment="center"
+            android:textColor="@color/white"
+            android:textSize="@dimen/dimen_text_20" />
+
+        <TextView
+            android:id="@+id/Items_Card_TV_TotalCard"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/Items_Card_IV_MainPic"
+            android:layout_marginStart="100dp"
+            android:layout_marginEnd="100dp"
+            android:gravity="center"
+            android:text="@string/TotalCard"
+            android:textColor="@color/white"
+            android:textSize="15dp" />
+
+
+        <ImageView
+            android:id="@+id/ItemsCard_Close_IV"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentRight="true"
+            android:layout_marginTop="5dp"
+            android:layout_marginEnd="10dp"
+            android:layout_marginRight="10dp"
+            android:src="@drawable/close_icon" />
+
+
+        <ImageView
+            android:id="@+id/ItemsCard_Edit_IV"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginStart="20dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="@dimen/dimen_text_20"
+
+            android:src="@drawable/editicon" />
+    </RelativeLayout>
+
+    <Button
+        android:id="@+id/Button_Example"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dimen_50"
+
+        android:layout_below="@id/RL1"
+        android:layout_marginStart="@dimen/album_dp_40"
+        android:layout_marginTop="@dimen/album_dp_40"
+        android:layout_marginEnd="@dimen/album_dp_40"
+
+        android:layout_marginBottom="@dimen/album_dp_10"
+        android:background="@drawable/red_button"
+        android:text="اتمام الشراء"
+        android:textColor="@color/white"
+        android:textSize="@dimen/dimen_text_20" />
+
+</RelativeLayout>
