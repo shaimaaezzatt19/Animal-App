@@ -93,23 +93,6 @@
     </LinearLayout>
 
 
-    <!--<ImageView-->
-    <!--android:id="@+id/Selected_item_Back_IB"-->
-    <!--android:layout_width="@dimen/dimen_50"-->
-    <!--android:layout_height="@dimen/dimen_50"-->
-    <!--android:layout_marginStart="@dimen/dimen_16"-->
-    <!--android:layout_marginLeft="@dimen/dimen_16"-->
-    <!--android:layout_marginEnd="@dimen/dimen_8"-->
-    <!--android:layout_marginRight="@dimen/dimen_8"-->
-    <!--android:layout_marginBottom="@dimen/dimen_24"-->
-    <!--android:shadowColor="#41ff4800"-->
-    <!--android:src="@drawable/back_icon"-->
-    <!--app:layout_constraintBottom_toBottomOf="parent"-->
-    <!--app:layout_constraintEnd_toEndOf="parent"-->
-    <!--app:layout_constraintHorizontal_bias="0.0"-->
-    <!--app:layout_constraintStart_toStartOf="parent" />-->
-
-
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="@dimen/album_dp_80"

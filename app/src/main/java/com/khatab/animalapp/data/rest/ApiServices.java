@@ -1,19 +1,27 @@
 package com.khatab.animalapp.data.rest;
 
-
+import com.khatab.animalapp.data.model.contact.Contact;
 
 import java.util.List;
 
+import retrofit2.Call;
+import retrofit2.http.Field;
+import retrofit2.http.FormUrlEncoded;
+import retrofit2.http.POST;
 
 public interface ApiServices {
 
-//    @POST("client/login")
-//    @FormUrlEncoded
-//    Call<UserLogin> sendUserLoginRequest(@Field("email") String email,
-//                                         @Field("password") String password);
+
+    @POST("client/login")
+    @FormUrlEncoded
+    Call<Contact> SendContact(@Field("name") String name,
+                              @Field("phone") String phone,
+                              @Field("messsage") String messsage);
+
 //
 //    @POST("client/register")
 //    @FormUrlEncoded
+
 //    Call<ClientRegister> addClientRegister(@Field("name") String name,
 //                                           @Field("email") String email,
 //                                           @Field("password") String password,

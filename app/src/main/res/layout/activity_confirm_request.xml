@@ -126,9 +126,7 @@
                 android:layout_marginStart="@dimen/start_end"
                 android:layout_marginTop="8dp"
                 android:layout_marginEnd="@dimen/start_end"
-                android:drawableStart="@drawable/location_icon"
-                android:background="@drawable/rectangleredshape"
-                android:drawableLeft="@drawable/location_icon" />
+                android:background="@drawable/rectangleredshape" />
 
         </LinearLayout>
 
@@ -148,18 +146,18 @@
 
 
     <!--<ImageView-->
-        <!--android:id="@+id/ConfirmCode_Back_IB"-->
-        <!--android:layout_width="@dimen/dimen_50"-->
-        <!--android:layout_height="@dimen/dimen_50"-->
-        <!--android:layout_marginStart="8dp"-->
-        <!--android:layout_marginLeft="8dp"-->
-        <!--android:layout_marginBottom="64dp"-->
-        <!--android:shadowColor="#41ff4800"-->
-        <!--android:src="@drawable/back_icon"-->
-        <!--app:layout_constraintBottom_toBottomOf="parent"-->
-        <!--app:layout_constraintEnd_toEndOf="parent"-->
-        <!--app:layout_constraintHorizontal_bias="0.084"-->
-        <!--app:layout_constraintStart_toStartOf="parent" />-->
+    <!--android:id="@+id/ConfirmCode_Back_IB"-->
+    <!--android:layout_width="@dimen/dimen_50"-->
+    <!--android:layout_height="@dimen/dimen_50"-->
+    <!--android:layout_marginStart="8dp"-->
+    <!--android:layout_marginLeft="8dp"-->
+    <!--android:layout_marginBottom="64dp"-->
+    <!--android:shadowColor="#41ff4800"-->
+    <!--android:src="@drawable/back_icon"-->
+    <!--app:layout_constraintBottom_toBottomOf="parent"-->
+    <!--app:layout_constraintEnd_toEndOf="parent"-->
+    <!--app:layout_constraintHorizontal_bias="0.084"-->
+    <!--app:layout_constraintStart_toStartOf="parent" />-->
 
     <RelativeLayout
         android:layout_width="match_parent"

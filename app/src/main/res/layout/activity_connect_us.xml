@@ -144,6 +144,7 @@
             android:layout_below="@id/splash_LL_socilImages">
 
             <ImageView
+                android:id="@+id/ConnecUs_Back_IV"
                 android:layout_width="@dimen/dimen_50"
                 android:layout_height="@dimen/dimen_50"
                 android:layout_marginStart="44dp"
