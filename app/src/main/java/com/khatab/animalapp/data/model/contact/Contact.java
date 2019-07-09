@@ -9,7 +9,7 @@ public class Contact {
     @SerializedName("data")
     private String mData;
     @SerializedName("error")
-    private Object mError;
+    private String mError;
     @SerializedName("status")
     private Boolean mStatus;
 
@@ -21,11 +21,11 @@ public class Contact {
         mData = data;
     }
 
-    public Object getError() {
+    public String getError() {
         return mError;
     }
 
-    public void setError(Object error) {
+    public void setError(String error) {
         mError = error;
     }
 

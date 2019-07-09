@@ -3,6 +3,7 @@ package com.khatab.animalapp.ui.activites;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
+import android.support.constraint.solver.widgets.Helper;
 import android.support.design.widget.TextInputEditText;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
@@ -17,9 +18,14 @@ import com.khatab.animalapp.R;
 import com.khatab.animalapp.data.model.contact.Contact;
 import com.khatab.animalapp.data.rest.ApiServices;
 
+import org.json.JSONObject;
+
+import java.io.IOException;
+
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
+import okhttp3.ResponseBody;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
@@ -69,7 +75,7 @@ public class ConnectUsActivity extends AppCompatActivity {
     public void onViewClicked(View view) {
         switch (view.getId()) {
             case R.id.SendConnectUs_BT:
-                connectue("shaimaa", "012", "dfds");
+                connectue();
                 break;
 
             case R.id.ConnectUs_Insteghram:
@@ -92,15 +98,22 @@ public class ConnectUsActivity extends AppCompatActivity {
         }
     }
 
-    public void connectue(String name, String phone, String message) {
-        name = ConnectUsName.getText().toString();
-        phone = ConnectUsPhone.getText().toString();
-        message = ConnectUsMessage.getText().toString();
+    // الرسالة ماتبعتتتش :(
+    public void connectue() {
+        String name = ConnectUsName.getText().toString();
+        String phone = ConnectUsPhone.getText().toString();
+        String message = ConnectUsMessage.getText().toString();
         apiServices.SendContact(name, phone, message).enqueue(new Callback<Contact>() {
             @Override
             public void onResponse(Call<Contact> call, Response<Contact> response) {
+                if (response.isSuccessful()) {
+                    if (response.body().getStatus()) {
+                        Toast.makeText(getApplicationContext(), response.body().getData(), Toast.LENGTH_SHORT).show();
+                    } else {
+                        Toast.makeText(getApplicationContext(), response.body().getError(), Toast.LENGTH_SHORT).show();
+                    }
+                }
             }
-
             @Override
             public void onFailure(Call<Contact> call, Throwable t) {
 

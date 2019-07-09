@@ -47,8 +47,8 @@
 
                 <ImageView
                     android:id="@+id/MainIcons_CallUs_IV"
-                    android:layout_width="@dimen/album_dp_45"
-                    android:layout_height="@dimen/album_dp_45"
+                    android:layout_width="47dp"
+                    android:layout_height="47dp"
                     android:src="@drawable/connectus_icon" />
 
                 <ImageView

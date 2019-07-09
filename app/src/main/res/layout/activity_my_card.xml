@@ -92,8 +92,8 @@
 
         <ImageView
             android:id="@+id/MYCard_Back_IB"
-            android:layout_width="@dimen/dimen_50"
-            android:layout_height="@dimen/dimen_50"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
             android:layout_marginStart="@dimen/dimen_16"
             android:layout_marginLeft="@dimen/dimen_16"
             android:layout_marginTop="@dimen/dimen_2"
@@ -102,8 +102,8 @@
 
         <ImageView
             android:id="@+id/MYCard_Menue_IB"
-            android:layout_width="@dimen/dimen_50"
-            android:layout_height="@dimen/dimen_50"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
             android:layout_alignParentRight="true"
             android:layout_marginTop="@dimen/dimen_4"
             android:layout_marginEnd="@dimen/dimen_16"

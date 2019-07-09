@@ -12,7 +12,7 @@ import retrofit2.http.POST;
 public interface ApiServices {
 
 
-    @POST("client/login")
+    @POST("contact")
     @FormUrlEncoded
     Call<Contact> SendContact(@Field("name") String name,
                               @Field("phone") String phone,

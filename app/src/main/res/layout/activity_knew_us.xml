@@ -41,9 +41,9 @@
         android:layout_width="match_parent"
         android:layout_height="200dp"
         android:layout_below="@id/KnewUs-toolbar"
-        android:layout_marginStart="10dp"
+        android:layout_marginStart="30dp"
         android:layout_marginTop="10dp"
-        android:layout_marginEnd="10dp" />
+        android:layout_marginEnd="30dp" />
 
     <ScrollView
         android:id="@+id/Scroll1"
@@ -240,8 +240,8 @@
 
     <ImageView
         android:id="@+id/KnewUs_IV_BackIcon"
-        android:layout_width="@dimen/dimen_50"
-        android:layout_height="@dimen/dimen_50"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
         android:layout_alignParentLeft="true"
         android:layout_alignParentBottom="true"
         android:layout_marginLeft="@dimen/dimen_text_20"
