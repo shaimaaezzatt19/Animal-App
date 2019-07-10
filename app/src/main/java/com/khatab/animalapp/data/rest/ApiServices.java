@@ -16,7 +16,7 @@ public interface ApiServices {
     @FormUrlEncoded
     Call<Contact> SendContact(@Field("name") String name,
                               @Field("phone") String phone,
-                              @Field("messsage") String messsage);
+                              @Field("message") String m);
 
 //
 //    @POST("client/register")
