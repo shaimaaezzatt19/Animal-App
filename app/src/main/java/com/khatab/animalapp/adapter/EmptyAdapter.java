@@ -1,4 +1,6 @@
-package com.khatab.animalapp.adapter;//package com.example.sofra.adapter;
+package com.khatab.animalapp.adapter;
+
+//package com.example.sofra.adapter;
 //
 //import android.content.Context;
 //import android.support.v7.widget.RecyclerView;

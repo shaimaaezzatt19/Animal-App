@@ -1,5 +1,6 @@
 package com.khatab.animalapp.data.rest;
 
+import com.khatab.animalapp.data.model.Services.Services;
 import com.khatab.animalapp.data.model.contact.Contact;
 
 import java.util.List;
@@ -7,7 +8,9 @@ import java.util.List;
 import retrofit2.Call;
 import retrofit2.http.Field;
 import retrofit2.http.FormUrlEncoded;
+import retrofit2.http.GET;
 import retrofit2.http.POST;
+import retrofit2.http.Query;
 
 public interface ApiServices {
 
@@ -17,6 +20,9 @@ public interface ApiServices {
     Call<Contact> SendContact(@Field("name") String name,
                               @Field("phone") String phone,
                               @Field("message") String m);
+
+    @GET("services")
+    Call<Services> getservices();
 
 //
 //    @POST("client/register")
