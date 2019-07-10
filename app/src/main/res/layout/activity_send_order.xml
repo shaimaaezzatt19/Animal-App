@@ -31,8 +31,6 @@
         android:layout_width="match_parent"
         android:layout_height="0dp"
 
-        android:layout_marginStart="@dimen/dimen_16"
-        android:layout_marginEnd="@dimen/dimen_16"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -184,27 +182,27 @@
 
             <TextView
                 android:id="@+id/Notes_TV"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="105dp"
+                android:layout_height="40dp"
                 android:layout_marginEnd="@dimen/dimen_16"
                 android:layout_marginRight="@dimen/dimen_16"
-                android:layout_marginBottom="228dp"
                 android:text="@string/Notes"
                 android:textColor="@color/black"
-                android:textSize="30dp"
+                android:textSize="25dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/RL1_SpinerTWO" />
 
             <EditText
                 android:id="@+id/WriteYourNotes_ET"
-                android:layout_width="350dp"
-                android:layout_height="@dimen/dimen_90"
-                android:layout_marginStart="@dimen/dimen_8"
-                android:layout_marginLeft="@dimen/dimen_8"
-                android:layout_marginEnd="@dimen/dimen_8"
-                android:layout_marginRight="@dimen/dimen_8"
+                android:layout_width="272dp"
+                android:layout_height="102dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginLeft="@dimen/dimen_16"
+                android:layout_marginEnd="@dimen/dimen_16"
+                android:layout_marginRight="@dimen/dimen_16"
                 android:background="@drawable/rectangleredshape"
                 app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.205"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/Notes_TV" />
 
@@ -224,12 +222,14 @@
                 android:id="@+id/AddToCard_BT"
                 android:layout_width="@dimen/album_dp_200"
                 android:layout_height="@dimen/dimen_50"
-                android:layout_marginStart="@dimen/dimen_8"
-                android:layout_marginLeft="@dimen/dimen_8"
+                android:layout_marginStart="8dp"
+                android:layout_marginLeft="8dp"
                 android:layout_marginTop="@dimen/album_dp_15"
+                android:layout_marginEnd="8dp"
+                android:layout_marginRight="8dp"
+
                 android:background="@drawable/red_button"
                 android:text="@string/AddToCard"
-
                 android:textColor="@color/white"
                 android:textSize="@dimen/dimen_text_25"
                 app:layout_constraintEnd_toEndOf="parent"

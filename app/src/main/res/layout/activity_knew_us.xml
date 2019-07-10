@@ -40,8 +40,6 @@
         android:id="@+id/main-Vedio"
         android:layout_width="match_parent"
         android:layout_height="200dp"
-        android:elevation="10dp"
-        app:cardCornerRadius="100dp"
         android:layout_below="@id/KnewUs-toolbar"
         android:layout_marginStart="30dp"
         android:layout_marginTop="10dp"
