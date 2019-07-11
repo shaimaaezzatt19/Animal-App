@@ -1,153 +1,86 @@
 package com.khatab.animalapp.ui.activites;
 
 import android.content.Intent;
+import android.os.Bundle;
 import android.support.constraint.ConstraintLayout;
 import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
-import android.view.View;
+import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.widget.ImageView;
-import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.khatab.animalapp.R;
+import com.khatab.animalapp.adapter.ServicesPicAnimalNameAdapter;
+import com.khatab.animalapp.data.model.Services.Datum;
+import com.khatab.animalapp.data.model.Services.Services;
+import com.khatab.animalapp.data.model.contact.Contact;
+import com.khatab.animalapp.data.rest.ApiServices;
+
+import java.util.ArrayList;
+import java.util.List;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
+
+import static com.khatab.animalapp.data.rest.RetrofitGeneral.getClient;
+import static java.security.AccessController.getContext;
 
 public class ServicesActivity extends AppCompatActivity {
     @BindView(R.id.OurServices_Title)
     TextView OurServicesTitle;
     @BindView(R.id.Toolbar_services)
     ConstraintLayout ToolbarServices;
-    @BindView(R.id.Services_ServiceOne_PIC_IV)
-    ImageView ServicesServiceOnePICIV;
-    @BindView(R.id.Services_ServiceTWO_PIC_IV)
-    ImageView ServicesServiceTWOPICIV;
-    @BindView(R.id.Services_LL1)
-    LinearLayout ServicesLL1;
-    @BindView(R.id.Services_ServiceThree_PIC_IV)
-    ImageView ServicesServiceThreePICIV;
-    @BindView(R.id.Services_ServiceFour_PIC_IV)
-    ImageView ServicesServiceFourPICIV;
-    @BindView(R.id.Services_LL2)
-    LinearLayout ServicesLL2;
-    @BindView(R.id.Services_ServiceFive_PIC_IV)
-    ImageView ServicesServiceFivePICIV;
-    @BindView(R.id.Services_ServiceSix_PIC_IV)
-    ImageView ServicesServiceSixPICIV;
-    @BindView(R.id.Services_LL3)
-    LinearLayout ServicesLL3;
-    @BindView(R.id.Services_ServiceSeven_PIC_IV)
-    ImageView ServicesServiceSevenPICIV;
-    @BindView(R.id.Services_ServiceEight_PIC_IV)
-    ImageView ServicesServiceEightPICIV;
-    @BindView(R.id.Services_LL4)
-    LinearLayout ServicesLL4;
-    @BindView(R.id.Services_ServiceNine_PIC_IV)
-    ImageView ServicesServiceNinePICIV;
-    @BindView(R.id.Services_ServicTen_PIC_IV)
-    ImageView ServicesServicTenPICIV;
-    @BindView(R.id.Services_LL5)
-    LinearLayout ServicesLL5;
-    @BindView(R.id.Services_LL6)
-    LinearLayout ServicesLL6;
-    @BindView(R.id.Name_Pic1)
-    TextView NamePic1;
-    @BindView(R.id.Name_Pic1_Constrain)
-    ConstraintLayout NamePic1Constrain;
-    @BindView(R.id.Name_Pic2)
-    TextView NamePic2;
-    @BindView(R.id.Name_Pic2_Constrain)
-    ConstraintLayout NamePic2Constrain;
-    @BindView(R.id.Name_Pic3)
-    TextView NamePic3;
-    @BindView(R.id.Name_Pic3_Constrain)
-    ConstraintLayout NamePic3Constrain;
-    @BindView(R.id.Name_Pic4)
-    TextView NamePic4;
-    @BindView(R.id.Name_Pic4_Constrain)
-    ConstraintLayout NamePic4Constrain;
-    @BindView(R.id.Name_Pic5)
-    TextView NamePic5;
-    @BindView(R.id.Name_Pic5_Constrain)
-    ConstraintLayout NamePic5Constrain;
-    @BindView(R.id.Name_Pic6)
-    TextView NamePic6;
-    @BindView(R.id.Name_Pic6_Constrain)
-    ConstraintLayout NamePic6Constrain;
-    @BindView(R.id.Name_Pic7)
-    TextView NamePic7;
-    @BindView(R.id.Name_Pic7_Constrain)
-    ConstraintLayout NamePic7Constrain;
-    @BindView(R.id.Name_Pic8)
-    TextView NamePic8;
-    @BindView(R.id.Name_Pic8_Constrain)
-    ConstraintLayout NamePic8Constrain;
+    @BindView(R.id.Services_RV)
+    RecyclerView ServicesRV;
+    @BindView(R.id.Services_IV_back)
+    ImageView ServicesIVBack;
+
+    private ApiServices apiServices;
+    private static final String TAG = ConnectUsActivity.class.getSimpleName();
+    private List<Services> items = new ArrayList<>();
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_services);
+        super.onCreate( savedInstanceState );
+        setContentView( R.layout.activity_services );
 
-        ButterKnife.bind(this);
-
+        ButterKnife.bind( this );
+        apiServices = getClient().create( ApiServices.class );
 
     }
 
-    @OnClick({R.id.Services_ServiceOne_PIC_IV, R.id.Services_ServiceTWO_PIC_IV, R.id.Services_ServiceThree_PIC_IV, R.id.Services_ServiceFour_PIC_IV, R.id.Services_ServiceFive_PIC_IV, R.id.Services_ServiceSix_PIC_IV, R.id.Services_ServiceSeven_PIC_IV, R.id.Services_ServiceEight_PIC_IV, R.id.Services_ServiceNine_PIC_IV, R.id.Services_ServicTen_PIC_IV})
-    public void onViewClicked(View view) {
-        switch (view.getId()) {
-            case R.id.Services_ServiceOne_PIC_IV:
+    @OnClick(R.id.Services_IV_back)
+    public void onViewClicked() {
+        Intent intentback = new Intent( ServicesActivity.this, FullMenueWithIcons.class );
+        startActivity( intentback );
 
-                Intent intent1 = new Intent(ServicesActivity.this, ItemSelectedFromServicesActivity.class);
-                startActivity(intent1);
-                break;
+    }
 
-            case R.id.Services_ServiceTWO_PIC_IV:
-                Intent intent2 = new Intent(ServicesActivity.this, ItemSelectedFromServicesActivity.class);
-                startActivity(intent2);
-                break;
+    public void SeeMyServices() {
+        apiServices.getservices().enqueue( new Callback<Services>() {
+            @Override
+            public void onResponse(Call<Services> call, Response<Services> response) {
 
-            case R.id.Services_ServiceThree_PIC_IV:
-                Intent intent3 = new Intent(ServicesActivity.this, ItemSelectedFromServicesActivity.class);
-                startActivity(intent3);
-                break;
+                if (response.isSuccessful()) {
+                    Boolean data = response.body().getStatus();
+                    items.addAll( data );
+                    ServicesRV.setAdapter( new ServicesPicAnimalNameAdapter
+                            ( items, ServicesActivity.this ) );
 
-            case R.id.Services_ServiceFour_PIC_IV:
-                Intent intent4 = new Intent(ServicesActivity.this, ItemSelectedFromServicesActivity.class);
-                startActivity(intent4);
-                break;
+                }
+            }
 
-            case R.id.Services_ServiceFive_PIC_IV:
-                Intent intent5 = new Intent(ServicesActivity.this, ItemSelectedFromServicesActivity.class);
-                startActivity(intent5);
-                break;
+            @Override
+            public void onFailure(Call<Services> call, Throwable t) {
+                Log.v( TAG, "Onfalliuer:error " + t.getMessage() );
 
-            case R.id.Services_ServiceSix_PIC_IV:
-                Intent intent6 = new Intent(ServicesActivity.this, ItemSelectedFromServicesActivity.class);
-                startActivity(intent6);
-                break;
-
-            case R.id.Services_ServiceSeven_PIC_IV:
-                Intent intent7 = new Intent(ServicesActivity.this, ItemSelectedFromServicesActivity.class);
-                startActivity(intent7);
-                break;
-
-            case R.id.Services_ServiceEight_PIC_IV:
-                Intent intent8 = new Intent(ServicesActivity.this, ItemSelectedFromServicesActivity.class);
-                startActivity(intent8);
-                break;
-
-            case R.id.Services_ServiceNine_PIC_IV:
-                Intent intent9 = new Intent(ServicesActivity.this, ItemSelectedFromServicesActivity.class);
-                startActivity(intent9);
-                break;
-
-            case R.id.Services_ServicTen_PIC_IV:
-                Intent intent10 = new Intent(ServicesActivity.this, ItemSelectedFromServicesActivity.class);
-                startActivity(intent10);
-                break;
-        }
+            }
+        } );
     }
 }
 

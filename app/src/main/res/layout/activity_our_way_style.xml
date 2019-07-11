@@ -3,8 +3,6 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_marginStart="@dimen/album_dp_10"
-    android:layout_marginEnd="@dimen/album_dp_10"
     android:layout_height="match_parent">
 
 
@@ -49,16 +47,20 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@id/Way_toolbar"
-            android:layout_marginTop="@dimen/dimen_text_20">
+            android:layout_marginStart="@dimen/album_dp_10"
+            android:layout_marginTop="@dimen/dimen_text_20"
+            android:layout_marginEnd="@dimen/album_dp_10">
 
             <ImageView
                 android:id="@+id/MyWay_MainPIC_IV"
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/album_dp_200"
+                android:layout_marginStart="@dimen/dimen_2"
                 android:layout_marginTop="-20dp"
-                android:layout_marginStart="@dimen/dimen_16"
-                android:layout_marginEnd="@dimen/dimen_16"
-                android:src="@drawable/knewus1" />
+                android:layout_marginEnd="2dp"
+                android:src="@drawable/knewus1"
+                android:layout_marginLeft="@dimen/dimen_2"
+                android:layout_marginRight="2dp" />
         </RelativeLayout>
 
         <ScrollView

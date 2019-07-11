@@ -3,44 +3,42 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="wrap_content">
 
-    <RelativeLayout
-        android:id="@+id/Main_RL"
+
+    <ImageView
+        android:id="@+id/Dialog_background"
         android:layout_width="match_parent"
-        android:layout_height="200dp"
-        android:layout_marginTop="@dimen/dimen_text_20">
+        android:layout_height="match_parent"
+        android:layout_marginStart="@dimen/dimen_16"
+        android:layout_marginEnd="@dimen/dimen_16"
+        android:src="@drawable/dialog1" />
+
+    <TextView
+        android:id="@+id/Dialg_TV"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:layout_centerHorizontal="true"
+        android:text="@string/Dialog"
+        android:textColor="@color/white"
+        android:textSize="@dimen/dimen_text_25" />
+
+    <RatingBar
+        android:id="@+id/Rate_Dialog"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/Dialg_TV"
+        android:layout_alignStart="@+id/Dialog_background"
+        android:layout_alignLeft="@+id/Dialog_background"
+        android:layout_alignEnd="@+id/Dialog_background"
+        android:layout_alignRight="@+id/Dialog_background"
+        android:layout_marginStart="83dp"
+        android:layout_marginLeft="83dp"
+        android:layout_marginTop="350dp"
+        android:layout_marginEnd="56dp"
+        android:layout_marginRight="56dp"
+        android:progressTint="@android:color/holo_orange_light" />
 
 
-        <ImageView
-            android:id="@+id/Dialog_background"
-            android:layout_marginStart="@dimen/dimen_16"
-            android:layout_marginEnd="@dimen/dimen_16"
-            android:layout_width="match_parent"
-            android:layout_height="350dp"
-            android:src="@drawable/dialog1" />
-
-        <TextView
-            android:id="@+id/Dialg_TV"
-            android:layout_below="@id/Dialog_background"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/Dialog"
-            android:gravity="center"
-            android:layout_marginTop="-140dp"
-            android:layout_marginStart="140dp"
-            android:textSize="@dimen/dimen_text_25"
-            android:textColor="@color/white"
-            android:layout_marginEnd="140dp" />
-
-        <RatingBar
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/Dialg_TV"
-            android:layout_marginStart="80dp"
-            android:layout_marginTop="10dp"
-            android:layout_marginLeft="80dp" />
-
-
-    </RelativeLayout>
 </RelativeLayout>
