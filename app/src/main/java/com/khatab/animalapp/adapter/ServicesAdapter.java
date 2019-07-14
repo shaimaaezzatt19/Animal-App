@@ -11,7 +11,7 @@ import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
 import com.khatab.animalapp.R;
-import com.khatab.animalapp.data.model.ServicesNumber.Services.ServicesData;
+import com.khatab.animalapp.data.model.Services.ServicesData;
 
 import java.util.List;
 

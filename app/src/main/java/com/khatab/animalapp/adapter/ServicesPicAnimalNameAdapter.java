@@ -11,8 +11,7 @@ import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
 import com.khatab.animalapp.R;
-import com.khatab.animalapp.data.model.ServicesNumber.Services.Services;
-import com.khatab.animalapp.data.model.ServicesNumber.Services.ServicesData;
+import com.khatab.animalapp.data.model.ServicesNumber.Services;
 
 import java.util.List;
 
@@ -25,13 +24,13 @@ public class ServicesPicAnimalNameAdapter extends RecyclerView.Adapter<ServicesP
 
     private Context context;
 
-    private List<ServicesData> Items;
+    private List<Services> Items;
     private List<String> mData;
     private LayoutInflater mInflater;
     private ItemClickListener mClickListener;
 
 
-    public ServicesPicAnimalNameAdapter(List<ServicesData> arrayList, Context context) {
+    public ServicesPicAnimalNameAdapter(List<Services> arrayList, Context context) {
         this.Items = arrayList;
         this.context = context;
     }
@@ -55,10 +54,10 @@ public class ServicesPicAnimalNameAdapter extends RecyclerView.Adapter<ServicesP
 
     private void setData(ViewHolder viewHolder, int position) {
 
-        ServicesData postsData = Items.get( position );
-        String image = postsData.getImage();
-        Glide.with( context ).load( image ).into( viewHolder.ItemsErvicesPICIV );
-        viewHolder.ServicesAnimalNameTV.setText( postsData.getName() );
+        Services postsData = Items.get( position );
+       // String image = postsData.getImage();
+       // Glide.with( context ).load( image ).into( viewHolder.ItemsErvicesPICIV );
+      //  viewHolder.ServicesAnimalNameTV.setText( postsData.getName() );
 
     }
 
