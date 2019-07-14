@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:gravity="center"
     tools:context=".ui.activites.KnewUsActivity">
 
     <include
@@ -61,35 +62,56 @@
                 android:id="@+id/KnewUs_LL1"
                 android:layout_width="match_parent"
                 android:layout_height="140dp"
-                android:layout_marginStart="20dp"
+                android:layout_marginStart="30dp"
                 android:layout_marginLeft="@dimen/dimen_16"
                 android:layout_marginTop="30dp"
                 android:layout_marginEnd="32dp"
+
                 android:layout_marginRight="32dp"
                 android:orientation="horizontal">
 
-                <ImageView
-                    android:id="@+id/KnewUs_PICOne_IV"
-                    android:layout_width="140dp"
-                    android:layout_height="100dp"
-                    android:layout_marginStart="10dp"
-                    android:layout_marginLeft="10dp"
-                    android:layout_marginTop="10dp"
-                    android:background="@drawable/rectangleredshape"
-                    android:src="@drawable/knewus1"
-                    android:textAlignment="center" />
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/dimen_16"
+                    android:layout_marginLeft="@dimen/dimen_16">
 
-                <ImageView
-                    android:id="@+id/KnewUs_PICTwo_IV"
-                    android:layout_width="140dp"
-                    android:layout_height="100dp"
-                    android:layout_margin="10dp"
-                    android:layout_marginTop="10dp"
-                    android:layout_marginEnd="10dp"
-                    android:layout_marginRight="10dp"
-                    android:background="@drawable/rectangleredshape"
-                    android:src="@drawable/knewus2"
-                    android:textAlignment="center" />
+                    <ImageView
+                        android:id="@+id/KnewUs_PICOne_IV"
+                        android:layout_width="140dp"
+                        android:layout_height="@dimen/durban_dp_100"
+                        android:layout_alignParentLeft="true"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginLeft="10dp"
+
+                        android:layout_marginTop="10dp"
+                        android:background="@drawable/rectangleredshape"
+                        android:src="@drawable/knewus1"
+                        android:textAlignment="center" />
+
+                </RelativeLayout>
+
+
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="@dimen/dimen_16"
+                    android:layout_marginRight="@dimen/dimen_16">
+
+                    <ImageView
+                        android:id="@+id/KnewUs_PICTwo_IV"
+                        android:layout_width="140dp"
+                        android:layout_height="@dimen/album_dp_100"
+                        android:layout_alignParentRight="true"
+                        android:layout_margin="@dimen/durban_dp_10"
+                        android:layout_marginTop="@dimen/album_dp_10"
+                        android:layout_marginEnd="@dimen/album_dp_20"
+                        android:layout_marginRight="@dimen/album_dp_10"
+                        android:background="@drawable/rectangleredshape"
+                        android:src="@drawable/knewus2"
+                        android:textAlignment="center" />
+                </RelativeLayout>
+
             </LinearLayout>
 
 
@@ -98,12 +120,17 @@
                 android:layout_width="match_parent"
                 android:layout_height="140dp"
                 android:layout_below="@id/KnewUs_LL1"
-                android:layout_marginStart="20dp"
+                android:layout_marginStart="30dp"
                 android:layout_marginLeft="@dimen/dimen_16"
                 android:layout_marginEnd="32dp"
                 android:layout_marginRight="32dp"
                 android:orientation="horizontal">
 
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/dimen_16"
+                    android:layout_marginLeft="@dimen/dimen_16">
                 <ImageView
                     android:id="@+id/KnewUs_PICThree_IV"
                     android:layout_width="140dp"
@@ -114,18 +141,26 @@
                     android:background="@drawable/rectangleredshape"
                     android:src="@drawable/knewus3"
                     android:textAlignment="center" />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="@dimen/dimen_16"
+                    android:layout_marginRight="@dimen/dimen_16">
 
                 <ImageView
                     android:id="@+id/KnewUs_PICFour_IV"
                     android:layout_width="140dp"
-                    android:layout_height="100dp"
-                    android:layout_margin="10dp"
-                    android:layout_marginTop="10dp"
-                    android:layout_marginEnd="10dp"
-                    android:layout_marginRight="10dp"
+                    android:layout_height="@dimen/durban_dp_100"
+                    android:layout_margin="@dimen/durban_dp_10"
+                    android:layout_marginTop="@dimen/durban_dp_10"
+                    android:layout_marginEnd="@dimen/durban_dp_10"
+                    android:layout_marginRight="@dimen/durban_dp_10"
                     android:background="@drawable/rectangleredshape"
                     android:src="@drawable/knewus4"
                     android:textAlignment="center" />
+                </RelativeLayout>
             </LinearLayout>
 
             <LinearLayout
@@ -133,31 +168,37 @@
                 android:layout_width="match_parent"
                 android:layout_height="140dp"
                 android:layout_below="@id/KnewUs_LL2"
-                android:layout_marginStart="20dp"
+                android:layout_marginStart="@dimen/album_dp_30"
                 android:layout_marginLeft="@dimen/dimen_16"
                 android:layout_marginEnd="32dp"
                 android:layout_marginRight="32dp"
                 android:orientation="horizontal">
 
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/dimen_16"
+                    android:layout_marginLeft="@dimen/dimen_16">
                 <ImageView
                     android:id="@+id/KnewUs_PICFive_IV"
                     android:layout_width="140dp"
-                    android:layout_height="100dp"
-                    android:layout_marginStart="10dp"
-                    android:layout_marginLeft="10dp"
-                    android:layout_marginTop="10dp"
+                    android:layout_height="@dimen/durban_dp_100"
+                    android:layout_marginStart="@dimen/durban_dp_10"
+                    android:layout_marginLeft="@dimen/durban_dp_10"
+                    android:layout_marginTop="@dimen/durban_dp_10"
                     android:background="@drawable/rectangleredshape"
                     android:src="@drawable/knewus5"
                     android:textAlignment="center" />
+                </RelativeLayout>
 
                 <ImageView
                     android:id="@+id/KnewUs_PICSix_IV"
                     android:layout_width="140dp"
-                    android:layout_height="100dp"
-                    android:layout_margin="10dp"
-                    android:layout_marginTop="10dp"
-                    android:layout_marginEnd="10dp"
-                    android:layout_marginRight="10dp"
+                    android:layout_height="@dimen/durban_dp_100"
+                    android:layout_margin="@dimen/durban_dp_10"
+                    android:layout_marginTop="@dimen/durban_dp_10"
+                    android:layout_marginEnd="@dimen/durban_dp_10"
+                    android:layout_marginRight="@dimen/durban_dp_10"
                     android:background="@drawable/rectangleredshape"
                     android:src="@drawable/knewus6"
                     android:textAlignment="center" />
@@ -168,31 +209,37 @@
                 android:layout_width="match_parent"
                 android:layout_height="140dp"
                 android:layout_below="@id/KnewUs_LL3"
-                android:layout_marginStart="20dp"
+                android:layout_marginStart="@dimen/album_dp_30"
                 android:layout_marginLeft="@dimen/dimen_16"
                 android:layout_marginEnd="32dp"
                 android:layout_marginRight="32dp"
                 android:orientation="horizontal">
 
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/dimen_16"
+                    android:layout_marginLeft="@dimen/dimen_16">
                 <ImageView
                     android:id="@+id/KnewUs_PICSeven_IV"
                     android:layout_width="140dp"
-                    android:layout_height="100dp"
-                    android:layout_marginStart="10dp"
-                    android:layout_marginLeft="10dp"
-                    android:layout_marginTop="10dp"
+                    android:layout_height="@dimen/durban_dp_100"
+                    android:layout_marginStart="@dimen/durban_dp_10"
+                    android:layout_marginLeft="@dimen/durban_dp_10"
+                    android:layout_marginTop="@dimen/durban_dp_10"
                     android:background="@drawable/rectangleredshape"
                     android:src="@drawable/knewus7"
                     android:textAlignment="center" />
+                </RelativeLayout>
 
                 <ImageView
                     android:id="@+id/KnewUs_PICEight_IV"
                     android:layout_width="140dp"
-                    android:layout_height="100dp"
-                    android:layout_margin="10dp"
-                    android:layout_marginTop="10dp"
-                    android:layout_marginEnd="10dp"
-                    android:layout_marginRight="10dp"
+                    android:layout_height="@dimen/durban_dp_100"
+                    android:layout_margin="@dimen/durban_dp_10"
+                    android:layout_marginTop="@dimen/durban_dp_10"
+                    android:layout_marginEnd="@dimen/durban_dp_10"
+                    android:layout_marginRight="@dimen/durban_dp_10"
                     android:background="@drawable/rectangleredshape"
                     android:src="@drawable/knewus8"
                     android:textAlignment="center" />
@@ -203,31 +250,37 @@
                 android:layout_width="match_parent"
                 android:layout_height="140dp"
                 android:layout_below="@id/KnewUs_LL4"
-                android:layout_marginStart="20dp"
+                android:layout_marginStart="30dp"
                 android:layout_marginLeft="@dimen/dimen_16"
                 android:layout_marginEnd="32dp"
                 android:layout_marginRight="32dp"
                 android:orientation="horizontal">
 
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/dimen_16"
+                    android:layout_marginLeft="@dimen/dimen_16">
                 <ImageView
                     android:id="@+id/KnewUs_PICNine_IV"
                     android:layout_width="140dp"
-                    android:layout_height="100dp"
-                    android:layout_marginStart="10dp"
-                    android:layout_marginLeft="10dp"
-                    android:layout_marginTop="10dp"
+                    android:layout_height="@dimen/durban_dp_100"
+                    android:layout_marginStart="@dimen/durban_dp_10"
+                    android:layout_marginLeft="@dimen/durban_dp_10"
+                    android:layout_marginTop="@dimen/durban_dp_10"
                     android:background="@drawable/rectangleredshape"
                     android:src="@drawable/knewus9"
                     android:textAlignment="center" />
+                </RelativeLayout>
 
                 <ImageView
                     android:id="@+id/KnewUs_PICTen_IV"
                     android:layout_width="140dp"
-                    android:layout_height="100dp"
-                    android:layout_margin="10dp"
-                    android:layout_marginTop="10dp"
-                    android:layout_marginEnd="10dp"
-                    android:layout_marginRight="10dp"
+                    android:layout_height="@dimen/durban_dp_100"
+                    android:layout_margin="@dimen/durban_dp_10"
+                    android:layout_marginTop="@dimen/durban_dp_10"
+                    android:layout_marginEnd="@dimen/durban_dp_10"
+                    android:layout_marginRight="@dimen/durban_dp_10"
                     android:background="@drawable/rectangleredshape"
                     android:src="@drawable/knewus10"
                     android:textAlignment="center" />

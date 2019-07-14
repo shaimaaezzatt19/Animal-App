@@ -13,8 +13,8 @@ import android.widget.Toast;
 
 import com.khatab.animalapp.R;
 import com.khatab.animalapp.adapter.ServicesAdapter;
-import com.khatab.animalapp.data.model.ServicesNumber.Services.Services;
-import com.khatab.animalapp.data.model.ServicesNumber.Services.ServicesData;
+import com.khatab.animalapp.data.model.ServicesNumber.Services;
+import com.khatab.animalapp.data.model.ServicesNumber.ServicesData;
 import com.khatab.animalapp.data.rest.ApiServices;
 
 import java.util.ArrayList;
@@ -55,13 +55,16 @@ public class ServicesActivity extends AppCompatActivity {
             @Override
             public void onResponse(Call<Services> call, Response<Services> response) {
                 if (response.isSuccessful()) {
-                    if (response.body().getStatus()) {
-                        Toast.makeText( ServicesActivity.this, "success", Toast.LENGTH_SHORT ).show();
+                    Boolean status = response.body().getStatus();
+                    Log.e( "nnn", "false" );
+                    if (status) {
+                        Log.e( "hhh", "done" );
 
                         ServicesRV.setAdapter( new ServicesAdapter( ServicesActivity.this,
-                                response.body().getData() ) );
-                    }else {
-                        Toast.makeText( ServicesActivity.this, "error", Toast.LENGTH_SHORT ).show();
+                                response.body().getData()) );
+
+                    } else {
+
                     }
                 }
             }
@@ -92,7 +95,6 @@ public class ServicesActivity extends AppCompatActivity {
 
                         ServicesRV.setAdapter( new ServicesAdapter( ServicesActivity.this, response.body().getData() ) );
                     } else {
-                        Toast.makeText( ServicesActivity.this, response.body().getError(), Toast.LENGTH_LONG ).show();
                     }
                 }
             }

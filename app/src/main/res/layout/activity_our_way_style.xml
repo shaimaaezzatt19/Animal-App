@@ -79,6 +79,7 @@
                 <TextView
                     android:id="@+id/MyWay_TextOne"
                     android:layout_width="wrap_content"
+                   android:background="@drawable/rectangleredshape"
                     android:layout_height="wrap_content"
                     android:layout_alignParentRight="true"
                     android:layout_marginStart="@dimen/dimen_text_20"
@@ -91,6 +92,8 @@
                     android:id="@+id/MyWay_TexTWO"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:background="@drawable/rectangleredshape"
+
                     android:layout_below="@id/MyWay_TextOne"
                     android:layout_alignParentRight="true"
                     android:layout_marginStart="@dimen/dimen_text_20"
@@ -104,6 +107,8 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_below="@id/MyWay_TexTWO"
+                    android:background="@drawable/rectangleredshape"
+
                     android:layout_alignParentRight="true"
                     android:layout_marginStart="@dimen/dimen_text_20"
                     android:layout_marginTop="@dimen/album_dp_15"
@@ -117,6 +122,8 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_below="@id/MYway_TexThree"
+                    android:background="@drawable/rectangleredshape"
+
                     android:layout_alignParentRight="true"
                     android:layout_marginStart="@dimen/dimen_text_20"
                     android:layout_marginTop="@dimen/album_dp_15"
@@ -128,6 +135,8 @@
                     android:id="@+id/MYway_Five"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:background="@drawable/rectangleredshape"
+
                     android:layout_below="@id/MYway_Four"
                     android:layout_alignParentRight="true"
                     android:layout_marginStart="@dimen/dimen_text_20"
@@ -141,6 +150,8 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_below="@id/MYway_Five"
+                    android:background="@drawable/rectangleredshape"
+
                     android:layout_alignParentRight="true"
                     android:layout_marginStart="@dimen/dimen_text_20"
                     android:layout_marginTop="@dimen/album_dp_15"
@@ -154,6 +165,8 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_below="@id/MYway_Six"
+                    android:background="@drawable/rectangleredshape"
+
                     android:layout_alignParentRight="true"
                     android:layout_marginStart="@dimen/dimen_text_20"
                     android:layout_marginTop="@dimen/album_dp_15"
@@ -166,6 +179,8 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_below="@id/MYway_Seven"
+                    android:background="@drawable/rectangleredshape"
+
                     android:layout_alignParentRight="true"
                     android:layout_marginStart="@dimen/dimen_text_20"
                     android:layout_marginTop="@dimen/album_dp_15"
@@ -178,6 +193,8 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_below="@id/MYway_Eight"
+                    android:background="@drawable/rectangleredshape"
+
                     android:layout_alignParentRight="true"
                     android:layout_marginStart="@dimen/dimen_text_20"
                     android:layout_marginTop="@dimen/album_dp_15"
@@ -187,6 +204,8 @@
 
                 <TextView
                     android:id="@+id/MYway_Ten"
+                    android:background="@drawable/rectangleredshape"
+
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_below="@id/MYway_Nine"
@@ -198,6 +217,8 @@
                     android:textColor="@color/black" />
 
                 <TextView
+                    android:background="@drawable/rectangleredshape"
+
                     android:id="@+id/MYway_Eleven"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"

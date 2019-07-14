@@ -1,9 +1,9 @@
 package com.khatab.animalapp.data.rest;
 
 import com.khatab.animalapp.data.model.Code.Code;
+import com.khatab.animalapp.data.model.Products;
 import com.khatab.animalapp.data.model.ServicesNumber.Services;
 import com.khatab.animalapp.data.model.ServicesNumber.ServicesData;
-import com.khatab.animalapp.data.model.ShowProducts.Products;
 import com.khatab.animalapp.data.model.contact.Contact;
 import com.khatab.animalapp.data.model.orders.Orders;
 
@@ -12,6 +12,7 @@ import retrofit2.http.Field;
 import retrofit2.http.FormUrlEncoded;
 import retrofit2.http.GET;
 import retrofit2.http.POST;
+import retrofit2.http.Path;
 
 public interface ApiServices {
 
@@ -31,8 +32,8 @@ public interface ApiServices {
     @GET("code")
     Call<Code> getCode();
 
-    @GET("services/1")
-    Call<ServicesData> getservicesDeatils();
+    @GET("services" + "/{id}")
+    Call<ServicesData> getservicesDeatils(@Path("id") Integer id);
 
 //Delete
 
