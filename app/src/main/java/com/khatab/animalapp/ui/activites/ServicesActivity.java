@@ -4,14 +4,18 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.constraint.ConstraintLayout;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.khatab.animalapp.R;
+import com.khatab.animalapp.adapter.ServicesAdapter;
 import com.khatab.animalapp.adapter.ServicesPicAnimalNameAdapter;
 import com.khatab.animalapp.data.model.Services.Services;
+import com.khatab.animalapp.data.model.Services.ServicesData;
 import com.khatab.animalapp.data.rest.ApiServices;
 
 import java.util.ArrayList;
@@ -38,7 +42,7 @@ public class ServicesActivity extends AppCompatActivity {
 
     private ApiServices apiServices;
     private static final String TAG = ConnectUsActivity.class.getSimpleName();
-    private List<Services> items = new ArrayList<>();
+    private List<ServicesData> items = new ArrayList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -47,7 +51,27 @@ public class ServicesActivity extends AppCompatActivity {
 
         ButterKnife.bind( this );
         apiServices = getClient().create( ApiServices.class );
-        SeeMyServices();
+        ServicesRV.setLayoutManager( new LinearLayoutManager( ServicesActivity.this ) );
+        apiServices.getservices().enqueue( new Callback<Services>() {
+            @Override
+            public void onResponse(Call<Services> call, Response<Services> response) {
+                if (response.isSuccessful()) {
+                    if (response.body().getStatus()) {
+                        Toast.makeText( ServicesActivity.this, "success", Toast.LENGTH_SHORT ).show();
+
+                        ServicesRV.setAdapter( new ServicesAdapter( ServicesActivity.this,
+                                response.body().getData() ) );
+                    }else {
+                        Toast.makeText( ServicesActivity.this, "error", Toast.LENGTH_SHORT ).show();
+                    }
+                }
+            }
+
+            @Override
+            public void onFailure(Call<Services> call, Throwable t) {
+
+            }
+        } );
 
     }
 
@@ -61,14 +85,15 @@ public class ServicesActivity extends AppCompatActivity {
         apiServices.getservices().enqueue( new Callback<Services>() {
             @Override
             public void onResponse(Call<Services> call, Response<Services> response) {
-
                 if (response.isSuccessful()) {
                     Boolean status = response.body().getStatus();
-                    if (status){
-                        List data = response.body().getData();
-                        items.addAll(data);
-                        ServicesRV.setAdapter( new ServicesPicAnimalNameAdapter
-                                ( items, ServicesActivity.this ) );
+                    Log.e( "nnn", "false" );
+                    if (status) {
+                        Log.e( "hhh", "done" );
+
+                        ServicesRV.setAdapter( new ServicesAdapter( ServicesActivity.this, response.body().getData() ) );
+                    } else {
+                        Toast.makeText( ServicesActivity.this, response.body().getError(), Toast.LENGTH_LONG ).show();
                     }
                 }
             }
