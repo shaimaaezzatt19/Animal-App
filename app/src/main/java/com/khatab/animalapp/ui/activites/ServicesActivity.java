@@ -13,9 +13,8 @@ import android.widget.Toast;
 
 import com.khatab.animalapp.R;
 import com.khatab.animalapp.adapter.ServicesAdapter;
-import com.khatab.animalapp.adapter.ServicesPicAnimalNameAdapter;
-import com.khatab.animalapp.data.model.Services.Services;
-import com.khatab.animalapp.data.model.Services.ServicesData;
+import com.khatab.animalapp.data.model.ServicesNumber.Services.Services;
+import com.khatab.animalapp.data.model.ServicesNumber.Services.ServicesData;
 import com.khatab.animalapp.data.rest.ApiServices;
 
 import java.util.ArrayList;
