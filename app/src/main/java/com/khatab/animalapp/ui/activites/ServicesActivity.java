@@ -8,13 +8,10 @@ import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.khatab.animalapp.R;
 import com.khatab.animalapp.adapter.ServicesPicAnimalNameAdapter;
-import com.khatab.animalapp.data.model.Services.Datum;
 import com.khatab.animalapp.data.model.Services.Services;
-import com.khatab.animalapp.data.model.contact.Contact;
 import com.khatab.animalapp.data.rest.ApiServices;
 
 import java.util.ArrayList;
@@ -28,7 +25,6 @@ import retrofit2.Callback;
 import retrofit2.Response;
 
 import static com.khatab.animalapp.data.rest.RetrofitGeneral.getClient;
-import static java.security.AccessController.getContext;
 
 public class ServicesActivity extends AppCompatActivity {
     @BindView(R.id.OurServices_Title)
@@ -51,6 +47,7 @@ public class ServicesActivity extends AppCompatActivity {
 
         ButterKnife.bind( this );
         apiServices = getClient().create( ApiServices.class );
+        SeeMyServices();
 
     }
 
@@ -58,7 +55,6 @@ public class ServicesActivity extends AppCompatActivity {
     public void onViewClicked() {
         Intent intentback = new Intent( ServicesActivity.this, FullMenueWithIcons.class );
         startActivity( intentback );
-
     }
 
     public void SeeMyServices() {
@@ -67,11 +63,13 @@ public class ServicesActivity extends AppCompatActivity {
             public void onResponse(Call<Services> call, Response<Services> response) {
 
                 if (response.isSuccessful()) {
-                    Boolean data = response.body().getStatus();
-                    items.addAll( data );
-                    ServicesRV.setAdapter( new ServicesPicAnimalNameAdapter
-                            ( items, ServicesActivity.this ) );
-
+                    Boolean status = response.body().getStatus();
+                    if (status){
+                        List data = response.body().getData();
+                        items.addAll(data);
+                        ServicesRV.setAdapter( new ServicesPicAnimalNameAdapter
+                                ( items, ServicesActivity.this ) );
+                    }
                 }
             }
 

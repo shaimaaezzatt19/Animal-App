@@ -75,7 +75,7 @@
                 android:layout_height="wrap_content"
                 android:layout_below="@id/ImageService_IV"
                 android:layout_marginStart="@dimen/dimen_16"
-                android:layout_marginTop="@dimen/album_dp_10"
+                android:layout_marginTop="@dimen/album_sp_20"
                 android:layout_marginEnd="@dimen/dimen_16"
                 android:gravity="center"
                 android:text="هنا يتم التعبير عن التفاصيل الخاصة بالصورة التي تم اختيارها والتي تعبر عن الخدمة اللي تم اختيارها مسبقا "
@@ -167,12 +167,12 @@
             </LinearLayout>
 
             <ImageView
-                android:layout_width="@dimen/dimen_50"
-                android:layout_height="@dimen/dimen_50"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:layout_alignParentBottom="true"
                 android:layout_alignParentLeft="true"
-                android:layout_marginStart="@dimen/dimen_2"
+                android:layout_marginStart="@dimen/album_sp_20"
                 android:layout_marginLeft="@dimen/dimen_2"
-                android:layout_marginTop="450dp"
                 android:src="@drawable/back_icon" />
         </RelativeLayout>
     </RelativeLayout>
