@@ -26,18 +26,18 @@
 
     <RatingBar
         android:id="@+id/Rate_Dialog"
-        android:layout_width="wrap_content"
+        android:layout_width="187dp"
         android:layout_height="wrap_content"
         android:layout_below="@id/Dialg_TV"
         android:layout_alignStart="@+id/Dialog_background"
         android:layout_alignLeft="@+id/Dialog_background"
         android:layout_alignEnd="@+id/Dialog_background"
         android:layout_alignRight="@+id/Dialog_background"
-        android:layout_marginStart="83dp"
-        android:layout_marginLeft="83dp"
+        android:layout_marginStart="80dp"
+        android:layout_marginLeft="80dp"
         android:layout_marginTop="350dp"
-        android:layout_marginEnd="56dp"
-        android:layout_marginRight="56dp"
+        android:layout_marginEnd="112dp"
+        android:layout_marginRight="112dp"
         android:progressTint="@android:color/holo_orange_light" />
 
 
