@@ -7,14 +7,14 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
+import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.khatab.animalapp.R;
 import com.khatab.animalapp.adapter.ServicesAdapter;
-import com.khatab.animalapp.data.model.ServicesNumber.Services;
-import com.khatab.animalapp.data.model.ServicesNumber.ServicesData;
+import com.khatab.animalapp.data.model.Services.Services;
+import com.khatab.animalapp.data.model.Services.ServicesData;
 import com.khatab.animalapp.data.rest.ApiServices;
 
 import java.util.ArrayList;
@@ -40,7 +40,7 @@ public class ServicesActivity extends AppCompatActivity {
     ImageView ServicesIVBack;
 
     private ApiServices apiServices;
-    private static final String TAG = ConnectUsActivity.class.getSimpleName();
+    private static final String TAG = ServicesActivity.class.getSimpleName();
     private List<ServicesData> items = new ArrayList<>();
 
     @Override
@@ -51,17 +51,22 @@ public class ServicesActivity extends AppCompatActivity {
         ButterKnife.bind( this );
         apiServices = getClient().create( ApiServices.class );
         ServicesRV.setLayoutManager( new LinearLayoutManager( ServicesActivity.this ) );
+        ServicesRV.setHasFixedSize( true );
         apiServices.getservices().enqueue( new Callback<Services>() {
+
             @Override
             public void onResponse(Call<Services> call, Response<Services> response) {
+
+                Log.v( TAG, "onResponse: response body: " + response.body().toString() );
                 if (response.isSuccessful()) {
                     Boolean status = response.body().getStatus();
-                    Log.e( "nnn", "false" );
+                    Log.v( "ServiceActivity: ", "status:" + status );
                     if (status) {
                         Log.e( "hhh", "done" );
 
                         ServicesRV.setAdapter( new ServicesAdapter( ServicesActivity.this,
-                                response.body().getData()) );
+                                response.body().getData() ) );
+
 
                     } else {
 
@@ -71,6 +76,7 @@ public class ServicesActivity extends AppCompatActivity {
 
             @Override
             public void onFailure(Call<Services> call, Throwable t) {
+                Log.e( TAG, " onFailure: error:" + t.getLocalizedMessage() );
 
             }
         } );
@@ -105,6 +111,25 @@ public class ServicesActivity extends AppCompatActivity {
 
             }
         } );
+    }
+
+    @OnClick({R.id.OurServices_Title, R.id.Toolbar_services, R.id.Services_RV, R.id.Services_IV_back})
+    public void onViewClicked(View view) {
+        switch (view.getId()) {
+            case R.id.OurServices_Title:
+                break;
+            case R.id.Toolbar_services:
+                break;
+            case R.id.Services_RV:
+
+                Intent intent = new Intent( ServicesActivity.this, AskTypeOfOrederActivity.class );
+                startActivity( intent );
+
+
+                break;
+            case R.id.Services_IV_back:
+                break;
+        }
     }
 }
 

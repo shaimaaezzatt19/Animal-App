@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
@@ -11,6 +12,7 @@ import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.Spinner;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.khatab.animalapp.R;
 
@@ -18,7 +20,7 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 
-public class SendOrderActivity extends AppCompatActivity {
+public class SendOrderActivity extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
     @BindView(R.id.SendMyOrder_Title)
     TextView SendMyOrderTitle;
     @BindView(R.id.Pic_SendMyOrder_IV)
@@ -56,50 +58,98 @@ public class SendOrderActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_send_order);
+        super.onCreate( savedInstanceState );
+        setContentView( R.layout.activity_send_order );
 
-        ButterKnife.bind(this);
+        Spinner spinner1 = findViewById( R.id.SpinnerOne );
+        Spinner spinner2 = findViewById( R.id.SpinnerTWO );
+
+
+        ArrayAdapter<CharSequence> adapter1 = ArrayAdapter.createFromResource( this,
+                R.array.Spinner1, android.R.layout.simple_spinner_item );
+        adapter1.setDropDownViewResource( android.R.layout.simple_spinner_dropdown_item );
+        spinner1.setAdapter( adapter1 );
+        spinner1.setOnItemSelectedListener( this );
+
+
+        ArrayAdapter<CharSequence> adapter2 = ArrayAdapter.createFromResource( this,
+                R.array.Spinner2, android.R.layout.simple_spinner_item );
+        adapter2.setDropDownViewResource( android.R.layout.simple_spinner_dropdown_item );
+        spinner2.setAdapter( adapter2 );
+        spinner2.setOnItemSelectedListener( this );
+
+
+        ButterKnife.bind( this );
+
+
+        EditText Count = (EditText) findViewById( R.id.SendMyOrder_Count_ET );
+        String CountNumber = Count.getText().toString();
+
+
+        Spinner SpinnerOne = (Spinner) findViewById( R.id.SpinnerOne );
+        String SpinnerOneDeatils = Count.getText().toString();
+
+        Spinner SpinnerTwo = (Spinner) findViewById( R.id.SpinnerTWO );
+        String SpinnerTWODeatils = Count.getText().toString();
+
+        EditText Notes = (EditText) findViewById( R.id.WriteYourNotes_ET );
+        String EnterNotes = Count.getText().toString();
+
+
     }
+
+    @Override
+    public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+        String text = parent.getItemAtPosition( position ).toString();
+        Toast.makeText( parent.getContext(), text, Toast.LENGTH_SHORT ).show();
+    }
+
+    @Override
+    public void onNothingSelected(AdapterView<?> parent) {
+
+    }
+
 
     @OnClick({R.id.AddToCard_BT, R.id.AddToCard_Back_IB})
     public void onViewClicked(View view) {
         switch (view.getId()) {
 
             case R.id.AddToCard_BT:
-                Intent intent1 = new Intent(SendOrderActivity.this, MyCardActivity.class);
-                startActivity(intent1);
+                Intent intent1 = new Intent( SendOrderActivity.this, MyCardActivity.class );
+                startActivity( intent1 );
                 break;
             case R.id.AddToCard_Back_IB:
-                Intent intent2 = new Intent(SendOrderActivity.this, MyCardActivity.class);
-                startActivity(intent2);
+                Intent intent2 = new Intent( SendOrderActivity.this, MyCardActivity.class );
+                startActivity( intent2 );
                 break;
         }
 
         // Array of choices
         String Array1[] = {"أطباق مغلفة", "أكياس", "أكياس بدون هواء"};
 
-// Selection of the spinner
-        Spinner spinner = (Spinner) findViewById(R.id.SpinnerOne);
 
-// Application of the Array to the Spinner
-        ArrayAdapter<String> spinnerArrayAdapter = new ArrayAdapter<String>(this,
-                android.R.layout.simple_spinner_item, Array1);
-        spinnerArrayAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item); // The drop down view
-        spinner.setAdapter(spinnerArrayAdapter);
+        // Selection of the spinner
+        Spinner spinner = (Spinner) findViewById( R.id.SpinnerOne );
+
+
+        // Application of the Array to the Spinner
+        ArrayAdapter<String> spinnerArrayAdapter = new ArrayAdapter<String>( this,
+                android.R.layout.simple_spinner_item, Array1 );
+        spinnerArrayAdapter.setDropDownViewResource( android.R.layout.simple_spinner_dropdown_item ); // The drop down view
+        spinner.setAdapter( spinnerArrayAdapter );
 
 
         // Array of choices
         String Array2[] = {"أرباع ", "أنصاص", "كامل", "ثلاجة", "تفصيل كبير", "تفصيل صغير"};
 
-// Selection of the spinner
-        Spinner spinner2 = (Spinner) findViewById(R.id.SpinnerTWO);
+        // Selection of the spinner
+        Spinner spinner2 = (Spinner) findViewById( R.id.SpinnerTWO );
 
-// Application of the Array to the Spinner
-        ArrayAdapter<String> spinnerArrayAdapter2 = new ArrayAdapter<String>(this,
-                android.R.layout.simple_spinner_item, Array2);
-        spinnerArrayAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item); // The drop down view
-        spinner.setAdapter(spinnerArrayAdapter2);
+        // Application of the Array to the Spinner
+        ArrayAdapter<String> spinnerArrayAdapter2 = new ArrayAdapter<String>( this,
+                android.R.layout.simple_spinner_item, Array2 );
+        spinnerArrayAdapter.setDropDownViewResource( android.R.layout.simple_spinner_dropdown_item ); // The drop down view
+        spinner.setAdapter( spinnerArrayAdapter2 );
 
 
     }

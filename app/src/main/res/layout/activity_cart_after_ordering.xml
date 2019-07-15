@@ -78,6 +78,25 @@
         app:layout_constraintVertical_bias="0.17000002" />
 
 
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginBottom="8dp"
+
+        android:text=" يمكنك الغاء الطلب حتى انتهاء العداد "
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="@+id/relativeLayout4"
+        app:layout_constraintEnd_toEndOf="@+id/Card_Timer_Image"
+        app:layout_constraintStart_toStartOf="@+id/Card_Timer_Image"
+        app:layout_constraintTop_toTopOf="@+id/OurServices_Title"
+        app:layout_constraintVertical_bias="0.721" />
+
     <!--<ImageView-->
     <!--android:id="@+id/CardAfterOrdering_Back_IV"-->
     <!--android:layout_width="@dimen/dimen_50"-->
@@ -96,11 +115,11 @@
 
 
     <RelativeLayout
+        android:id="@+id/relativeLayout4"
         android:layout_width="match_parent"
         android:layout_height="@dimen/album_dp_80"
-        android:layout_marginStart="@dimen/dimen_16"
-        android:layout_marginEnd="@dimen/dimen_16"
-        app:layout_constraintBottom_toBottomOf="parent">
+        app:layout_constraintBottom_toBottomOf="parent"
+        tools:layout_editor_absoluteX="16dp">
 
         <ImageView
             android:id="@+id/CardAfterOrdering_Back_IV"

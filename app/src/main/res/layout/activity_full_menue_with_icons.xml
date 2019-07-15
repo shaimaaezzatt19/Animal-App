@@ -11,9 +11,9 @@
         android:id="@+id/main-Vedio"
         android:layout_width="match_parent"
         android:layout_height="250dp"
-        android:layout_marginStart="@dimen/album_dp_10"
-        android:layout_marginTop="10dp"
-        android:layout_marginEnd="@dimen/album_dp_10" />
+        android:layout_marginStart="5dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginEnd="5dp" />
 
     <RelativeLayout
         android:layout_width="match_parent"

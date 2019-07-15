@@ -49,8 +49,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_margin="@dimen/album_dp_1"
-                android:layout_marginStart="@dimen/dimen_4"
-                android:layout_marginEnd="@dimen/dimen_4"
+                android:layout_marginStart="@dimen/album_dp_1"
+                android:layout_marginEnd="@dimen/album_dp_1"
                 android:background="@drawable/rectangleredshape"
                 android:orientation="vertical">
 
@@ -58,9 +58,9 @@
                     android:id="@+id/Services_RV"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="@dimen/dimen_16"
-                    android:layout_marginTop="@dimen/album_dp_10"
-                    android:layout_marginEnd="@dimen/dimen_16">
+                    android:layout_marginStart="@dimen/dimen_2"
+                    android:layout_marginTop="@dimen/dimen_2"
+                    android:layout_marginEnd="@dimen/dimen_2">
 
                 </android.support.v7.widget.RecyclerView>
 
