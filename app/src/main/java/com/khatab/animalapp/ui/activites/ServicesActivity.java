@@ -49,9 +49,11 @@ public class ServicesActivity extends AppCompatActivity {
         setContentView( R.layout.activity_services );
 
         ButterKnife.bind( this );
+
         apiServices = getClient().create( ApiServices.class );
         ServicesRV.setLayoutManager( new LinearLayoutManager( ServicesActivity.this ) );
         ServicesRV.setHasFixedSize( true );
+
         apiServices.getservices().enqueue( new Callback<Services>() {
 
             @Override
@@ -128,6 +130,9 @@ public class ServicesActivity extends AppCompatActivity {
 
                 break;
             case R.id.Services_IV_back:
+
+                Intent intentBack = new Intent( ServicesActivity.this, AskTypeOfOrederActivity.class );
+                startActivity( intentBack );
                 break;
         }
     }

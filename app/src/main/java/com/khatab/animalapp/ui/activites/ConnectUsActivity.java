@@ -53,6 +53,7 @@ public class ConnectUsActivity extends AppCompatActivity {
     LinearLayout splashLLSocilImages;
     @BindView(R.id.ConnecUs_Back_IV)
     ImageView ConnecUsBackIV;
+
     private ApiServices apiServices;
     private static final String TAG = ConnectUsActivity.class.getSimpleName();
 

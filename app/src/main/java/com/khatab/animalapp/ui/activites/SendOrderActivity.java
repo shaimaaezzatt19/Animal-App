@@ -115,7 +115,7 @@ public class SendOrderActivity extends AppCompatActivity implements AdapterView.
         switch (view.getId()) {
 
             case R.id.AddToCard_BT:
-                Intent intent1 = new Intent( SendOrderActivity.this, MyCardActivity.class );
+                Intent intent1 = new Intent( SendOrderActivity.this, ConfirmRequestActivity.class );
                 startActivity( intent1 );
                 break;
             case R.id.AddToCard_Back_IB:
