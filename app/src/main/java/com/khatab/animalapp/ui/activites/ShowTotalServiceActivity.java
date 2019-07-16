@@ -85,7 +85,7 @@ public class ShowTotalServiceActivity extends AppCompatActivity {
 
     @OnClick(R.id.ShowTotalServices_BT_Requset)
     public void onViewClicked() {
-        Intent intent = new Intent( ShowTotalServiceActivity.this, OrderTotalService.class );
+        Intent intent = new Intent( ShowTotalServiceActivity.this, SendTotalOrderActivity.class );
         startActivity( intent );
     }
 }

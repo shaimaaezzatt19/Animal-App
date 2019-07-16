@@ -11,9 +11,9 @@
         android:id="@+id/main-Vedio"
         android:layout_width="match_parent"
         android:layout_height="250dp"
-        android:layout_marginStart="5dp"
-        android:layout_marginTop="5dp"
-        android:layout_marginEnd="5dp" />
+        android:layout_marginStart="@dimen/dimen_2"
+        android:layout_marginTop="@dimen/dimen_2"
+        android:layout_marginEnd="@dimen/dimen_2" />
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -37,12 +37,12 @@
 
             <LinearLayout
                 android:id="@+id/shape1"
-                android:gravity="center"
                 android:layout_width="match_parent"
                 android:layout_height="60dp"
                 android:layout_marginStart="32dp"
                 android:layout_marginTop="@dimen/dimen_text_20"
                 android:layout_marginEnd="32dp"
+                android:gravity="center"
                 android:orientation="horizontal">
 
                 <ImageView
@@ -60,12 +60,12 @@
             </LinearLayout>
 
             <LinearLayout
-                android:gravity="center"
                 android:id="@+id/shape2"
                 android:layout_width="match_parent"
                 android:layout_height="60dp"
                 android:layout_marginStart="64dp"
                 android:layout_marginEnd="64dp"
+                android:gravity="center"
                 android:orientation="horizontal">
 
                 <ImageView

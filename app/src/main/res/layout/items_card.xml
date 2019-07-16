@@ -25,7 +25,7 @@
             android:src="@drawable/animal_example2" />
 
         <TextView
-            android:id="@+id/items-card_deatilsinTV"
+            android:id="@+id/items_card_deatilsinTV"
             android:layout_width="match_parent"
             android:layout_height="100dp"
             android:layout_below="@id/Items_Card_IV_MainPic"

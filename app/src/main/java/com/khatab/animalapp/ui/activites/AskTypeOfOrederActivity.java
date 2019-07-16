@@ -55,7 +55,8 @@ public class AskTypeOfOrederActivity extends AppCompatActivity {
     }
 
     public void ShowServiceName() {
-        apiServices.getservicesDeatils( "12" ).enqueue( new Callback<ShowService>() {
+        apiServices.getservicesDeatils( "12").enqueue( new Callback<ShowService>() {
+
             @Override
             public void onResponse(Call<ShowService> call, Response<ShowService> response) {
 

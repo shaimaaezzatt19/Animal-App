@@ -1,9 +1,9 @@
 package com.khatab.animalapp.ui.activites;
 
 import android.content.Intent;
-import android.os.Bundle;
 import android.support.constraint.ConstraintLayout;
 import android.support.v7.app.AppCompatActivity;
+import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -23,7 +23,7 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 
-public class OrderTotalService extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
+public class SendTotalOrderActivity extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
 
 
     @BindView(R.id.odderTotalService_TV_toolbarTitle)
@@ -74,8 +74,7 @@ public class OrderTotalService extends AppCompatActivity implements AdapterView.
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate( savedInstanceState );
-        setContentView( R.layout.activity_order_total_service );
-
+        setContentView( R.layout.activity_send_total_order );
 
         Spinner spinner1 = findViewById( R.id.SpinnerOne );
         Spinner spinner2 = findViewById( R.id.SpinnerTWO );
@@ -135,7 +134,7 @@ public class OrderTotalService extends AppCompatActivity implements AdapterView.
 
     @OnClick(R.id.OrderTotalService_BT)
     public void onViewClicked() {
-        Intent intent = new Intent( OrderTotalService.this, MyCardActivity.class );
+        Intent intent = new Intent( SendTotalOrderActivity.this, MyCardActivity.class );
         startActivity( intent );
 
     }
