@@ -1,8 +1,8 @@
 package com.khatab.animalapp.ui.activites;
 
 import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
@@ -12,7 +12,6 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.khatab.animalapp.R;
-import com.khatab.animalapp.adapter.ServicesAdapter;
 import com.khatab.animalapp.data.model.Code.Code;
 import com.khatab.animalapp.data.rest.ApiServices;
 
@@ -44,6 +43,9 @@ public class ConfirmCodeActivity extends AppCompatActivity {
     Button SendConfirmCodeBT;
     @BindView(R.id.ConfirmCode_Back_IB)
     ImageView ConfirmCodeBackIB;
+    @BindView(R.id.ConfirmCode_Menue_IB)
+    ImageView ConfirmCodeMenueIB;
+
 
     private ApiServices apiServices;
     private static final String TAG = ConnectUsActivity.class.getSimpleName();
@@ -102,5 +104,12 @@ public class ConfirmCodeActivity extends AppCompatActivity {
                 startActivity( intent2 );
                 break;
         }
+    }
+
+    @OnClick(R.id.ConfirmCode_Menue_IB)
+    public void onViewClicked() {
+
+        Intent menueintent = new Intent( ConfirmCodeActivity.this, FullMenueWithIcons.class );
+        startActivity( menueintent );
     }
 }

@@ -4,10 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
-    android:layout_marginStart="@dimen/start_end"
-    android:layout_marginTop="10dp"
-    android:layout_marginEnd="@dimen/start_end"
-    android:layout_marginBottom="@dimen/dimen_16"
+
     android:background="@drawable/rectangleredshape"
     tools:context=".ui.activites.ExampleCardViewActivity">
 
@@ -51,7 +48,7 @@
             android:src="@drawable/animal_example2" />
 
         <TextView
-            android:id="@+id/items-card_deatilsinTV"
+            android:id="@+id/items_card_deatilsinTV"
             android:layout_width="match_parent"
             android:layout_height="100dp"
             android:layout_below="@id/Items_Card_IV_MainPic"

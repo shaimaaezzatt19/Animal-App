@@ -3,8 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".ui.activites.FullMenueWithIcons">
+    android:layout_height="match_parent">
 
 
     <VideoView
@@ -15,12 +14,21 @@
         android:layout_marginTop="@dimen/dimen_2"
         android:layout_marginEnd="@dimen/dimen_2" />
 
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="5dp"
+        android:layout_below="@id/main-Vedio"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="@dimen/dimen_8"
+        android:layout_marginEnd="32dp"
+        android:src="@drawable/red_line" />
+
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_below="@id/main-Vedio"
         android:layout_marginTop="@dimen/album_dp_10"
-        android:background="@drawable/main_splash">
+        android:background="@drawable/test_background">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -29,8 +37,8 @@
 
             <ImageView
                 android:id="@+id/Main_Menue_Icon_IV"
-                android:layout_width="60dp"
-                android:layout_height="60dp"
+                android:layout_width="70dp"
+                android:layout_height="70dp"
                 android:layout_gravity="center"
                 android:layout_marginTop="@dimen/album_dp_30"
                 android:src="@drawable/menue_icon" />
@@ -40,23 +48,38 @@
                 android:layout_width="match_parent"
                 android:layout_height="60dp"
                 android:layout_marginStart="32dp"
-                android:layout_marginTop="@dimen/dimen_text_20"
+                android:layout_marginTop="@dimen/durban_dp_10"
                 android:layout_marginEnd="32dp"
                 android:gravity="center"
                 android:orientation="horizontal">
 
-                <ImageView
-                    android:id="@+id/MainIcons_CallUs_IV"
-                    android:layout_width="47dp"
-                    android:layout_height="47dp"
-                    android:src="@drawable/connectus_icon" />
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
 
-                <ImageView
-                    android:id="@+id/KnewUs_IV_Icon"
-                    android:layout_width="@dimen/album_dp_45"
-                    android:layout_height="@dimen/album_dp_45"
-                    android:layout_marginLeft="190dp"
-                    android:src="@drawable/knewus_icon" />
+
+                    <ImageView
+                        android:id="@+id/MainIcons_CallUs_IV"
+                        android:layout_width="@dimen/album_dp_45"
+                        android:layout_height="@dimen/album_dp_45"
+                        android:layout_alignParentStart="true"
+                        android:layout_alignParentLeft="true"
+                        android:layout_marginStart="@dimen/durban_dp_10"
+                        android:layout_marginLeft="@dimen/durban_dp_10"
+                        android:src="@drawable/connectus_icon" />
+
+                    <ImageView
+                        android:id="@+id/KnewUs_IV_Icon"
+                        android:layout_width="@dimen/album_dp_45"
+                        android:layout_height="@dimen/album_dp_45"
+                        android:layout_alignParentEnd="true"
+                        android:layout_alignParentRight="true"
+                        android:layout_marginLeft="190dp"
+                        android:layout_marginEnd="@dimen/durban_dp_10"
+                        android:layout_marginRight="@dimen/durban_dp_10"
+                        android:src="@drawable/knewus_icon" />
+                </RelativeLayout>
+
             </LinearLayout>
 
             <LinearLayout
@@ -68,34 +91,51 @@
                 android:gravity="center"
                 android:orientation="horizontal">
 
-                <ImageView
-                    android:id="@+id/DialogIcon_IV"
-                    android:layout_width="@dimen/album_dp_45"
-                    android:layout_height="@dimen/album_dp_45"
-                    android:src="@drawable/dialog_icon" />
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
 
-                <ImageView
-                    android:id="@+id/OurWayStyle_IV_Icon"
-                    android:layout_width="@dimen/album_dp_45"
-                    android:layout_height="@dimen/album_dp_45"
-                    android:layout_marginLeft="120dp"
-                    android:src="@drawable/ourway_icon" />
+                    <ImageView
+                        android:id="@+id/DialogIcon_IV"
+                        android:layout_width="@dimen/album_dp_45"
+                        android:layout_height="@dimen/album_dp_45"
+                        android:layout_alignParentLeft="true"
+                        android:layout_marginStart="@dimen/dimen_text_20"
+                        android:src="@drawable/dialog_icon" />
+
+                    <ImageView
+                        android:id="@+id/OurWayStyle_IV_Icon"
+                        android:layout_width="@dimen/album_dp_45"
+                        android:layout_height="@dimen/album_dp_45"
+                        android:layout_alignParentRight="true"
+                        android:layout_marginEnd="@dimen/dimen_text_20"
+                        android:src="@drawable/ourway_icon" />
+
+                </RelativeLayout>
+
+
             </LinearLayout>
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="@dimen/album_dp_80">
+                android:layout_height="@dimen/album_dp_80"
+                android:layout_gravity="center"
+                android:gravity="center">
 
-                <ImageView
-
-                    android:id="@+id/Servies_Icon_IV"
-                    android:layout_width="@dimen/album_dp_45"
-                    android:layout_height="@dimen/album_dp_45"
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
                     android:layout_gravity="center"
-                    android:layout_marginStart="173dp"
-                    android:layout_marginLeft="180dp"
-                    android:layout_marginTop="-18dp"
-                    android:src="@drawable/servicess_icon" />
+                    android:gravity="center">
+
+                    <ImageView
+                        android:id="@+id/Servies_Icon_IV"
+                        android:layout_width="@dimen/album_dp_45"
+                        android:layout_height="@dimen/album_dp_45"
+                        android:src="@drawable/servicess_icon" />
+                </RelativeLayout>
+
+
             </LinearLayout>
         </LinearLayout>
     </RelativeLayout>

@@ -1,9 +1,10 @@
 package com.khatab.animalapp.ui.activites;
 
 import android.content.Intent;
+import android.os.Bundle;
 import android.support.design.widget.TextInputEditText;
 import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
+import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
@@ -43,6 +44,8 @@ public class ConfirmRequestActivity extends AppCompatActivity {
     LinearLayout LL1ConfirmRequest;
     @BindView(R.id.ConfirmCode_Back_IB)
     ImageView ConfirmCodeBackIB;
+    @BindView(R.id.ConfirmCode_Menue_IB)
+    ImageView ConfirmCodeMenueIB;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -70,5 +73,21 @@ public class ConfirmRequestActivity extends AppCompatActivity {
 
         Intent i = new Intent( ConfirmRequestActivity.this, ConfirmCodeActivity.class );
         startActivity( i );
+    }
+
+    @OnClick({R.id.ConfirmCode_Back_IB, R.id.ConfirmCode_Menue_IB})
+    public void onViewClicked(View view) {
+        switch (view.getId()) {
+            case R.id.ConfirmCode_Back_IB:
+
+                Intent backIntent = new Intent( ConfirmRequestActivity.this, ServicesActivity.class );
+                startActivity( backIntent );
+                break;
+            case R.id.ConfirmCode_Menue_IB:
+
+                Intent menueintent = new Intent( ConfirmRequestActivity.this, FullMenueWithIcons.class );
+                startActivity( menueintent );
+                break;
+        }
     }
 }

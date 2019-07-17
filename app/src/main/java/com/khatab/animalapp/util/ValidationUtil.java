@@ -11,6 +11,12 @@ public class ValidationUtil {
 
     }
 
+    public static boolean validateCodeNumber1(String CodeNumber) {
+        return CodeNumber.length() == 4 && TextUtils.isDigitsOnly(CodeNumber);
+
+     }
+
+
     public static boolean validatePassword(String password) {
         return password.length() >= 3;
 

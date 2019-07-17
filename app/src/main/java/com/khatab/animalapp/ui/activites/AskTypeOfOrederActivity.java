@@ -40,6 +40,8 @@ public class AskTypeOfOrederActivity extends AppCompatActivity {
     LinearLayout LL1ItemSelected;
     @BindView(R.id.SendOrder_item_Back_IB)
     ImageView SendOrderItemBackIB;
+    @BindView(R.id.AskTypeOfOrder_MenueIcon_IV)
+    ImageView AskTypeOfOrderMenueIconIV;
 
     private ApiServices apiServices;
     private static final String TAG = AskTypeOfOrederActivity.class.getSimpleName();
@@ -55,7 +57,10 @@ public class AskTypeOfOrederActivity extends AppCompatActivity {
     }
 
     public void ShowServiceName() {
-        apiServices.getservicesDeatils( "12").enqueue( new Callback<ShowService>() {
+
+
+        // المفروض هنا أحط ال id بتاع الخدمة اللي اختارتها من ال Services
+        apiServices.getservicesDeatils( "12" ).enqueue( new Callback<ShowService>() {
 
             @Override
             public void onResponse(Call<ShowService> call, Response<ShowService> response) {
@@ -105,5 +110,12 @@ public class AskTypeOfOrederActivity extends AppCompatActivity {
 
                 break;
         }
+    }
+
+    @OnClick(R.id.AskTypeOfOrder_MenueIcon_IV)
+    public void onViewClicked() {
+
+        Intent menueIntent = new Intent( AskTypeOfOrederActivity.this, FullMenueWithIcons.class );
+        startActivity( menueIntent );
     }
 }

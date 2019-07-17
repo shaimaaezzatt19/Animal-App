@@ -7,7 +7,7 @@
     android:background="@drawable/main_splash"
     tools:context=".ui.activites.MainMenueActivity">
 
-z
+
     <VideoView
         android:id="@+id/main-Vedio"
         android:layout_width="match_parent"
