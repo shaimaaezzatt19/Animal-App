@@ -3,7 +3,8 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="@drawable/test_background">
 
     <include layout="@layout/toolbar" />
 
@@ -56,8 +57,8 @@
                 android:id="@+id/Option_Selected_Show_Deatils_TV"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="@dimen/dimen_16"
-                android:layout_marginLeft="@dimen/dimen_16"
+                android:layout_marginStart="@dimen/dimen_text_20"
+                android:layout_marginLeft="@dimen/dimen_text_20"
                 android:fontFamily="@font/details_font"
                 android:gravity="center"
                 android:text="هنا يتواجد النص الذي من المفترض أن يصف كل صورة (اللي تعبتر عن الصنف) ويتواجد مميزاتها ووصفها"

@@ -3,7 +3,8 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="@drawable/test_background">
 
 
     <RelativeLayout
@@ -56,11 +57,11 @@
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/album_dp_200"
                 android:layout_marginStart="@dimen/dimen_2"
+                android:layout_marginLeft="@dimen/dimen_2"
                 android:layout_marginTop="-20dp"
                 android:layout_marginEnd="2dp"
-                android:src="@drawable/knewus1"
-                android:layout_marginLeft="@dimen/dimen_2"
-                android:layout_marginRight="2dp" />
+                android:layout_marginRight="2dp"
+                android:src="@drawable/knewus1" />
         </RelativeLayout>
 
         <ScrollView
@@ -79,12 +80,12 @@
                 <TextView
                     android:id="@+id/MyWay_TextOne"
                     android:layout_width="wrap_content"
-                   android:background="@drawable/rectangleredshape"
                     android:layout_height="wrap_content"
                     android:layout_alignParentRight="true"
                     android:layout_marginStart="@dimen/dimen_text_20"
                     android:layout_marginTop="5dp"
                     android:layout_marginEnd="@dimen/dimen_text_20"
+                    android:background="@drawable/rectangleredshape"
                     android:text="@string/MyWayOne"
                     android:textColor="@color/black" />
 
@@ -92,13 +93,13 @@
                     android:id="@+id/MyWay_TexTWO"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:background="@drawable/rectangleredshape"
-
                     android:layout_below="@id/MyWay_TextOne"
+
                     android:layout_alignParentRight="true"
                     android:layout_marginStart="@dimen/dimen_text_20"
                     android:layout_marginTop="@dimen/album_dp_15"
                     android:layout_marginEnd="@dimen/dimen_text_20"
+                    android:background="@drawable/rectangleredshape"
                     android:text="@string/MyWayTWO"
                     android:textColor="@color/black" />
 
@@ -107,12 +108,12 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_below="@id/MyWay_TexTWO"
-                    android:background="@drawable/rectangleredshape"
-
                     android:layout_alignParentRight="true"
+
                     android:layout_marginStart="@dimen/dimen_text_20"
                     android:layout_marginTop="@dimen/album_dp_15"
                     android:layout_marginEnd="@dimen/dimen_text_20"
+                    android:background="@drawable/rectangleredshape"
                     android:text="@string/MyWayTthree"
                     android:textColor="@color/black" />
 
@@ -122,12 +123,12 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_below="@id/MYway_TexThree"
-                    android:background="@drawable/rectangleredshape"
-
                     android:layout_alignParentRight="true"
+
                     android:layout_marginStart="@dimen/dimen_text_20"
                     android:layout_marginTop="@dimen/album_dp_15"
                     android:layout_marginEnd="@dimen/dimen_text_20"
+                    android:background="@drawable/rectangleredshape"
                     android:text="@string/MyWayFour"
                     android:textColor="@color/black" />
 
@@ -135,13 +136,13 @@
                     android:id="@+id/MYway_Five"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:background="@drawable/rectangleredshape"
-
                     android:layout_below="@id/MYway_Four"
+
                     android:layout_alignParentRight="true"
                     android:layout_marginStart="@dimen/dimen_text_20"
                     android:layout_marginTop="@dimen/album_dp_15"
                     android:layout_marginEnd="@dimen/dimen_text_20"
+                    android:background="@drawable/rectangleredshape"
                     android:text="@string/MyWayFive"
                     android:textColor="@color/black" />
 
@@ -150,12 +151,12 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_below="@id/MYway_Five"
-                    android:background="@drawable/rectangleredshape"
-
                     android:layout_alignParentRight="true"
+
                     android:layout_marginStart="@dimen/dimen_text_20"
                     android:layout_marginTop="@dimen/album_dp_15"
                     android:layout_marginEnd="@dimen/dimen_text_20"
+                    android:background="@drawable/rectangleredshape"
                     android:text="@string/MyWaySix"
                     android:textColor="@color/black" />
 
@@ -165,12 +166,12 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_below="@id/MYway_Six"
-                    android:background="@drawable/rectangleredshape"
-
                     android:layout_alignParentRight="true"
+
                     android:layout_marginStart="@dimen/dimen_text_20"
                     android:layout_marginTop="@dimen/album_dp_15"
                     android:layout_marginEnd="@dimen/dimen_text_20"
+                    android:background="@drawable/rectangleredshape"
                     android:text="@string/MyWaySeven"
                     android:textColor="@color/black" />
 
@@ -179,12 +180,12 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_below="@id/MYway_Seven"
-                    android:background="@drawable/rectangleredshape"
-
                     android:layout_alignParentRight="true"
+
                     android:layout_marginStart="@dimen/dimen_text_20"
                     android:layout_marginTop="@dimen/album_dp_15"
                     android:layout_marginEnd="@dimen/dimen_text_20"
+                    android:background="@drawable/rectangleredshape"
                     android:text="@string/MyWayEight"
                     android:textColor="@color/black" />
 
@@ -193,33 +194,32 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_below="@id/MYway_Eight"
-                    android:background="@drawable/rectangleredshape"
-
                     android:layout_alignParentRight="true"
+
                     android:layout_marginStart="@dimen/dimen_text_20"
                     android:layout_marginTop="@dimen/album_dp_15"
                     android:layout_marginEnd="@dimen/dimen_text_20"
+                    android:background="@drawable/rectangleredshape"
                     android:text="@string/MyWayNine"
                     android:textColor="@color/black" />
 
                 <TextView
                     android:id="@+id/MYway_Ten"
-                    android:background="@drawable/rectangleredshape"
-
                     android:layout_width="wrap_content"
+
                     android:layout_height="wrap_content"
                     android:layout_below="@id/MYway_Nine"
                     android:layout_alignParentRight="true"
                     android:layout_marginStart="@dimen/dimen_text_20"
                     android:layout_marginTop="@dimen/album_dp_15"
                     android:layout_marginEnd="@dimen/dimen_text_20"
+                    android:background="@drawable/rectangleredshape"
                     android:text="@string/MyWayTeen"
                     android:textColor="@color/black" />
 
                 <TextView
-                    android:background="@drawable/rectangleredshape"
-
                     android:id="@+id/MYway_Eleven"
+
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_below="@id/MYway_Ten"
@@ -227,6 +227,7 @@
                     android:layout_marginStart="@dimen/dimen_text_20"
                     android:layout_marginTop="@dimen/album_dp_15"
                     android:layout_marginEnd="@dimen/dimen_text_20"
+                    android:background="@drawable/rectangleredshape"
                     android:text="@string/MyWayEleven"
                     android:textColor="@color/black" />
             </RelativeLayout>
