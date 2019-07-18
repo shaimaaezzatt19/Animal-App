@@ -17,12 +17,12 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="8dp"
-            android:layout_marginLeft="8dp"
-            android:layout_marginTop="8dp"
-            android:layout_marginEnd="8dp"
-            android:layout_marginRight="8dp"
-            android:layout_marginBottom="8dp"
+            android:layout_marginStart="@dimen/dimen_8"
+            android:layout_marginLeft="@dimen/dimen_8"
+            android:layout_marginTop="@dimen/dimen_8"
+            android:layout_marginEnd="@dimen/dimen_8"
+            android:layout_marginRight="@dimen/dimen_8"
+            android:layout_marginBottom="@dimen/dimen_8"
             android:gravity="center"
             android:text="تعرف علينا"
             android:textColor="@color/white"
@@ -39,7 +39,7 @@
     <VideoView
         android:id="@+id/main-Vedio"
         android:layout_width="match_parent"
-        android:layout_height="200dp"
+        android:layout_height="@dimen/durban_dp_200"
         android:layout_below="@id/KnewUs-toolbar"
         android:layout_marginStart="30dp"
         android:layout_marginTop="10dp"
@@ -75,7 +75,7 @@
                     android:layout_marginLeft="@dimen/dimen_2">
 
                     <ImageView
-                        android:layout_width="160dp"
+                        android:layout_width="@dimen/dimen_150"
                         android:layout_height="@dimen/album_dp_100"
                         android:layout_alignParentLeft="true"
                         android:layout_marginStart="@dimen/durban_dp_10"
@@ -83,7 +83,7 @@
                         android:src="@drawable/knewus1" />
 
                     <ImageView
-                        android:layout_width="160dp"
+                        android:layout_width="@dimen/dimen_150"
                         android:layout_height="@dimen/album_dp_100"
                         android:layout_alignParentRight="true"
                         android:layout_marginEnd="@dimen/durban_dp_10"
@@ -113,7 +113,7 @@
                     android:layout_marginLeft="@dimen/dimen_2">
 
                     <ImageView
-                        android:layout_width="160dp"
+                        android:layout_width="@dimen/dimen_150"
                         android:layout_height="@dimen/album_dp_100"
                         android:layout_alignParentLeft="true"
                         android:layout_marginStart="@dimen/durban_dp_10"
@@ -121,7 +121,7 @@
                         android:src="@drawable/knewus3" />
 
                     <ImageView
-                        android:layout_width="160dp"
+                        android:layout_width="@dimen/dimen_150"
                         android:layout_height="@dimen/album_dp_100"
                         android:layout_alignParentRight="true"
                         android:layout_marginEnd="@dimen/durban_dp_10"
@@ -151,7 +151,7 @@
                     android:layout_marginLeft="@dimen/dimen_2">
 
                     <ImageView
-                        android:layout_width="160dp"
+                        android:layout_width="@dimen/dimen_150"
                         android:layout_height="@dimen/album_dp_100"
                         android:layout_alignParentLeft="true"
                         android:layout_marginStart="@dimen/durban_dp_10"
@@ -159,7 +159,7 @@
                         android:src="@drawable/knewus5" />
 
                     <ImageView
-                        android:layout_width="160dp"
+                        android:layout_width="@dimen/dimen_150"
                         android:layout_height="@dimen/album_dp_100"
                         android:layout_alignParentRight="true"
                         android:layout_marginEnd="@dimen/durban_dp_10"
@@ -187,7 +187,7 @@
                     android:layout_marginLeft="@dimen/dimen_2">
 
                     <ImageView
-                        android:layout_width="160dp"
+                        android:layout_width="@dimen/dimen_150"
                         android:layout_height="@dimen/album_dp_100"
                         android:layout_alignParentLeft="true"
                         android:layout_marginStart="@dimen/durban_dp_10"
@@ -195,7 +195,7 @@
                         android:src="@drawable/knewus7" />
 
                     <ImageView
-                        android:layout_width="160dp"
+                        android:layout_width="@dimen/dimen_150"
                         android:layout_height="@dimen/album_dp_100"
                         android:layout_alignParentRight="true"
                         android:layout_marginEnd="@dimen/durban_dp_10"
@@ -222,7 +222,7 @@
                     android:layout_marginLeft="@dimen/dimen_2">
 
                     <ImageView
-                        android:layout_width="160dp"
+                        android:layout_width="@dimen/dimen_150"
                         android:layout_height="@dimen/album_dp_100"
                         android:layout_alignParentLeft="true"
                         android:layout_marginStart="@dimen/durban_dp_10"
@@ -230,7 +230,7 @@
                         android:src="@drawable/knewus9" />
 
                     <ImageView
-                        android:layout_width="160dp"
+                        android:layout_width="@dimen/dimen_150"
                         android:layout_height="@dimen/album_dp_100"
                         android:layout_alignParentRight="true"
                         android:layout_marginEnd="@dimen/durban_dp_10"
@@ -245,8 +245,8 @@
 
     <ImageView
         android:id="@+id/KnewUs_IV_BackIcon"
-        android:layout_width="60dp"
-        android:layout_height="60dp"
+        android:layout_width="@dimen/dimen_60"
+        android:layout_height="@dimen/dimen_60"
         android:layout_alignParentLeft="true"
         android:layout_alignParentBottom="true"
         android:layout_marginLeft="@dimen/dimen_text_20"

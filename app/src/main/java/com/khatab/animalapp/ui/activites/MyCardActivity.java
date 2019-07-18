@@ -74,7 +74,7 @@ public class MyCardActivity extends AppCompatActivity {
                             if (status) {
                                 Log.e( "hhh", "done" );
 
-                                RV1.setAdapter( new MyCardAdapter( MyCardActivity.this, response.body().getData() ) );
+                                RV1.setAdapter( new MyCardAdapter( response.body().getData(), MyCardActivity.this ) );
 
 
                             } else {
@@ -85,6 +85,7 @@ public class MyCardActivity extends AppCompatActivity {
 
                     @Override
                     public void onFailure(Call<SaveOrder> call, Throwable t) {
+                        Log.e( TAG, " onFailure: error:" + t.getLocalizedMessage() );
 
                     }
                 } );

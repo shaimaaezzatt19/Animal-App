@@ -16,7 +16,6 @@
     <dimen name="descreption">80dp</dimen>
 
 
-
     <dimen name="logotop">80dp</dimen>
     <dimen name="imagesocial">80dp</dimen>
 
@@ -24,6 +23,8 @@
     <dimen name="dim_sss">1dp</dimen>
     <dimen name="dim_ss">2dp</dimen>
     <dimen name="dim_s">4dp</dimen>
+    <dimen name="dim_5">5dp</dimen>
+
     <dimen name="dim_m">8dp</dimen>
     <dimen name="dim_l">16dp</dimen>
     <dimen name="dim_xl">24dp</dimen>
@@ -36,7 +37,6 @@
     <dimen name="txt_size_s">12sp</dimen>
     <dimen name="txt_size_m">16sp</dimen>
     <dimen name="txt_size_l">20sp</dimen>
-
 
 
     <dimen name="dim_et_hight">40dp</dimen>
@@ -68,9 +68,15 @@
     <dimen name="dimen_8">8dp</dimen>
     <dimen name="dimen_16">16dp</dimen>
     <dimen name="dimen_24">24dp</dimen>
+    <dimen name="dimen_32">32dp</dimen>
+
     <dimen name="dimen_34">34dp</dimen>
+    <dimen name="dimen_40">40dp</dimen>
     <dimen name="dimen_42">42dp</dimen>
     <dimen name="dimen_50">50dp</dimen>
+    <dimen name="dimen_60">60dp</dimen>
+    <dimen name="dimen_63">63dp</dimen>
+
     <dimen name="dimen_66">66dp</dimen>
     <dimen name="dimen_74">74dp</dimen>
     <dimen name="dimen_82">82dp</dimen>
@@ -79,6 +85,11 @@
     <dimen name="dimen_2">2dp</dimen>
     <dimen name="dimen_text_20">20sp</dimen>
     <dimen name="dimen_130">130dp</dimen>
+    <dimen name="dimen_140">140dp</dimen>
+
+    <dimen name="dimen_150">150dp</dimen>
+    <dimen name="dimen_180">180dp</dimen>
+
     <dimen name="dimen_text_25">25sp</dimen>
     <dimen name="txt_size_xl">24sp</dimen>
     <dimen name="txt_size_xxl">28sp</dimen>

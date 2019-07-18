@@ -3,6 +3,7 @@ package com.khatab.animalapp.ui.activites;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
@@ -63,10 +64,13 @@ public class ExampleCardViewActivity extends AppCompatActivity {
 
     @OnClick(R.id.ItemsCard_Close_IV)
     public void onViewClicked() {
+        ItemsCardIVMainPic.setVisibility( View.INVISIBLE );
+        itemsCardDeatilsinTV.setVisibility( View.INVISIBLE );
+        itemsCardDeatilsinTV.setVisibility( View.INVISIBLE );
+        ItemsCardCloseIV.setVisibility( View.INVISIBLE );
+        ItemsCardEditIV.setVisibility( View.INVISIBLE );
+        ButtonExample.setVisibility( View.INVISIBLE );
 
-
-        //علشان لما أضغط عليها الصورة تتمسح من ال RV
-        ItemsCardCloseIV.setText( " " );
 
     }
 }

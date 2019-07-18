@@ -14,7 +14,7 @@
         android:layout_height="wrap_content"
         android:layout_margin="@dimen/dimen_4"
         android:layout_marginStart="@dimen/dimen_text_16"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="@dimen/durban_dp_10"
         android:layout_marginEnd="@dimen/dimen_text_16"
         android:elevation="@dimen/durban_dp_10"
         app:cardCornerRadius="@dimen/dimen_8">
@@ -43,7 +43,7 @@
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="37dp"
-        android:layout_marginBottom="20dp"
+        android:layout_marginBottom="@dimen/dimen_text_20"
         android:text="حاشي "
         android:textColor="@color/black"
         android:textSize="@dimen/dimen_text_25"

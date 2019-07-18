@@ -60,14 +60,14 @@ public interface ApiServices {
     Call<SaveOrder> SendAllDetailsToSaveOrder(@Field("phone") String phone,
                                               @Field("address") String address,
                                               @Field("name") String name,
-                                              @Field("products[0][quantity]") RequestBody products_quantity,
-                                              @Field("products[0][product_id]") RequestBody products_product_id,
-                                              @Field("products[0][packing]") RequestBody products_packing,
-                                              @Field("products[0][cut]") RequestBody products_cut,
-                                              @Field("products[1][quantity]") RequestBody products_quantity2,
-                                              @Field("products[1][product_id]") RequestBody products_product_id2,
-                                              @Field("products[1][packing]") RequestBody products_packing2,
-                                              @Field("products[1][cut]") RequestBody products_cut2,
+                                              @Field("products[0][quantity]") String products_quantity,
+                                              @Field("products[0][product_id]") String products_product_id,
+                                              @Field("products[0][packing]") String products_packing,
+                                              @Field("products[0][cut]") String products_cut,
+                                              @Field("products[1][quantity]") String products_quantity2,
+                                              @Field("products[1][product_id]") String products_product_id2,
+                                              @Field("products[1][packing]") String products_packing2,
+                                              @Field("products[1][cut]") String products_cut2,
                                               @Field("code") String code);
 
 

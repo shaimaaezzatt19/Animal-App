@@ -37,7 +37,7 @@
         <ImageView
             android:id="@+id/Pic_Selected_Service_IV"
             android:layout_width="wrap_content"
-            android:layout_height="160dp"
+            android:layout_height="@dimen/dimen_150"
             android:layout_marginStart="@dimen/dimen_text_25"
             android:layout_marginTop="80dp"
             android:layout_marginEnd="@dimen/dimen_text_25"
@@ -165,8 +165,8 @@
 
         <ImageView
             android:id="@+id/Selected_item_Back_IB"
-            android:layout_width="60dp"
-            android:layout_height="60dp"
+            android:layout_width="@dimen/dimen_60"
+            android:layout_height="@dimen/dimen_60"
             android:layout_marginStart="@dimen/dimen_16"
             android:layout_marginLeft="@dimen/dimen_16"
             android:layout_marginTop="@dimen/dimen_2"
@@ -175,8 +175,8 @@
 
         <ImageView
             android:id="@+id/Selected_item_Menue_IB"
-            android:layout_width="60dp"
-            android:layout_height="60dp"
+            android:layout_width="@dimen/dimen_60"
+            android:layout_height="@dimen/dimen_60"
             android:layout_alignParentRight="true"
             android:layout_marginTop="@dimen/dimen_4"
             android:layout_marginEnd="@dimen/dimen_16"

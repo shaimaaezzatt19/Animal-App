@@ -123,13 +123,13 @@
                 android:src="@drawable/insteghram_icon" />
 
             <ImageView
-                android:id="@+id/connectUs_Facbook"
+                android:id="@+id/connectUs_Twitter"
                 style="@style/SocialImages"
                 android:layout_width="40dp"
                 android:layout_height="40dp"
                 android:layout_marginStart="@dimen/dim_xl"
                 android:layout_marginLeft="@dimen/dim_xl"
-                android:src="@drawable/facebook_icon" />
+                android:src="@drawable/twitter_icon" />
 
             <ImageView
                 android:id="@+id/onnectUs_Whatsapp"
@@ -137,6 +137,14 @@
                 android:layout_width="40dp"
                 android:layout_height="40dp"
                 android:src="@drawable/whatsapp_icon" />
+
+
+            <ImageView
+                android:id="@+id/onnectUs_Snapchat"
+                style="@style/SocialImages"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:src="@drawable/snapchat_logo" />
         </LinearLayout>
 
         <android.support.constraint.ConstraintLayout

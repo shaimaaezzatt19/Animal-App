@@ -22,9 +22,9 @@
             android:id="@+id/odderTotalService_TV_toolbarTitle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:layout_marginEnd="180dp"
-            android:layout_marginRight="180dp"
+            android:layout_marginTop="@dimen/dimen_text_16"
+            android:layout_marginEnd="@dimen/dimen_180"
+            android:layout_marginRight="@dimen/dimen_180"
             android:fontFamily="@font/cairo"
             android:gravity="center"
             android:text="@string/OrderTitle"
@@ -57,15 +57,15 @@
                 android:layout_alignParentLeft="true"
                 android:layout_alignParentEnd="true"
                 android:layout_alignParentRight="true"
-                android:layout_marginStart="0dp"
-                android:layout_marginLeft="0dp"
-                android:layout_marginTop="15dp"
+                android:layout_marginStart="@dimen/album_dp_0"
+                android:layout_marginLeft="@dimen/album_dp_0"
+                android:layout_marginTop="@dimen/album_dp_15"
                 android:orientation="vertical">
 
                 <ImageView
                     android:id="@+id/Pic_Selected_Service_IV"
                     android:layout_width="wrap_content"
-                    android:layout_height="150dp"
+                    android:layout_height="@dimen/dimen_150"
                     android:layout_marginStart="@dimen/dimen_text_25"
                     android:layout_marginTop="@dimen/album_dp_10"
                     android:layout_marginEnd="@dimen/dimen_text_25"
@@ -79,7 +79,7 @@
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
                     android:layout_marginStart="@dimen/dimen_text_20"
-                    android:layout_marginTop="20dp"
+                    android:layout_marginTop="@dimen/dimen_text_20"
                     android:layout_marginEnd="@dimen/dimen_text_20"
                     android:fontFamily="@font/details_font"
                     android:text="هنا يتواجد النص الذي من المفترض أن يصف الصنف والذي تعبر عنه الصورة المتواجدة بالأعلى "
@@ -88,8 +88,8 @@
                 <android.support.constraint.ConstraintLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="10dp"
-                    android:layout_marginBottom="10dp"
+                    android:layout_marginTop="@dimen/durban_dp_10"
+                    android:layout_marginBottom="@dimen/durban_dp_10"
                     android:orientation="horizontal"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent">
@@ -98,8 +98,8 @@
                         android:id="@+id/textView9"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginEnd="20dp"
-                        android:layout_marginRight="20dp"
+                        android:layout_marginEnd="@dimen/dimen_text_20"
+                        android:layout_marginRight="@dimen/dimen_text_20"
                         android:text="@string/Kilo"
                         android:textColor="@color/black"
                         android:textSize="@dimen/dimen_text_20"
@@ -111,10 +111,10 @@
                         android:id="@+id/textView10"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginStart="8dp"
-                        android:layout_marginLeft="8dp"
-                        android:layout_marginEnd="8dp"
-                        android:layout_marginRight="8dp"
+                        android:layout_marginStart="@dimen/dimen_8"
+                        android:layout_marginLeft="@dimen/dimen_8"
+                        android:layout_marginEnd="@dimen/dimen_8"
+                        android:layout_marginRight="@dimen/dimen_8"
                         android:text="@string/Price"
                         android:textColor="@color/red"
                         android:textSize="@dimen/dimen_text_20"
@@ -125,9 +125,9 @@
                         app:layout_constraintTop_toTopOf="parent" />
 
                     <ImageView
-                        android:layout_width="200dp"
-                        android:layout_height="0dp"
-                        android:layout_marginTop="24dp"
+                        android:layout_width="@dimen/durban_dp_200"
+                        android:layout_height="@dimen/album_dp_0"
+                        android:layout_marginTop="@dimen/dimen_24"
                         android:src="@drawable/shape_line"
                         app:layout_constraintEnd_toEndOf="@+id/textView10"
                         app:layout_constraintHorizontal_bias="0.064"
@@ -151,10 +151,10 @@
                     android:layout_height="wrap_content"
                     android:layout_marginStart="348dp"
                     android:layout_marginLeft="348dp"
-                    android:layout_marginTop="8dp"
-                    android:layout_marginEnd="20dp"
-                    android:layout_marginRight="20dp"
-                    android:layout_marginBottom="8dp"
+                    android:layout_marginTop="@dimen/dimen_8"
+                    android:layout_marginEnd="@dimen/dimen_text_20"
+                    android:layout_marginRight="@dimen/dimen_text_20"
+                    android:layout_marginBottom="@dimen/dimen_8"
                     android:text="@string/OrderKilo"
                     android:textColor="@color/black"
                     android:textSize="20dp"
@@ -168,13 +168,13 @@
 
                 <EditText
                     android:id="@+id/Count_SendAllOrder_TV"
-                    android:layout_width="80dp"
-                    android:layout_height="40dp"
-                    android:layout_marginStart="8dp"
-                    android:layout_marginLeft="8dp"
-                    android:layout_marginTop="8dp"
-                    android:layout_marginEnd="8dp"
-                    android:layout_marginRight="8dp"
+                    android:layout_width="@dimen/album_dp_80"
+                    android:layout_height="@dimen/dimen_40"
+                    android:layout_marginStart="@dimen/dimen_8"
+                    android:layout_marginLeft="@dimen/dimen_8"
+                    android:layout_marginTop="@dimen/dimen_8"
+                    android:layout_marginEnd="@dimen/dimen_8"
+                    android:layout_marginRight="@dimen/dimen_8"
                     android:background="@drawable/rectangleredshape"
                     app:layout_constraintEnd_toStartOf="@+id/textView6"
                     app:layout_constraintStart_toEndOf="@+id/relativeLayout"
@@ -183,8 +183,8 @@
 
                 <RelativeLayout
                     android:id="@+id/relativeLayout"
-                    android:layout_width="140dp"
-                    android:layout_height="45dp"
+                    android:layout_width="@dimen/dimen_140"
+                    android:layout_height="@dimen/album_dp_45"
                     android:layout_marginTop="@dimen/dimen_8"
                     android:background="@drawable/rectangleredshape"
                     app:layout_constraintEnd_toStartOf="@+id/Count_SendAllOrder_TV"
@@ -193,17 +193,16 @@
 
                     <Spinner
                         android:id="@+id/SpinnerOne"
-                        android:layout_width="140dp"
+                        android:layout_width="@dimen/dimen_140"
                         android:layout_height="@dimen/album_dp_45"
-                        android:layout_marginBottom="17dp"
                         android:entries="@array/Spinner1" />
 
                 </RelativeLayout>
 
                 <RelativeLayout
                     android:id="@+id/relativeLayout2"
-                    android:layout_width="140dp"
-                    android:layout_height="45dp"
+                    android:layout_width="@dimen/dimen_140"
+                    android:layout_height="@dimen/album_dp_45"
                     android:layout_marginTop="@dimen/dimen_8"
                     android:background="@drawable/rectangleredshape"
                     app:layout_constraintEnd_toStartOf="@+id/Count_SendAllOrder_TV"
@@ -212,8 +211,8 @@
 
                     <Spinner
                         android:id="@+id/SpinnerTWO"
-                        android:layout_width="140dp"
-                        android:layout_height="45dp"
+                        android:layout_width="@dimen/dimen_140"
+                        android:layout_height="@dimen/album_dp_45"
                         android:entries="@array/Spinner2">
 
                     </Spinner>
@@ -232,8 +231,8 @@
 
                     <Spinner
                         android:id="@+id/SpinnerThree"
-                        android:layout_width="140dp"
-                        android:layout_height="45dp"
+                        android:layout_width="@dimen/dimen_140"
+                        android:layout_height="@dimen/album_dp_45"
                         android:entries="@array/Spinner3" />
 
                 </RelativeLayout>
@@ -242,8 +241,8 @@
                     android:id="@+id/Notes_TV"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginEnd="20dp"
-                    android:layout_marginRight="20dp"
+                    android:layout_marginEnd="@dimen/dimen_text_20"
+                    android:layout_marginRight="@dimen/dimen_text_20"
                     android:text="@string/Notes"
                     android:textColor="@color/black"
                     android:textSize="20dp"
@@ -254,10 +253,10 @@
                     android:id="@+id/EnterNote"
                     android:layout_width="270dp"
                     android:layout_height="@dimen/dimen_90"
-                    android:layout_marginStart="8dp"
-                    android:layout_marginLeft="8dp"
-                    android:layout_marginEnd="8dp"
-                    android:layout_marginRight="8dp"
+                    android:layout_marginStart="@dimen/dimen_8"
+                    android:layout_marginLeft="@dimen/dimen_8"
+                    android:layout_marginEnd="@dimen/dimen_8"
+                    android:layout_marginRight="@dimen/dimen_8"
                     android:background="@drawable/rectangleredshape"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintHorizontal_bias="0.28"
@@ -280,10 +279,10 @@
                     android:id="@+id/OrderTotalService_BT"
                     android:layout_width="@dimen/durban_dp_200"
                     android:layout_height="@dimen/dimen_50"
-                    android:layout_marginTop="16dp"
-                    android:layout_marginEnd="70dp"
-                    android:layout_marginRight="70dp"
-                    android:layout_marginBottom="8dp"
+                    android:layout_marginTop="@dimen/dimen_text_16"
+                    android:layout_marginEnd="@dimen/durban_dp_70"
+                    android:layout_marginRight="@dimen/durban_dp_70"
+                    android:layout_marginBottom="@dimen/dimen_8"
                     android:background="@drawable/red_button"
                     android:gravity="center"
                     android:text="@string/AddToCard"
@@ -297,12 +296,12 @@
 
             <ImageView
                 android:id="@+id/Selected_item_Back_IB"
-                android:layout_width="60dp"
-                android:layout_height="60dp"
+                android:layout_width="@dimen/dimen_60"
+                android:layout_height="@dimen/dimen_60"
                 android:layout_below="@+id/Constrain2"
-                android:layout_marginStart="8dp"
-                android:layout_marginLeft="8dp"
-                android:layout_marginBottom="8dp"
+                android:layout_marginStart="@dimen/dimen_8"
+                android:layout_marginLeft="@dimen/dimen_8"
+                android:layout_marginBottom="@dimen/dimen_8"
                 android:shadowColor="#41ff4800"
                 android:src="@drawable/back_icon" />
 

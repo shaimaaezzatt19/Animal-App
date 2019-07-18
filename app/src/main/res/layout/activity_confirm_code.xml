@@ -44,8 +44,8 @@
 
         <EditText
             android:id="@+id/CodeNumber1"
-            android:layout_width="@dimen/album_dp_40"
-            android:layout_height="@dimen/album_dp_40"
+            android:layout_width="@dimen/dimen_40"
+            android:layout_height="@dimen/dimen_40"
             android:layout_marginStart="@dimen/album_dp_10"
             android:layout_marginLeft="@dimen/album_dp_10"
             android:layout_marginTop="@dimen/album_dp_10"
@@ -53,8 +53,8 @@
 
         <EditText
             android:id="@+id/CodeNumber2"
-            android:layout_width="@dimen/album_dp_40"
-            android:layout_height="@dimen/album_dp_40"
+            android:layout_width="@dimen/dimen_40"
+            android:layout_height="@dimen/dimen_40"
             android:layout_marginStart="@dimen/album_dp_10"
             android:layout_marginLeft="@dimen/album_dp_10"
             android:layout_marginTop="@dimen/album_dp_10"
@@ -62,8 +62,8 @@
 
         <EditText
             android:id="@+id/CodeNumber3"
-            android:layout_width="@dimen/album_dp_40"
-            android:layout_height="@dimen/album_dp_40"
+            android:layout_width="@dimen/dimen_40"
+            android:layout_height="@dimen/dimen_40"
             android:layout_marginStart="@dimen/album_dp_10"
             android:layout_marginLeft="@dimen/album_dp_10"
             android:layout_marginTop="@dimen/album_dp_10"
@@ -71,8 +71,8 @@
 
         <EditText
             android:id="@+id/CodeNumber4"
-            android:layout_width="@dimen/album_dp_40"
-            android:layout_height="@dimen/album_dp_40"
+            android:layout_width="@dimen/dimen_40"
+            android:layout_height="@dimen/dimen_40"
             android:layout_marginStart="@dimen/album_dp_10"
             android:layout_marginLeft="@dimen/album_dp_10"
             android:layout_marginTop="@dimen/album_dp_10"

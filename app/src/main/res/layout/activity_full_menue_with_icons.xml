@@ -19,7 +19,7 @@
         android:layout_height="5dp"
         android:layout_below="@id/main-Vedio"
         android:layout_marginStart="32dp"
-        android:layout_marginTop="@dimen/dimen_8"
+        android:layout_marginTop="@dimen/album_dp_15"
         android:layout_marginEnd="32dp"
         android:src="@drawable/red_line" />
 
@@ -37,8 +37,8 @@
 
             <ImageView
                 android:id="@+id/Main_Menue_Icon_IV"
-                android:layout_width="70dp"
-                android:layout_height="70dp"
+                android:layout_width="@dimen/durban_dp_70"
+                android:layout_height="@dimen/durban_dp_70"
                 android:layout_gravity="center"
                 android:layout_marginTop="@dimen/album_dp_30"
                 android:src="@drawable/menue_icon" />
@@ -46,10 +46,10 @@
             <LinearLayout
                 android:id="@+id/shape1"
                 android:layout_width="match_parent"
-                android:layout_height="60dp"
-                android:layout_marginStart="32dp"
+                android:layout_height="@dimen/dimen_60"
+                android:layout_marginStart="@dimen/dimen_32"
                 android:layout_marginTop="@dimen/durban_dp_10"
-                android:layout_marginEnd="32dp"
+                android:layout_marginEnd="@dimen/dimen_32"
                 android:gravity="center"
                 android:orientation="horizontal">
 
@@ -85,7 +85,7 @@
             <LinearLayout
                 android:id="@+id/shape2"
                 android:layout_width="match_parent"
-                android:layout_height="60dp"
+                android:layout_height="@dimen/dimen_60"
                 android:layout_marginStart="64dp"
                 android:layout_marginEnd="64dp"
                 android:gravity="center"
@@ -101,7 +101,8 @@
                         android:layout_height="@dimen/album_dp_45"
                         android:layout_alignParentLeft="true"
                         android:layout_marginStart="@dimen/dimen_text_20"
-                        android:src="@drawable/dialog_icon" />
+                        android:src="@drawable/dialog_icon"
+                        android:layout_marginLeft="@dimen/dimen_text_20" />
 
                     <ImageView
                         android:id="@+id/OurWayStyle_IV_Icon"
@@ -109,7 +110,8 @@
                         android:layout_height="@dimen/album_dp_45"
                         android:layout_alignParentRight="true"
                         android:layout_marginEnd="@dimen/dimen_text_20"
-                        android:src="@drawable/ourway_icon" />
+                        android:src="@drawable/ourway_icon"
+                        android:layout_marginRight="@dimen/dimen_text_20" />
 
                 </RelativeLayout>
 

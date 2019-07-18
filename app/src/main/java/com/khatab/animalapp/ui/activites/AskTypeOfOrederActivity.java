@@ -60,7 +60,7 @@ public class AskTypeOfOrederActivity extends AppCompatActivity {
 
 
         // المفروض هنا أحط ال id بتاع الخدمة اللي اختارتها من ال Services
-        apiServices.getservicesDeatils( "12" ).enqueue( new Callback<ShowService>() {
+        apiServices.getservicesDeatils( "11" ).enqueue( new Callback<ShowService>() {
 
             @Override
             public void onResponse(Call<ShowService> call, Response<ShowService> response) {

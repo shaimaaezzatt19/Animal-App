@@ -16,9 +16,9 @@
         android:id="@+id/SendMyOrder_Title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginLeft="8dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginStart="@dimen/dimen_8"
+        android:layout_marginLeft="@dimen/dimen_8"
+        android:layout_marginTop="@dimen/dimen_text_16"
         android:fontFamily="@font/cairo"
         android:gravity="center"
         android:text="@string/OrderTitle"
@@ -30,7 +30,7 @@
 
     <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="0dp"
+        android:layout_height="@dimen/album_dp_0"
 
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -43,8 +43,8 @@
 
             <ImageView
                 android:id="@+id/Pic_SendMyOrder_IV"
-                android:layout_width="0dp"
-                android:layout_height="150dp"
+                android:layout_width="@dimen/album_dp_0"
+                android:layout_height="@dimen/dimen_150"
                 android:layout_marginStart="@dimen/dimen_text_25"
                 android:layout_marginTop="@dimen/dimen_16"
                 android:layout_marginEnd="@dimen/dimen_text_25"
@@ -61,7 +61,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="32dp"
                 android:layout_marginTop="@dimen/dimen_16"
-                android:layout_marginEnd="32dp"
+                android:layout_marginEnd="@dimen/dimen_32"
                 android:fontFamily="@font/details_font"
                 android:gravity="center"
                 android:text="هذا النص بمثابة نص توضيحي لتفاصيل الصورة(الخدمة) التي تم اختيارها وعرضها "
@@ -74,8 +74,8 @@
                 android:id="@+id/SendMyOrder_Kilo_TV"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="16dp"
-                android:layout_marginLeft="16dp"
+                android:layout_marginStart="@dimen/dimen_text_16"
+                android:layout_marginLeft="@dimen/dimen_text_16"
                 android:layout_marginTop="@dimen/dimen_16"
                 android:layout_marginEnd="@dimen/dimen_16"
                 android:layout_marginRight="@dimen/dimen_16"
@@ -91,10 +91,10 @@
                 android:id="@+id/SendMyOrder_Price_TV"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="8dp"
-                android:layout_marginLeft="8dp"
-                android:layout_marginEnd="8dp"
-                android:layout_marginRight="8dp"
+                android:layout_marginStart="@dimen/dimen_8"
+                android:layout_marginLeft="@dimen/dimen_8"
+                android:layout_marginEnd="@dimen/dimen_8"
+                android:layout_marginRight="@dimen/dimen_8"
                 android:text="@string/Price"
                 android:textColor="@color/red"
                 android:textSize="@dimen/dimen_text_25"
@@ -106,11 +106,11 @@
 
             <View
                 android:id="@+id/view"
-                android:layout_width="0dp"
-                android:layout_height="1dp"
-                android:layout_marginStart="50dp"
+                android:layout_width="@dimen/album_dp_0"
+                android:layout_height="@dimen/album_dp_1"
+                android:layout_marginStart="@dimen/dimen_50"
                 android:layout_marginTop="@dimen/dimen_16"
-                android:layout_marginEnd="50dp"
+                android:layout_marginEnd="@dimen/dimen_50"
                 android:background="@color/black"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
@@ -123,7 +123,7 @@
                 android:layout_marginTop="@dimen/dimen_24"
                 android:layout_marginEnd="@dimen/dimen_16"
                 android:layout_marginRight="@dimen/dimen_16"
-                android:layout_marginBottom="8dp"
+                android:layout_marginBottom="@dimen/dimen_8"
                 android:text="@string/OrderKilo"
                 android:textColor="@color/black"
                 android:textSize="@dimen/dimen_text_25"
@@ -143,7 +143,7 @@
 
             <RelativeLayout
                 android:id="@+id/RL1_SpinerOne"
-                android:layout_width="180dp"
+                android:layout_width="@dimen/dimen_180"
                 android:layout_height="@dimen/dimen_50"
                 android:layout_marginEnd="@dimen/dimen_16"
                 android:layout_marginRight="@dimen/dimen_16"
@@ -163,7 +163,7 @@
 
             <RelativeLayout
                 android:id="@+id/RL1_SpinerTWO"
-                android:layout_width="180dp"
+                android:layout_width="@dimen/dimen_180"
                 android:layout_height="@dimen/dimen_50"
                 android:layout_marginTop="@dimen/dimen_8"
                 android:background="@drawable/rectangleredshape"
@@ -184,7 +184,7 @@
             <TextView
                 android:id="@+id/Notes_TV"
                 android:layout_width="105dp"
-                android:layout_height="40dp"
+                android:layout_height="@dimen/dimen_40"
                 android:layout_marginEnd="@dimen/dimen_16"
                 android:layout_marginRight="@dimen/dimen_16"
                 android:text="@string/Notes"
@@ -239,8 +239,8 @@
 
             <ImageView
                 android:id="@+id/AddToCard_Back_IB"
-                android:layout_width="60dp"
-                android:layout_height="60dp"
+                android:layout_width="@dimen/dimen_60"
+                android:layout_height="@dimen/dimen_60"
                 android:shadowColor="#41ff4800"
                 android:src="@drawable/back_icon"
                 app:layout_constraintStart_toStartOf="parent"

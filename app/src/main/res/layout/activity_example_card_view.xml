@@ -50,14 +50,14 @@
         <TextView
             android:id="@+id/items_card_deatilsinTV"
             android:layout_width="match_parent"
-            android:layout_height="100dp"
+            android:layout_height="@dimen/album_dp_100"
             android:layout_below="@id/Items_Card_IV_MainPic"
             android:layout_alignParentTop="false"
             android:layout_alignParentBottom="true"
-            android:layout_marginStart="60dp"
+            android:layout_marginStart="@dimen/dimen_60"
             android:layout_marginTop="-40dp"
-            android:layout_marginEnd="60dp"
-            android:layout_marginBottom="10dp"
+            android:layout_marginEnd="@dimen/dimen_60"
+            android:layout_marginBottom="@dimen/durban_dp_10"
             android:background="@drawable/red_button"
             android:textAlignment="center"
             android:textColor="@color/white"
@@ -68,34 +68,34 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@id/Items_Card_IV_MainPic"
-            android:layout_marginStart="100dp"
-            android:layout_marginEnd="100dp"
+            android:layout_marginStart="@dimen/album_dp_100"
+            android:layout_marginEnd="@dimen/album_dp_100"
             android:gravity="center"
             android:text="@string/TotalCard"
             android:textColor="@color/white"
-            android:textSize="15dp" />
+            android:textSize="@dimen/album_dp_15" />
 
 
         <ImageView
             android:id="@+id/ItemsCard_Close_IV"
-            android:layout_width="30dp"
-            android:layout_height="30dp"
+            android:layout_width="@dimen/album_dp_30"
+            android:layout_height="@dimen/album_dp_30"
             android:layout_alignParentTop="true"
             android:layout_alignParentRight="true"
             android:layout_marginTop="5dp"
-            android:layout_marginEnd="10dp"
-            android:layout_marginRight="10dp"
+            android:layout_marginEnd="@dimen/durban_dp_10"
+            android:layout_marginRight="@dimen/durban_dp_10"
             android:src="@drawable/close_icon" />
 
 
         <ImageView
             android:id="@+id/ItemsCard_Edit_IV"
-            android:layout_width="30dp"
-            android:layout_height="30dp"
+            android:layout_width="@dimen/album_dp_30"
+            android:layout_height="@dimen/album_dp_30"
             android:layout_alignParentLeft="true"
             android:layout_alignParentTop="true"
-            android:layout_marginStart="20dp"
-            android:layout_marginLeft="20dp"
+            android:layout_marginStart="@dimen/dimen_text_20"
+            android:layout_marginLeft="@dimen/dimen_text_20"
             android:layout_marginTop="@dimen/dimen_text_20"
 
             android:src="@drawable/edit_icon" />

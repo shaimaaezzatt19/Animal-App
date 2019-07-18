@@ -46,9 +46,8 @@ public class ConfirmCodeActivity extends AppCompatActivity {
     @BindView(R.id.ConfirmCode_Menue_IB)
     ImageView ConfirmCodeMenueIB;
 
-
     private ApiServices apiServices;
-    private static final String TAG = ConnectUsActivity.class.getSimpleName();
+    private static final String TAG = ConfirmCodeActivity.class.getSimpleName();
 
 
     @Override

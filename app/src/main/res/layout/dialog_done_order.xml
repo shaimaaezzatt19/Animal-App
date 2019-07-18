@@ -7,14 +7,14 @@
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="200dp"
+        android:layout_height="@dimen/durban_dp_200"
         android:layout_marginTop="20dp">
 
 
         <ImageView
             android:id="@+id/DialogDone_IV"
             android:layout_width="match_parent"
-            android:layout_height="200dp"
+            android:layout_height="@dimen/durban_dp_200"
             android:src="@drawable/dialog1" />
 
         <TextView
@@ -22,11 +22,11 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@id/DialogDone_IV"
-            android:layout_marginStart="20dp"
-            android:layout_marginLeft="20dp"
+            android:layout_marginStart="@dimen/dimen_text_20"
+            android:layout_marginLeft="@dimen/dimen_text_20"
             android:layout_marginTop="-150dp"
-            android:layout_marginEnd="10dp"
-            android:layout_marginRight="10dp"
+            android:layout_marginEnd="@dimen/durban_dp_10"
+            android:layout_marginRight="@dimen/durban_dp_10"
             android:gravity="center"
             android:text="@string/DialogDone"
             android:textColor="@color/white"
@@ -36,8 +36,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@id/DialogDone_TV"
-            android:layout_marginStart="140dp"
-            android:layout_marginLeft="140dp"
+            android:layout_marginStart="@dimen/dimen_140"
+            android:layout_marginLeft="@dimen/dimen_140"
             android:layout_marginTop="@dimen/dimen_text_20"
             android:src="@drawable/back_icon" />
 
