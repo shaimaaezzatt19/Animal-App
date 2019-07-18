@@ -16,9 +16,9 @@
         android:id="@+id/SendMyOrder_Title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginLeft="8dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginStart="@dimen/dimen_8"
+        android:layout_marginLeft="@dimen/dimen_8"
+        android:layout_marginTop="@dimen/dimen_text_16"
         android:fontFamily="@font/cairo"
         android:gravity="center"
         android:text="@string/OrderTitle"
@@ -133,8 +133,8 @@
 
             <EditText
                 android:id="@+id/SendMyOrder_Count_ET"
-                android:layout_width="67dp"
-                android:layout_height="44dp"
+                android:layout_width="@dimen/durban_dp_70"
+                android:layout_height="@dimen/album_dp_45"
                 android:layout_marginEnd="@dimen/dimen_16"
                 android:layout_marginRight="@dimen/dimen_16"
                 android:background="@drawable/rectangleredshape"
@@ -155,8 +155,8 @@
 
                 <Spinner
                     android:id="@+id/SpinnerOne"
-                    android:layout_width="170dp"
-                    android:layout_height="48dp"
+                    android:layout_width="@dimen/dimen_170"
+                    android:layout_height="@dimen/dimen_50"
                     android:entries="@array/Spinner1">
 
                 </Spinner>
@@ -174,8 +174,8 @@
 
                 <Spinner
                     android:id="@+id/SpinnerTWO"
-                    android:layout_width="170dp"
-                    android:layout_height="48dp"
+                    android:layout_width="@dimen/dimen_170"
+                    android:layout_height="@dimen/dimen_50"
                     android:entries="@array/Spinner2">
 
                 </Spinner>
