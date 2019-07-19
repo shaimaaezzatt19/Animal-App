@@ -25,7 +25,7 @@
         android:layout_marginRight="@dimen/dimen_8"
         android:fontFamily="@font/cairo"
         android:gravity="center"
-        android:text="@string/ServiceSelected"
+        android:text="d"
         android:textColor="@color/white"
         android:textSize="@dimen/dimen_text_20"
         app:layout_constraintEnd_toEndOf="parent"
@@ -50,10 +50,11 @@
 
         <ImageView
             android:id="@+id/Pic_Selected_Service_IV"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="@dimen/album_dp_200"
             android:background="@drawable/rectangleredshape"
-            android:src="@drawable/animal_example2" />
+            />
+        <!--android:src="@drawable/animal_example2"-->
 
         <Button
             android:id="@+id/SendOrder_Option1_BT"

@@ -1,6 +1,7 @@
 package com.khatab.animalapp.ui.activites;
 
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
@@ -10,9 +11,13 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import com.bumptech.glide.Glide;
 import com.khatab.animalapp.R;
 import com.khatab.animalapp.data.model.ShowService.ShowService;
+import com.khatab.animalapp.data.model.ShowService.ShowServiceData;
 import com.khatab.animalapp.data.rest.ApiServices;
+
+import java.util.List;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -53,38 +58,83 @@ public class AskTypeOfOrederActivity extends AppCompatActivity {
         ButterKnife.bind( this );
         apiServices = getClient().create( ApiServices.class );
 
-        Integer id = getIntent().getExtras().getInt( "id" );
-        ShowServiceName( id );
+        Intent i = getIntent();
+        if (i != null && i.hasExtra( "id" )) {
+            Long id = i.getExtras().getLong( "id" );
+//            Integer id = i.getExtras().getInt( "id" );
+            ShowServiceName( id );
+
+        }
     }
 
-    public void ShowServiceName(Integer id) {
-
-
-        // المفروض هنا أحط ال id بتاع الخدمة اللي اختارتها من ال Services
+    public void ShowServiceName(Long id) {
         apiServices.getservicesDeatils( id ).enqueue( new Callback<ShowService>() {
-
             @Override
             public void onResponse(Call<ShowService> call, Response<ShowService> response) {
-
                 if (response.isSuccessful()) {
                     Boolean status = response.body().getStatus();
-                    Log.e( "nnn", "false" );
-                    if (status) {
-                        Log.e( "hhh", "done" );
+                    if (status)
+                    {
+                        List<ShowServiceData> data = response.body().getData();
+                        ServiceSelectedToolbarTitleTV.setText( data.get( 0 ).getName() );
+//                        PicSelectedServiceIV.setImageResource( data.get( 0 ).getImage() );
+                        Glide.with( AskTypeOfOrederActivity.this ).load( data.get( 0 ).getImage() ).into(PicSelectedServiceIV );
+//                        SendOrderOption1BT.setText( data.get(0).get );
+//                        SendOrderOption2BT.setText( data.get( 0 ).getName() );
+
+
+                        Log.i( "hhh", "done stauts true" );
 
                     } else {
+                        Log.i( "hhh", "staus false" );
                     }
+                } else {
+                    Log.i( "hhh", "onResponse: response ok but fail" );
                 }
             }
 
             @Override
             public void onFailure(Call<ShowService> call, Throwable t) {
-                Log.v( TAG, "Onfalliuer:error " + t.getMessage() );
-
+                Log.i( "hhh", "Onfalliuer : error " + t.getMessage() );
             }
         } );
-
     }
+//    public void ShowServiceName(Long id) {
+//        // المفروض هنا أحط ال id بتاع الخدمة اللي اختارتها من ال Services
+//        apiServices.getservicesDeatils( id ).enqueue( new Callback<ShowService>() {
+//            @Override
+//            public void onResponse(Call<ShowService> call, Response<ShowService> response) {
+//
+//                if (response.isSuccessful())
+//                {
+//                    Boolean status = response.body().getStatus();
+////                    Log.e( "nnn", "false" );
+//                    if (status)
+//                    {
+//                        List<ShowServiceData> data = response.body().getData();
+//                        ServiceSelectedToolbarTitleTV.setText( data.get( 1 ).getName() );
+////                        PicSelectedServiceIV.setImageResource(  );
+//
+//                        Log.i( "hhh", "done stauts true" );
+//
+//                    } else
+//                    {
+//                        Log.i( "hhh", "staus false" );
+//                    }
+//                }else {
+//                    Log.i( "hhh", "onResponse: response ok but fail" );
+//                }
+//            }
+//
+//            @Override
+//            public void onFailure(Call<ShowService> call, Throwable t)
+//            {
+//                Log.i( "hhh", "Onfalliuer : error " + t.getMessage() );
+//
+//            }
+//        } );
+//
+//    }
 
     @OnClick({R.id.SendOrder_Option1_BT, R.id.SendOrder_Option2_BT, R.id.SendOrder_Option3_BT, R.id.SendOrder_item_Back_IB})
     public void onViewClicked(View view) {

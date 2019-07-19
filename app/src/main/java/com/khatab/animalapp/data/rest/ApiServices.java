@@ -19,6 +19,7 @@ import retrofit2.http.GET;
 import retrofit2.http.Multipart;
 import retrofit2.http.POST;
 import retrofit2.http.Path;
+import retrofit2.http.Query;
 
 public interface ApiServices {
 
@@ -38,8 +39,9 @@ public interface ApiServices {
     @GET("code")
     Call<Code> getCode();
 
-    @GET("services" + "/{id}")
-    Call<ShowService> getservicesDeatils(@Path("id") Integer id);
+//    @GET("services" + "/{id}")
+    @GET("services")
+    Call<ShowService> getservicesDeatils(@Query("id") Long id);
 
 
 //Delete

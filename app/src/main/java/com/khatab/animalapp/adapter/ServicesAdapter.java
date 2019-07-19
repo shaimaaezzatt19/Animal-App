@@ -44,14 +44,7 @@ public class ServicesAdapter extends RecyclerView.Adapter<ServicesAdapter.ViewHo
         viewHolder.name.setText( data.getName() );
         Glide.with( context ).load( data.getImage() ).into( viewHolder.image );
 
-        viewHolder.itemView.setOnClickListener( new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent( context, AskTypeOfOrederActivity.class );
-                intent.putExtra( "id", data.getId() );
-                context.startActivity( intent );
-            }
-        } );
+
     }
 
     @Override
@@ -64,12 +57,21 @@ public class ServicesAdapter extends RecyclerView.Adapter<ServicesAdapter.ViewHo
         ImageView image;
         TextView name;
 
-        public ViewHolder(@NonNull View itemView) {
+        public ViewHolder(@NonNull View itemView)
+        {
             super( itemView );
 
             image = itemView.findViewById( R.id.Items_ervices_PIC_IV );
             name = itemView.findViewById( R.id.Services_AnimalName_TV );
-
+            itemView.setOnClickListener( new View.OnClickListener() {
+                @Override
+                public void onClick(View v)
+                {
+                    Intent intent = new Intent( context, AskTypeOfOrederActivity.class );
+                    intent.putExtra( "id", Items.get(getAdapterPosition()).getId() );
+                    context.startActivity( intent );
+                }
+            } );
         }
     }
 }
