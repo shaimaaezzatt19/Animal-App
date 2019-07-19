@@ -74,7 +74,7 @@ public class MyCardActivity extends AppCompatActivity {
                             if (status) {
                                 Log.e( "hhh", "done" );
 
-                                RV1.setAdapter( new MyCardAdapter( response.body().getData(), MyCardActivity.this ) );
+                         //     RV1.setAdapter( new MyCardAdapter( response.body().getData(), MyCardActivity.this ) );
 
 
                             } else {

@@ -45,7 +45,7 @@ public class ConnectUsActivity extends AppCompatActivity {
     LinearLayout MainLL1;
     @BindView(R.id.ConnectUs_Insteghram)
     ImageView ConnectUsInsteghram;
-    @BindView(R.id.connectUs_Facbook)
+    @BindView(R.id.connectUs_Twitter)
     ImageView connectUsFacbook;
     @BindView(R.id.onnectUs_Whatsapp)
     ImageView onnectUsWhatsapp;
@@ -107,7 +107,7 @@ public class ConnectUsActivity extends AppCompatActivity {
         ConnectUsName.setText("");
     }
 
-    @OnClick({R.id.SendConnectUs_BT, R.id.ConnectUs_Insteghram, R.id.connectUs_Facbook, R.id.onnectUs_Whatsapp, R.id.ConnecUs_Back_IV})
+    @OnClick({R.id.SendConnectUs_BT, R.id.ConnectUs_Insteghram, R.id.connectUs_Twitter, R.id.onnectUs_Whatsapp, R.id.ConnecUs_Back_IV})
     public void onViewClicked(View view) {
         switch (view.getId()) {
             case R.id.SendConnectUs_BT:
@@ -123,7 +123,7 @@ public class ConnectUsActivity extends AppCompatActivity {
                 startActivity(i);
 
                 break;
-            case R.id.connectUs_Facbook:
+            case R.id.connectUs_Twitter:
 
                 String url2 = "https://www.google.com/";
                 Intent i2 = new Intent(Intent.ACTION_VIEW);

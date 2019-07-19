@@ -1,6 +1,7 @@
 package com.khatab.animalapp.adapter;
 
 import android.content.Context;
+import android.content.Intent;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -12,6 +13,7 @@ import android.widget.TextView;
 import com.bumptech.glide.Glide;
 import com.khatab.animalapp.R;
 import com.khatab.animalapp.data.model.Services.ServicesData;
+import com.khatab.animalapp.ui.activites.AskTypeOfOrederActivity;
 
 import java.util.List;
 
@@ -37,11 +39,19 @@ public class ServicesAdapter extends RecyclerView.Adapter<ServicesAdapter.ViewHo
     @Override
     public void onBindViewHolder(@NonNull ViewHolder viewHolder, int i) {
 
-        ServicesData data = Items.get( i );
+        final ServicesData data = Items.get( i );
 
         viewHolder.name.setText( data.getName() );
         Glide.with( context ).load( data.getImage() ).into( viewHolder.image );
 
+        viewHolder.itemView.setOnClickListener( new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent( context, AskTypeOfOrederActivity.class );
+                intent.putExtra( "id", data.getId() );
+                context.startActivity( intent );
+            }
+        } );
     }
 
     @Override

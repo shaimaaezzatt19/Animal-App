@@ -53,14 +53,15 @@ public class AskTypeOfOrederActivity extends AppCompatActivity {
         ButterKnife.bind( this );
         apiServices = getClient().create( ApiServices.class );
 
-
+        Integer id = getIntent().getExtras().getInt( "id" );
+        ShowServiceName( id );
     }
 
-    public void ShowServiceName() {
+    public void ShowServiceName(Integer id) {
 
 
         // المفروض هنا أحط ال id بتاع الخدمة اللي اختارتها من ال Services
-        apiServices.getservicesDeatils( "11" ).enqueue( new Callback<ShowService>() {
+        apiServices.getservicesDeatils( id ).enqueue( new Callback<ShowService>() {
 
             @Override
             public void onResponse(Call<ShowService> call, Response<ShowService> response) {
