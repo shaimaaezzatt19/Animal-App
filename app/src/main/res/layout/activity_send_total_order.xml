@@ -27,7 +27,7 @@
             android:layout_marginRight="@dimen/dimen_180"
             android:fontFamily="@font/cairo"
             android:gravity="center"
-            android:text="@string/OrderTitle"
+            android:text="Test"
             android:textColor="@color/white"
             android:textSize="@dimen/dimen_text_20"
             app:layout_constraintEnd_toEndOf="parent"

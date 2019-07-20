@@ -3,6 +3,7 @@ package com.khatab.animalapp.ui.activites;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -15,10 +16,17 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.khatab.animalapp.R;
+import com.khatab.animalapp.data.model.ShowProducts.ShowProducts;
+import com.khatab.animalapp.data.rest.ApiServices;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
+
+import static com.khatab.animalapp.data.rest.RetrofitGeneral.getClient;
 
 public class SendOrderActivity extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
     @BindView(R.id.SendMyOrder_Title)
@@ -56,6 +64,9 @@ public class SendOrderActivity extends AppCompatActivity implements AdapterView.
     @BindView(R.id.AddToCard_Back_IB)
     ImageView AddToCardBackIB;
 
+    private ApiServices apiServices;
+    private static final String TAG = SendOrderActivity.class.getSimpleName();
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate( savedInstanceState );
@@ -80,6 +91,15 @@ public class SendOrderActivity extends AppCompatActivity implements AdapterView.
 
 
         ButterKnife.bind( this );
+        apiServices = getClient().create( ApiServices.class );
+
+
+        Intent i = getIntent();
+        if (i != null && i.hasExtra( "id" )) {
+            Long id = i.getExtras().getLong( "id" );
+//            Integer id = i.getExtras().getInt( "id" );
+            Sendorder( id );
+        }
 
 
         EditText Count = (EditText) findViewById( R.id.SendMyOrder_Count_ET );
@@ -96,6 +116,40 @@ public class SendOrderActivity extends AppCompatActivity implements AdapterView.
         String EnterNotes = Count.getText().toString();
 
 
+    }
+
+    public void Sendorder(Long id) {
+        apiServices.getProductsDeatils(id).enqueue( new Callback<ShowProducts>() {
+            @Override
+            public void onResponse(Call<ShowProducts> call, Response<ShowProducts> response) {
+                if (response.isSuccessful()) {
+                    Boolean status = response.body().getStatus();
+                    if (status) {
+
+//                       // List<ProductsData> data = response.body().getData();
+//                        SendMyOrderTitle.setText( data.get( 0 ).getName() );
+//                        Glide.with( SendOrderActivity.this ).load( data.get( 0 ).getImage() ).into( PicSendMyOrderIV );
+//                        SendMyOrderPriceTV.setText( data.get( 0 ).getName() );
+//
+
+                        Log.i( "hhh", "done stauts true" );
+
+                    } else {
+                        Log.i( "hhh", "staus false" );
+                    }
+                } else {
+                    Log.i( "hhh", "onResponse: response ok but fail" );
+                }
+            }
+
+            @Override
+            public void onFailure(Call<ShowProducts> call, Throwable t) {
+
+                Log.i( "hhh", "Onfalliuer : error " + t.getMessage() );
+
+
+            }
+        } );
     }
 
     @Override

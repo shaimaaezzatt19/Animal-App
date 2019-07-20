@@ -10,10 +10,15 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import com.bumptech.glide.Glide;
 import com.khatab.animalapp.R;
-import com.khatab.animalapp.adapter.ServicesAdapter;
-import com.khatab.animalapp.data.model.ShowProducts.Products;
+import com.khatab.animalapp.data.model.ShowProducts.ShowProducts;
+import com.khatab.animalapp.data.model.ShowProducts.ShowProducts.Products;
+import com.khatab.animalapp.data.model.ShowProducts.ShowProducts.ProductsData;
+import com.khatab.animalapp.data.model.ShowProducts.ShowProductsData;
 import com.khatab.animalapp.data.rest.ApiServices;
+
+import java.util.List;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -55,32 +60,16 @@ public class OptionSelectedDeatailsActivity extends AppCompatActivity {
         ButterKnife.bind( this );
         apiServices = getClient().create( ApiServices.class );
 
+        Intent i = getIntent();
+        if (i != null && i.hasExtra( "id" )) {
+            Long id = i.getExtras().getLong( "id" );
+//            Integer id = i.getExtras().getInt( "id" );
+            ProductsDeatils( id );
+
+        }
+
+
     }
-
-    public void ShowProductsDeatils() {
-        apiServices.getProductsDeatils().enqueue( new Callback<Products>() {
-            @Override
-            public void onResponse(Call<Products> call, Response<Products> response) {
-
-                if (response.isSuccessful()) {
-                    Boolean status = response.body().getStatus();
-                    Log.e( "nnn", "false" );
-                    if (status) {
-                        Log.e( "hhh", "done" );
-
-                    } else {
-                    }
-                }
-            }
-
-            @Override
-            public void onFailure(Call<Products> call, Throwable t) {
-                Log.v( TAG, "Onfalliuer:error " + t.getMessage() );
-
-            }
-        } );
-    }
-
 
     @OnClick({R.id.Service_Selected_Order_BT, R.id.Selected_item_Back_IB})
     public void onViewClicked(View view) {
@@ -95,5 +84,38 @@ public class OptionSelectedDeatailsActivity extends AppCompatActivity {
                 startActivity( intent2 );
                 break;
         }
+    }
+
+    public void ProductsDeatils(Long id) {
+        apiServices.getProductsDeatils( id ).enqueue( new Callback<ShowProducts>() {
+            @Override
+            public void onResponse(Call<ShowProducts> call, Response<ShowProducts> response) {
+                if (response.isSuccessful()) {
+                    Boolean status = response.body().getStatus();
+                    if (status) {
+
+                        List<ShowProductsData> data = response.body().getData();
+
+                        ServiceDeatilsSelectedToolbarTitleTV.setText( data.get( 0 ).getName() );
+                        OptionSelectedShowDeatilsTV.setText( data.get( 0 ).getDescription() );
+                        textView8.setText( data.get( 0 ).getPrice().toString() );
+                        Glide.with( OptionSelectedDeatailsActivity.this ).load( data.get( 0 ).getImage() ).into( PicSelectedServiceIV );
+
+                        Log.i( "hhh", "done stauts true" );
+
+                    } else {
+                        Log.i( "hhh", "staus false" );
+                    }
+                } else {
+                    Log.i( "hhh", "onResponse: response ok but fail" );
+                }
+            }
+
+            @Override
+            public void onFailure(Call<ShowProducts> call, Throwable t) {
+                Log.i( "hhh", "Onfalliuer : error " + t.getMessage() );
+
+            }
+        } );
     }
 }

@@ -73,14 +73,20 @@ public class AskTypeOfOrederActivity extends AppCompatActivity {
             public void onResponse(Call<ShowService> call, Response<ShowService> response) {
                 if (response.isSuccessful()) {
                     Boolean status = response.body().getStatus();
-                    if (status)
-                    {
+                    if (status) {
+
                         List<ShowServiceData> data = response.body().getData();
+
                         ServiceSelectedToolbarTitleTV.setText( data.get( 0 ).getName() );
 //                        PicSelectedServiceIV.setImageResource( data.get( 0 ).getImage() );
-                        Glide.with( AskTypeOfOrederActivity.this ).load( data.get( 0 ).getImage() ).into(PicSelectedServiceIV );
+                        Glide.with( AskTypeOfOrederActivity.this ).load( data.get( 0 ).getImage() ).into( PicSelectedServiceIV );
 //                        SendOrderOption1BT.setText( data.get(0).get );
 //                        SendOrderOption2BT.setText( data.get( 0 ).getName() );
+
+
+                        SendOrderOption1BT.setText( data.get( 0 ).getName() );
+                        SendOrderOption2BT.setText( data.get( 0 ).getName() );
+                        SendOrderOption3BT.setText( data.get( 0 ).getName() );
 
 
                         Log.i( "hhh", "done stauts true" );

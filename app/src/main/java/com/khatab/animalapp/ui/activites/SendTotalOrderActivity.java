@@ -17,11 +17,22 @@ import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.bumptech.glide.Glide;
 import com.khatab.animalapp.R;
+import com.khatab.animalapp.data.model.ShowService.ShowService;
+import com.khatab.animalapp.data.model.ShowService.ShowServiceData;
+import com.khatab.animalapp.data.rest.ApiServices;
+
+import java.util.List;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
+
+import static com.khatab.animalapp.data.rest.RetrofitGeneral.getClient;
 
 public class SendTotalOrderActivity extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
 
@@ -71,6 +82,9 @@ public class SendTotalOrderActivity extends AppCompatActivity implements Adapter
     @BindView(R.id.scrollView2)
     ScrollView scrollView2;
 
+    private ApiServices apiServices;
+    private static final String TAG = SendTotalOrderActivity.class.getSimpleName();
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate( savedInstanceState );
@@ -103,6 +117,15 @@ public class SendTotalOrderActivity extends AppCompatActivity implements Adapter
 
 
         ButterKnife.bind( this );
+        apiServices = getClient().create( ApiServices.class );
+        Intent i = getIntent();
+        if (i != null && i.hasExtra( "id" )) {
+            Long id = i.getExtras().getLong( "id" );
+//            Integer id = i.getExtras().getInt( "id" );
+            SendTotalorder( id );
+
+        }
+
 
         EditText Count = (EditText) findViewById( R.id.Count_SendAllOrder_TV );
         String CountNumber = Count.getText().toString();
@@ -120,6 +143,33 @@ public class SendTotalOrderActivity extends AppCompatActivity implements Adapter
         EditText Notes = (EditText) findViewById( R.id.EnterNote );
         String EnterNotes = Count.getText().toString();
     }
+
+    public void SendTotalorder(Long id) {
+        apiServices.getservicesDeatils( id ).enqueue( new Callback<ShowService>() {
+            @Override
+            public void onResponse(Call<ShowService> call, Response<ShowService> response) {
+                if (response.isSuccessful()) {
+                    Boolean status = response.body().getStatus();
+                    if (status) {
+                        List<ShowServiceData> data = response.body().getData();
+
+                        odderTotalServiceTVToolbarTitle.setText( data.get( 0 ).getName() );
+                        Glide.with( SendTotalOrderActivity.this ).load( data.get( 0 ).getImage() ).into( PicSelectedServiceIV );
+
+                    }
+
+                }
+
+
+            }
+
+            @Override
+            public void onFailure(Call<ShowService> call, Throwable t) {
+
+            }
+        } );
+    }
+
 
     @Override
     public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {

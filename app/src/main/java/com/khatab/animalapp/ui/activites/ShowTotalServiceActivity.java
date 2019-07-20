@@ -11,7 +11,7 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.khatab.animalapp.R;
-import com.khatab.animalapp.data.model.ShowProducts.Products;
+import com.khatab.animalapp.data.model.ShowProducts.ShowProducts;
 import com.khatab.animalapp.data.rest.ApiServices;
 
 import butterknife.BindView;
@@ -59,10 +59,10 @@ public class ShowTotalServiceActivity extends AppCompatActivity {
 
     }
 
-    public void ShowProductsDeatils() {
-        apiServices.getProductsDeatils().enqueue( new Callback<Products>() {
+    public void ShowProductsDeatils(Long id) {
+        apiServices.getProductsDeatils( id ).enqueue( new Callback<ShowProducts>() {
             @Override
-            public void onResponse(Call<Products> call, Response<Products> response) {
+            public void onResponse(Call<ShowProducts> call, Response<ShowProducts> response) {
 
                 if (response.isSuccessful()) {
                     Boolean status = response.body().getStatus();
@@ -76,7 +76,7 @@ public class ShowTotalServiceActivity extends AppCompatActivity {
             }
 
             @Override
-            public void onFailure(Call<Products> call, Throwable t) {
+            public void onFailure(Call<ShowProducts> call, Throwable t) {
                 Log.v( TAG, "Onfalliuer:error " + t.getMessage() );
 
             }

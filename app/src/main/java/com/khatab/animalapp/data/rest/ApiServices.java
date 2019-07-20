@@ -3,14 +3,13 @@ package com.khatab.animalapp.data.rest;
 import com.khatab.animalapp.data.model.CancleOrder.CancleOrder;
 import com.khatab.animalapp.data.model.Code.Code;
 import com.khatab.animalapp.data.model.SaveOrder.SaveOrder;
-import com.khatab.animalapp.data.model.ShowProducts.Products;
+import com.khatab.animalapp.data.model.ShowProducts.ShowProducts;
 import com.khatab.animalapp.data.model.Services.Services;
 
 import com.khatab.animalapp.data.model.ShowService.ShowService;
 import com.khatab.animalapp.data.model.contact.Contact;
 import com.khatab.animalapp.data.model.orders.Orders;
 
-import okhttp3.RequestBody;
 import retrofit2.Call;
 import retrofit2.http.DELETE;
 import retrofit2.http.Field;
@@ -18,7 +17,6 @@ import retrofit2.http.FormUrlEncoded;
 import retrofit2.http.GET;
 import retrofit2.http.Multipart;
 import retrofit2.http.POST;
-import retrofit2.http.Path;
 import retrofit2.http.Query;
 
 public interface ApiServices {
@@ -48,11 +46,11 @@ public interface ApiServices {
 
 
     @GET("products/1")
-    Call<Products> getProductsDeatils();
+    Call<ShowProducts> getProductsDeatils(@Query("id") Long id);
 
 
     @DELETE("orders/14")
-    Call<CancleOrder> MakeCancle();
+    Call<CancleOrder> MakeCancle(@Query("id") Long id);
 
 
     //Cheack ???
