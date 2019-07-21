@@ -1,6 +1,7 @@
 package com.khatab.animalapp.ui.activites;
 
 import android.content.Intent;
+import android.drm.ProcessedData;
 import android.support.constraint.ConstraintLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -10,9 +11,13 @@ import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
+import com.bumptech.glide.Glide;
 import com.khatab.animalapp.R;
 import com.khatab.animalapp.data.model.ShowProducts.ShowProducts;
+import com.khatab.animalapp.data.model.ShowProducts.ShowProductsData;
 import com.khatab.animalapp.data.rest.ApiServices;
+
+import java.util.List;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -56,6 +61,12 @@ public class ShowTotalServiceActivity extends AppCompatActivity {
 
         ButterKnife.bind( this );
         apiServices = getClient().create( ApiServices.class );
+        Intent i = getIntent();
+        if (i != null && i.hasExtra( "id" )) {
+            Long id = i.getExtras().getLong( "id" );
+//            Integer id = i.getExtras().getInt( "id" );
+            ProductsAllDeatils( id );
+        }
 
     }
 
@@ -87,5 +98,43 @@ public class ShowTotalServiceActivity extends AppCompatActivity {
     public void onViewClicked() {
         Intent intent = new Intent( ShowTotalServiceActivity.this, SendTotalOrderActivity.class );
         startActivity( intent );
+    }
+
+    public void ProductsAllDeatils(Long id) {
+        apiServices.getProductsDeatils( id ).enqueue( new Callback<ShowProducts>() {
+            @Override
+            public void onResponse(Call<ShowProducts> call, Response<ShowProducts> response) {
+                if (response.isSuccessful()) {
+                    Boolean status = response.body().getStatus();
+                    if (status) {
+
+                        List<ShowProductsData> data = response.body().getData();
+
+                        SendMyOrderTitle.setText( data.get( 0 ).getName() );
+                        ShowServiceNameOnImageTV.setText( data.get( 0 ).getName() );
+                        ShowServiceServiceNotesTV.setText( data.get( 0 ).getDescription() );
+                        ShowTotsalServices1TV.setText( data.get( 0 ).getPrice().toString() );
+                        ShowTotsalServices2TV.setText( data.get( 0 ).getPrice().toString() );
+                        ShowTotsalServices3TV.setText( data.get( 0 ).getPrice().toString() );
+
+
+                        Glide.with( ShowTotalServiceActivity.this ).load( data.get( 0 ).getImage() ).into( ImageServiceIV );
+
+                        Log.i( "hhh", "done stauts true" );
+
+                    } else {
+                        Log.i( "hhh", "staus false" );
+                    }
+                } else {
+                    Log.i( "hhh", "onResponse: response ok but fail" );
+                }
+            }
+
+            @Override
+            public void onFailure(Call<ShowProducts> call, Throwable t) {
+                Log.i( "hhh", "Onfalliuer : error " + t.getMessage() );
+
+            }
+        } );
     }
 }

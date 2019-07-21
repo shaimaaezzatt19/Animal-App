@@ -15,9 +15,14 @@ import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.bumptech.glide.Glide;
 import com.khatab.animalapp.R;
+import com.khatab.animalapp.data.model.SaveOrder.SaveOrder;
 import com.khatab.animalapp.data.model.ShowProducts.ShowProducts;
+import com.khatab.animalapp.data.model.ShowProducts.ShowProductsData;
 import com.khatab.animalapp.data.rest.ApiServices;
+
+import java.util.List;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -119,18 +124,19 @@ public class SendOrderActivity extends AppCompatActivity implements AdapterView.
     }
 
     public void Sendorder(Long id) {
-        apiServices.getProductsDeatils(id).enqueue( new Callback<ShowProducts>() {
+        apiServices.getProductsDeatils( id ).enqueue( new Callback<ShowProducts>() {
             @Override
             public void onResponse(Call<ShowProducts> call, Response<ShowProducts> response) {
                 if (response.isSuccessful()) {
                     Boolean status = response.body().getStatus();
                     if (status) {
 
-//                       // List<ProductsData> data = response.body().getData();
-//                        SendMyOrderTitle.setText( data.get( 0 ).getName() );
-//                        Glide.with( SendOrderActivity.this ).load( data.get( 0 ).getImage() ).into( PicSendMyOrderIV );
-//                        SendMyOrderPriceTV.setText( data.get( 0 ).getName() );
-//
+                        List<ShowProductsData> data = response.body().getData();
+                        SendMyOrderTitle.setText( data.get( 0 ).getName() );
+
+                        Glide.with( SendOrderActivity.this ).load( data.get( 0 ).getImage() ).into( PicSendMyOrderIV );
+                        SendMyOrderPriceTV.setText( data.get( 0 ).getName() );
+
 
                         Log.i( "hhh", "done stauts true" );
 
@@ -150,6 +156,41 @@ public class SendOrderActivity extends AppCompatActivity implements AdapterView.
 
             }
         } );
+
+    }
+
+    public void sendorder() {
+        String Count = SendMyOrderCountET.getText().toString();
+        String spinner1 = SpinnerOne.toString();
+        String spinner2 = SpinnerTWO.toString();
+        String notes = NotesTV.toString();
+
+        apiServices.SendAllDetailsToSaveOrder( "", "", "", "",
+                "", "", "", ""
+                , "", "", "", "" ).enqueue( new Callback<SaveOrder>() {
+            @Override
+            public void onResponse(Call<SaveOrder> call, Response<SaveOrder> response) {
+                if (response.isSuccessful()) {
+                    Boolean status = response.body().getStatus();
+                    if (status) {
+
+                        String Count = SendMyOrderCountET.getText().toString();
+                        String spinner1 = SpinnerOne.toString();
+                        String spinner2 = SpinnerTWO.toString();
+                        String notes = NotesTV.toString();
+
+
+                    }
+                }
+
+            }
+
+            @Override
+            public void onFailure(Call<SaveOrder> call, Throwable t) {
+
+            }
+        } );
+
     }
 
     @Override
@@ -169,6 +210,9 @@ public class SendOrderActivity extends AppCompatActivity implements AdapterView.
         switch (view.getId()) {
 
             case R.id.AddToCard_BT:
+
+                // هنا هحط اسم الميثود
+                //وكمان هعمل intent بالحاجات اللي اختارتها
                 Intent intent1 = new Intent( SendOrderActivity.this, ConfirmRequestActivity.class );
                 startActivity( intent1 );
                 break;

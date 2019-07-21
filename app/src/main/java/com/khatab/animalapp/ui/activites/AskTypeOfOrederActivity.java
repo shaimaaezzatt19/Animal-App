@@ -105,53 +105,22 @@ public class AskTypeOfOrederActivity extends AppCompatActivity {
             }
         } );
     }
-//    public void ShowServiceName(Long id) {
-//        // المفروض هنا أحط ال id بتاع الخدمة اللي اختارتها من ال Services
-//        apiServices.getservicesDeatils( id ).enqueue( new Callback<ShowService>() {
-//            @Override
-//            public void onResponse(Call<ShowService> call, Response<ShowService> response) {
-//
-//                if (response.isSuccessful())
-//                {
-//                    Boolean status = response.body().getStatus();
-////                    Log.e( "nnn", "false" );
-//                    if (status)
-//                    {
-//                        List<ShowServiceData> data = response.body().getData();
-//                        ServiceSelectedToolbarTitleTV.setText( data.get( 1 ).getName() );
-////                        PicSelectedServiceIV.setImageResource(  );
-//
-//                        Log.i( "hhh", "done stauts true" );
-//
-//                    } else
-//                    {
-//                        Log.i( "hhh", "staus false" );
-//                    }
-//                }else {
-//                    Log.i( "hhh", "onResponse: response ok but fail" );
-//                }
-//            }
-//
-//            @Override
-//            public void onFailure(Call<ShowService> call, Throwable t)
-//            {
-//                Log.i( "hhh", "Onfalliuer : error " + t.getMessage() );
-//
-//            }
-//        } );
-//
-//    }
+
 
     @OnClick({R.id.SendOrder_Option1_BT, R.id.SendOrder_Option2_BT, R.id.SendOrder_Option3_BT, R.id.SendOrder_item_Back_IB})
     public void onViewClicked(View view) {
         switch (view.getId()) {
             case R.id.SendOrder_Option1_BT:
-                Intent intent1 = new Intent( AskTypeOfOrederActivity.this, SendOrderActivity.class );
-                startActivity( intent1 );
+
+                 //ال intent هنا المفروص يبقى ازاي
+//                Intent intent = new Intent( AskTypeOfOrederActivity.this, OptionSelectedDeatailsActivity.class );
+//                intent.putExtra( "id", );
+//                startActivity( intent );
+
 
                 break;
             case R.id.SendOrder_Option2_BT:
-                Intent intent2 = new Intent( AskTypeOfOrederActivity.this, SendOrderActivity.class );
+                Intent intent2 = new Intent( AskTypeOfOrederActivity.this, OptionSelectedDeatailsActivity.class );
                 startActivity( intent2 );
 
                 break;

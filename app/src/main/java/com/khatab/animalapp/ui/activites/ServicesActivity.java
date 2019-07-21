@@ -131,7 +131,7 @@ public class ServicesActivity extends AppCompatActivity {
                 break;
             case R.id.Services_IV_back:
 
-                Intent intentBack = new Intent( ServicesActivity.this, AskTypeOfOrederActivity.class );
+                Intent intentBack = new Intent( ServicesActivity.this, FullMenueWithIcons.class );
                 startActivity( intentBack );
                 break;
         }

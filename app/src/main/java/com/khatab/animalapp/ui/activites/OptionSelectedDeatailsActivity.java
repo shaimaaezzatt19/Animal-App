@@ -13,8 +13,6 @@ import android.widget.TextView;
 import com.bumptech.glide.Glide;
 import com.khatab.animalapp.R;
 import com.khatab.animalapp.data.model.ShowProducts.ShowProducts;
-import com.khatab.animalapp.data.model.ShowProducts.ShowProducts.Products;
-import com.khatab.animalapp.data.model.ShowProducts.ShowProducts.ProductsData;
 import com.khatab.animalapp.data.model.ShowProducts.ShowProductsData;
 import com.khatab.animalapp.data.rest.ApiServices;
 
@@ -99,6 +97,7 @@ public class OptionSelectedDeatailsActivity extends AppCompatActivity {
                         ServiceDeatilsSelectedToolbarTitleTV.setText( data.get( 0 ).getName() );
                         OptionSelectedShowDeatilsTV.setText( data.get( 0 ).getDescription() );
                         textView8.setText( data.get( 0 ).getPrice().toString() );
+
                         Glide.with( OptionSelectedDeatailsActivity.this ).load( data.get( 0 ).getImage() ).into( PicSelectedServiceIV );
 
                         Log.i( "hhh", "done stauts true" );

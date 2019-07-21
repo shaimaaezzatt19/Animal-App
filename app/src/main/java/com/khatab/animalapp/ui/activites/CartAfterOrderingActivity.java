@@ -52,28 +52,32 @@ public class CartAfterOrderingActivity extends AppCompatActivity {
 
 
         Button menueicon;
-        menueicon = (Button) findViewById( R.id.CardAfterOrdering_Menue_IV );
-        menueicon.setOnClickListener( new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent menueicon = new Intent( CartAfterOrderingActivity.this, FullMenueWithIcons.class );
-                startActivity( menueicon );
-
-            }
-        } );
-
-        Button backIcon;
-        backIcon = (Button) findViewById( R.id.CardAfterOrdering_Back_IV );
-        backIcon.setOnClickListener( new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
-                Intent backIntent = new Intent( CartAfterOrderingActivity.this, ConfirmCodeActivity.class );
-                startActivity( backIntent );
 
 
-            }
-        } );
+
+//
+//        menueicon = (Button) findViewById( R.id.CardAfterOrdering_Menue_IV );
+//        menueicon.setOnClickListener( new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                Intent menueicon = new Intent( CartAfterOrderingActivity.this, FullMenueWithIcons.class );
+//                startActivity( menueicon );
+//
+//            }
+//        } );
+
+//        Button backIcon;
+//        backIcon = (Button) findViewById( R.id.CardAfterOrdering_Back_IV );
+//        backIcon.setOnClickListener( new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//
+//                Intent backIntent = new Intent( CartAfterOrderingActivity.this, ConfirmCodeActivity.class );
+//                startActivity( backIntent );
+//
+//
+//            }
+//        } );
 
         Button button;
         button = (Button) findViewById( R.id.CardCancleOrder );
@@ -81,7 +85,7 @@ public class CartAfterOrderingActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                Cancle();
+              //  Cancle(id);
             }
         } );
 
@@ -92,10 +96,10 @@ public class CartAfterOrderingActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                new CountDownTimer( 60000, 1000 ) {
+                new CountDownTimer( 00000, 60000 ) {
                     public void onTick(long millisUntilFinished) {
                         textView.setText( String.valueOf( counter ) );
-                        counter++;
+                        counter--;
                     }
 
                     public void onFinish() {
@@ -116,9 +120,9 @@ public class CartAfterOrderingActivity extends AppCompatActivity {
         } );
     }
 
-    public void Cancle() {
+    public void Cancle(Long id) {
         apiServices = getClient().create( ApiServices.class );
-        apiServices.MakeCancle().enqueue( new Callback<CancleOrder>() {
+        apiServices.MakeCancle( id ).enqueue( new Callback<CancleOrder>() {
             @Override
             public void onResponse(Call<CancleOrder> call, Response<CancleOrder> response) {
 

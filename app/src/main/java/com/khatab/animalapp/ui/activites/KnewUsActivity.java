@@ -44,7 +44,7 @@ public class KnewUsActivity extends AppCompatActivity {
         // set the media controller for video view
         simpleVideoView.setMediaController(mediaControls);
         // set the uri for the video view
-        simpleVideoView.setVideoURI(Uri.parse("android.resource://" + getPackageName() + "/" + R.raw.vediozoom));
+        simpleVideoView.setVideoURI(Uri.parse("android.resource://" + getPackageName() + "/" + R.raw.vedio));
         // start a video
         simpleVideoView.start();
 

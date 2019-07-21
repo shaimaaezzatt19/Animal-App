@@ -60,11 +60,11 @@ public class ConnectUsActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_connect_us);
-        ButterKnife.bind(this);
+        super.onCreate( savedInstanceState );
+        setContentView( R.layout.activity_connect_us );
+        ButterKnife.bind( this );
 
-        apiServices = getClient().create(ApiServices.class);
+        apiServices = getClient().create( ApiServices.class );
 
     }
 
@@ -72,25 +72,24 @@ public class ConnectUsActivity extends AppCompatActivity {
         String name = ConnectUsName.getText().toString();
         final String phone = ConnectUsPhone.getText().toString();
         String message = ConnectUsMessage.getText().toString();
-        apiServices.SendContact(name, phone, message).enqueue(new Callback<Contact>() {
+        apiServices.SendContact( name, phone, message ).enqueue( new Callback<Contact>() {
             @Override
             public void onResponse(Call<Contact> call, Response<Contact> response) {
                 if (response.isSuccessful()) {
 
-                    if (!validatePhone(phone)) {
-                        ConnectUsPhone.setError(getString(R.string.phone_number_error));
+                    if (!validatePhone( phone )) {
+                        ConnectUsPhone.setError( getString( R.string.phone_number_error ) );
                         return;
-                    } else
-                        {
+                    } else {
 
-                        Toast.makeText(getApplicationContext(), "لا يوجد اتصال بالانترنت .. برجاء المحاولة لاحقا", Toast.LENGTH_LONG).show(); // display a toast when an error is occured while playing an video
+                        Toast.makeText( getApplicationContext(), "لا يوجد اتصال بالانترنت .. برجاء المحاولة لاحقا", Toast.LENGTH_LONG ).show(); // display a toast when an error is occured while playing an video
 
                     }
 
                     if (response.body().getStatus()) {
-                        Toast.makeText(getApplicationContext(), response.body().getData(), Toast.LENGTH_SHORT).show();
+                        Toast.makeText( getApplicationContext(), response.body().getData(), Toast.LENGTH_SHORT ).show();
                     } else {
-                        Toast.makeText(getApplicationContext(), response.body().getError(), Toast.LENGTH_SHORT).show();
+                        Toast.makeText( getApplicationContext(), response.body().getError(), Toast.LENGTH_SHORT ).show();
                     }
                 }
             }
@@ -98,49 +97,53 @@ public class ConnectUsActivity extends AppCompatActivity {
             @Override
             public void onFailure(Call<Contact> call, Throwable t) {
 
-                Log.v(TAG, "Onfalliuer:error " + t.getMessage());
+                Log.v( TAG, "Onfalliuer:error " + t.getMessage() );
             }
-        });
+        } );
 
-        ConnectUsMessage.setText("");
-        ConnectUsPhone.setText("");
-        ConnectUsName.setText("");
+        ConnectUsMessage.setText( "" );
+        ConnectUsPhone.setText( "" );
+        ConnectUsName.setText( "" );
     }
 
     @OnClick({R.id.SendConnectUs_BT, R.id.ConnectUs_Insteghram, R.id.connectUs_Twitter, R.id.onnectUs_Whatsapp, R.id.ConnecUs_Back_IV})
     public void onViewClicked(View view) {
         switch (view.getId()) {
             case R.id.SendConnectUs_BT:
+                String url2 = " https://www.instagram.com/p/B0DHQh2hLl9/?utm_source=ig_web_copy_link\n";
+                Intent i12 = new Intent( Intent.ACTION_VIEW );
+                i12.setData( Uri.parse( url2 ) );
+                startActivity( i12 );
 
                 Connectue();
 
                 break;
             case R.id.ConnectUs_Insteghram:
 
-                String url = "https://www.google.com/";
-                Intent i = new Intent(Intent.ACTION_VIEW);
-                i.setData(Uri.parse(url));
-                startActivity(i);
+                String url = "https://www.instagram.com/bwksmlzym/";
+                Intent i = new Intent( Intent.ACTION_VIEW );
+                i.setData( Uri.parse( url ) );
+                startActivity( i );
 
                 break;
             case R.id.connectUs_Twitter:
 
-                String url2 = "https://www.google.com/";
-                Intent i2 = new Intent(Intent.ACTION_VIEW);
-                i2.setData(Uri.parse(url2));
-                startActivity(i2);
+                String url5 = "https://www.google.com/";
+                Intent i2 = new Intent( Intent.ACTION_VIEW );
+                i2.setData( Uri.parse( url5 ) );
+                startActivity( i2 );
 
                 break;
             case R.id.onnectUs_Whatsapp:
 
-                Uri uri = Uri.parse("https://wa.me/015551234567");
-                Intent intent = new Intent(Intent.ACTION_VIEW, uri);
-                startActivity(intent);
+                Uri uri = Uri.parse( "https://wa.me/0551045568" );
+                Intent intent = new Intent( Intent.ACTION_VIEW, uri );
+                startActivity( intent );
                 break;
 
             case R.id.ConnecUs_Back_IV:
-                Intent back = new Intent(ConnectUsActivity.this, FullMenueWithIcons.class);
-                startActivity(back);
+                Intent back = new Intent( ConnectUsActivity.this, FullMenueWithIcons.class );
+                startActivity( back );
                 break;
         }
     }
@@ -149,7 +152,7 @@ public class ConnectUsActivity extends AppCompatActivity {
         if (target == null || target.length() < 11 || target.length() >= 10) {
             return false;
         } else {
-            return android.util.Patterns.PHONE.matcher(target).matches();
+            return android.util.Patterns.PHONE.matcher( target ).matches();
         }
 
     }

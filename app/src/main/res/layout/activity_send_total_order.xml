@@ -195,6 +195,7 @@
                         android:id="@+id/SpinnerOne"
                         android:layout_width="@dimen/dimen_140"
                         android:layout_height="@dimen/album_dp_45"
+                        android:layout_centerVertical="true"
                         android:entries="@array/Spinner1" />
 
                 </RelativeLayout>

@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.support.constraint.ConstraintLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -19,6 +20,9 @@ import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
 import com.khatab.animalapp.R;
+import com.khatab.animalapp.data.model.SaveOrder.SaveOrder;
+import com.khatab.animalapp.data.model.ShowProducts.ShowProducts;
+import com.khatab.animalapp.data.model.ShowProducts.ShowProductsData;
 import com.khatab.animalapp.data.model.ShowService.ShowService;
 import com.khatab.animalapp.data.model.ShowService.ShowServiceData;
 import com.khatab.animalapp.data.rest.ApiServices;
@@ -144,30 +148,82 @@ public class SendTotalOrderActivity extends AppCompatActivity implements Adapter
         String EnterNotes = Count.getText().toString();
     }
 
+//         odderTotalServiceTVToolbarTitle.setText( data.get( 0 ).getName() );
+//                        Glide.with( SendTotalOrderActivity.this ).load( data.get( 0 ).getImage() ).into( PicSelectedServiceIV );
+
     public void SendTotalorder(Long id) {
-        apiServices.getservicesDeatils( id ).enqueue( new Callback<ShowService>() {
+        apiServices.getProductsDeatils( id ).enqueue( new Callback<ShowProducts>() {
             @Override
-            public void onResponse(Call<ShowService> call, Response<ShowService> response) {
+            public void onResponse(Call<ShowProducts> call, Response<ShowProducts> response) {
+
                 if (response.isSuccessful()) {
                     Boolean status = response.body().getStatus();
                     if (status) {
-                        List<ShowServiceData> data = response.body().getData();
+                        List<ShowProductsData> data = response.body().getData();
 
                         odderTotalServiceTVToolbarTitle.setText( data.get( 0 ).getName() );
+                        textView10.setText( data.get( 0 ).getPrice().toString() );
+
                         Glide.with( SendTotalOrderActivity.this ).load( data.get( 0 ).getImage() ).into( PicSelectedServiceIV );
+
+                        Log.i( "hhh", "done stauts true" );
+
+                    } else {
+                        Log.i( "hhh", "staus false" );
+                    }
+                } else {
+                    Log.i( "hhh", "onResponse: response ok but fail" );
+                }
+            }
+
+            @Override
+            public void onFailure(Call<ShowProducts> call, Throwable t) {
+                Log.i( "hhh", "Onfalliuer : error " + t.getMessage() );
+
+            }
+        } );
+    }
+
+    public void sendTotalorder() {
+
+        String Count = CountSendAllOrderTV.getText().toString();
+        String spinner1 = SpinnerOne.toString();
+        String spinner2 = SpinnerTWO.toString();
+        String spinner3 = SpinnerThree.toString();
+
+        String notes = EnterNote.toString();
+
+        apiServices.SendAllDetailsToSaveOrder( "",
+                "", "", "", "", ""
+                , "", "", ""
+                , "", "", "" ).enqueue( new Callback<SaveOrder>() {
+            @Override
+            public void onResponse(Call<SaveOrder> call, Response<SaveOrder> response) {
+
+                if (response.isSuccessful()) {
+                    Boolean status = response.body().getStatus();
+                    if (status) {
+
+                        String Count = CountSendAllOrderTV.getText().toString();
+                        String spinner1 = SpinnerOne.toString();
+                        String spinner2 = SpinnerTWO.toString();
+                        String spinner3 = SpinnerThree.toString();
+                        String notes = EnterNote.toString();
+
 
                     }
 
                 }
-
-
             }
 
             @Override
-            public void onFailure(Call<ShowService> call, Throwable t) {
+            public void onFailure(Call<SaveOrder> call, Throwable t) {
+                Log.i( "hhh", "Onfalliuer : error " + t.getMessage() );
+
 
             }
         } );
+
     }
 
 
