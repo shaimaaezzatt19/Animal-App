@@ -18,7 +18,7 @@ import butterknife.ButterKnife;
 import butterknife.OnClick;
 
 public class MainMenueActivity extends AppCompatActivity {
-    private final int splash_Display_Length = 40000;
+    private final int splash_Display_Length = 400000;
     VideoView simpleVideoView;
     MediaController mediaControls;
     boolean pausing = false;
@@ -33,6 +33,12 @@ public class MainMenueActivity extends AppCompatActivity {
 
 
         simpleVideoView = (VideoView) findViewById( R.id.main_Vedio );
+        simpleVideoView.setOnPreparedListener(new MediaPlayer.OnPreparedListener() {
+            @Override
+            public void onPrepared(MediaPlayer mp) {
+                mp.setLooping(true);
+            }
+        });
 
 
         if (mediaControls == null) {

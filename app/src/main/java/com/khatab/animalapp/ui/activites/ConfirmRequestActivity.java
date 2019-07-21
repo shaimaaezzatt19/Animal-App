@@ -2,93 +2,107 @@ package com.khatab.animalapp.ui.activites;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.design.widget.TextInputEditText;
+import android.support.design.widget.TextInputLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
-import android.widget.Button;
-import android.widget.EditText;
 import android.widget.ImageView;
-import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.khatab.animalapp.R;
+import com.khatab.animalapp.data.model.SaveOrder.SaveOrder;
+import com.khatab.animalapp.data.rest.ApiServices;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
+
+import static com.khatab.animalapp.data.rest.RetrofitGeneral.getClient;
 
 public class ConfirmRequestActivity extends AppCompatActivity {
 
 
-    EditText editText;
-
-    TextInputEditText textInputEditText;
-
     @BindView(R.id.CofirmOrder_Title)
     TextView CofirmOrderTitle;
-    @BindView(R.id.ConfirmRequest_TV_Name)
-    TextView ConfirmRequestTVName;
-    @BindView(R.id.ConfirmRequest_ET_Name)
-    TextInputEditText ConfirmRequestETName;
-    @BindView(R.id.ConfirmRequest_TV_phone)
-    TextView ConfirmRequestTVPhone;
-    @BindView(R.id.ConfirmRequest_ET_phone)
-    TextInputEditText ConfirmRequestETPhone;
-    @BindView(R.id.ConfirmRequest_TV_Address)
-    TextView ConfirmRequestTVAddress;
-    @BindView(R.id.ConfirmRequest_ET_Address)
-    TextInputEditText ConfirmRequestETAddress;
-    @BindView(R.id.Confirm_Code_Order_BT)
-    Button ConfirmCodeOrderBT;
-    @BindView(R.id.LL1_ConfirmRequest)
-    LinearLayout LL1ConfirmRequest;
     @BindView(R.id.ConfirmCode_Back_IB)
     ImageView ConfirmCodeBackIB;
     @BindView(R.id.ConfirmCode_Menue_IB)
     ImageView ConfirmCodeMenueIB;
+    @BindView(R.id.Confirm_Request_phone_TI)
+    TextInputLayout ConfirmRequestPhoneTI;
+    @BindView(R.id.Confirm_Request_Name_TI)
+    TextInputLayout ConfirmRequestNameTI;
+    @BindView(R.id.Confirm_Request_Address_TI)
+    TextInputLayout ConfirmRequestAddressTI;
+
+
+    private ApiServices apiServices;
+    private static final String TAG = ConfirmRequestActivity.class.getSimpleName();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate( savedInstanceState );
         setContentView( R.layout.activity_confirm_request );
-
-
-        TextInputEditText Name = (TextInputEditText) findViewById( R.id.ConfirmRequest_ET_Name );
-        String EnterName = Name.getText().toString();
-
-
-        TextInputEditText Phone = (TextInputEditText) findViewById( R.id.ConfirmRequest_ET_phone );
-        String EnterPhone = Phone.getText().toString();
-
-
-        TextInputEditText Location = (TextInputEditText) findViewById( R.id.ConfirmRequest_ET_Address );
-        String EnterLocation = Location.getText().toString();
-
-
         ButterKnife.bind( this );
+        apiServices = getClient().create( ApiServices.class );
+
     }
 
-    @OnClick(R.id.Confirm_Code_Order_BT)
-    public void onViewClicked() {
-
-        Intent i = new Intent( ConfirmRequestActivity.this, ConfirmCodeActivity.class );
-        startActivity( i );
-    }
-
-    @OnClick({R.id.ConfirmCode_Back_IB, R.id.ConfirmCode_Menue_IB})
-    public void onViewClicked(View view) {
+    @OnClick({R.id.Confirm_Request_Btn_Buy_TI, R.id.ConfirmCode_Back_IB, R.id.ConfirmCode_Menue_IB})
+    public void onViewClicked(View view)
+    {
         switch (view.getId()) {
+            case R.id.Confirm_Request_Btn_Buy_TI:
+                confirmRequest();
+                break;
             case R.id.ConfirmCode_Back_IB:
-
-                Intent backIntent = new Intent( ConfirmRequestActivity.this, ServicesActivity.class );
-                startActivity( backIntent );
+                Intent i = new Intent( ConfirmRequestActivity.this, ConfirmCodeActivity.class );
+                startActivity( i );
                 break;
             case R.id.ConfirmCode_Menue_IB:
-
                 Intent menueintent = new Intent( ConfirmRequestActivity.this, FullMenueWithIcons.class );
                 startActivity( menueintent );
                 break;
         }
+    }
+
+
+    //صفحه send order  فوق أهي
+    //لما أختار منها كل حاجة
+    // هدخل بياناتي علشان يجيلي كود تأكيد
+    //وبعد كود التأكيد هيجلي timer يعد تنازلي لمدة دقيقة
+    //لو ملغتش الطلب ف الدقيقة
+    //الطلب هيتنفذ ويظهر
+    // تمام ؟
+
+
+    public void confirmRequest() {
+
+        String phone = ConfirmRequestPhoneTI.getEditText().getText().toString();
+        String name = ConfirmRequestNameTI.getEditText().getText().toString();
+        String address = ConfirmRequestAddressTI.getEditText().getText().toString();
+
+        apiServices.SendAllDetailsToSaveOrder( phone, address,
+                name, "", "", ""
+                , "", "", "", "", "", "" ).enqueue( new Callback<SaveOrder>() {
+            @Override
+            public void onResponse(Call<SaveOrder> call, Response<SaveOrder> response) {
+
+                if (response.isSuccessful()) {
+                    Boolean status = response.body().getStatus();
+                    if (status) {
+
+                    }
+                }
+            }
+
+            @Override
+            public void onFailure(Call<SaveOrder> call, Throwable t) {
+
+            }
+        } );
     }
 
 }

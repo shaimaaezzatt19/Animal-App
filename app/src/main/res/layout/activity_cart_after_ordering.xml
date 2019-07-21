@@ -89,9 +89,9 @@
         android:layout_marginRight="@dimen/dimen_8"
         android:layout_marginBottom="@dimen/dimen_8"
 
-        android:text=" يمكنك الغاء الطلب حتى انتهاء العداد "
+        android:text=" يمكنك الغاء الطلب حتى انتهاء العداد مدته 30 ثانبه"
         android:textAppearance="?android:attr/textAppearanceLarge"
-        android:textSize="20sp"
+        android:textSize="15sp"
         app:layout_constraintBottom_toBottomOf="@+id/relativeLayout4"
         app:layout_constraintEnd_toEndOf="@+id/Card_Timer_Image"
         app:layout_constraintStart_toStartOf="@+id/Card_Timer_Image"

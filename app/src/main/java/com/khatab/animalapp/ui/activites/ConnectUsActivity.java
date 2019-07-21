@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.support.design.widget.TextInputEditText;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
+import android.util.Patterns;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
@@ -26,7 +27,6 @@ import retrofit2.Response;
 
 import static com.khatab.animalapp.data.rest.RetrofitGeneral.getClient;
 import static com.khatab.animalapp.util.ValidationUtil.validatePhone;
-import static java.security.AccessController.getContext;
 
 public class ConnectUsActivity extends AppCompatActivity {
 
@@ -53,6 +53,8 @@ public class ConnectUsActivity extends AppCompatActivity {
     LinearLayout splashLLSocilImages;
     @BindView(R.id.ConnecUs_Back_IV)
     ImageView ConnecUsBackIV;
+    @BindView(R.id.onnectUs_Snapchat)
+    ImageView onnectUsSnapchat;
 
     private ApiServices apiServices;
     private static final String TAG = ConnectUsActivity.class.getSimpleName();
@@ -110,10 +112,7 @@ public class ConnectUsActivity extends AppCompatActivity {
     public void onViewClicked(View view) {
         switch (view.getId()) {
             case R.id.SendConnectUs_BT:
-                String url2 = " https://www.instagram.com/p/B0DHQh2hLl9/?utm_source=ig_web_copy_link\n";
-                Intent i12 = new Intent( Intent.ACTION_VIEW );
-                i12.setData( Uri.parse( url2 ) );
-                startActivity( i12 );
+
 
                 Connectue();
 
@@ -152,8 +151,16 @@ public class ConnectUsActivity extends AppCompatActivity {
         if (target == null || target.length() < 11 || target.length() >= 10) {
             return false;
         } else {
-            return android.util.Patterns.PHONE.matcher( target ).matches();
+            return Patterns.PHONE.matcher( target ).matches();
         }
 
+    }
+
+    @OnClick(R.id.onnectUs_Snapchat)
+    public void onViewClicked() {
+        String url2 = " https://www.instagram.com/p/B0DHQh2hLl9/?utm_source=ig_web_copy_link\n";
+        Intent i12 = new Intent( Intent.ACTION_VIEW );
+        i12.setData( Uri.parse( url2 ) );
+        startActivity( i12 );
     }
 }

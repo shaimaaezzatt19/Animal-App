@@ -28,7 +28,7 @@
                 android:layout_marginTop="@dimen/dimen_16"
                 android:fontFamily="@font/cairo"
                 android:gravity="center"
-                android:text="@string/OrderTitle"
+                android:text="name"
                 android:textColor="@color/white"
                 android:textSize="@dimen/dimen_text_25"
 
@@ -58,22 +58,11 @@
                 android:background="@drawable/rectangleredshape"
                 android:src="@drawable/animal_example" />
 
-            <TextView
-                android:id="@+id/ShowService_NameOnImage_TV"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="@dimen/dimen_150"
-                android:layout_marginLeft="160dp"
-                android:layout_marginTop="@dimen/dimen_60"
-                android:fontFamily="@font/cairo"
-                android:gravity="center"
-                android:text="@string/ServiceSelecteName"
-                android:textColor="@color/white"
-                android:textSize="@dimen/dimen_text_25" />
+
 
             <TextView
                 android:id="@+id/ShowService_ServiceNotes_TV"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_below="@id/ImageService_IV"
                 android:layout_marginStart="@dimen/dimen_16"
@@ -102,7 +91,7 @@
                     android:layout_marginTop="@dimen/album_dp_10"
                     android:text="@string/size"
                     android:textColor="@color/black"
-                    android:textSize="22dp" />
+                    android:textSize="25dp" />
 
 
                 <LinearLayout
@@ -168,14 +157,15 @@
 
             </LinearLayout>
 
-            <ImageView
-                android:layout_width="@dimen/dimen_60"
-                android:layout_height="@dimen/dimen_60"
-                android:layout_alignParentLeft="true"
-                android:layout_alignParentBottom="true"
-                android:layout_marginStart="@dimen/album_sp_20"
-                android:layout_marginLeft="@dimen/dimen_2"
-                android:src="@drawable/back_icon" />
+
         </RelativeLayout>
+        <ImageView
+            android:layout_width="@dimen/dimen_60"
+            android:layout_height="@dimen/dimen_60"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginStart="@dimen/album_sp_20"
+            android:layout_marginLeft="@dimen/dimen_2"
+            android:src="@drawable/back_icon" />
     </RelativeLayout>
 </ScrollView>

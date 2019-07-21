@@ -45,11 +45,11 @@ public interface ApiServices {
 //Delete
 
 
-    @GET("products/1")
+    @GET("products")
     Call<ShowProducts> getProductsDeatils(@Query("id") Long id);
 
 
-    @DELETE("orders/14")
+    @DELETE("orders")
     Call<CancleOrder> MakeCancle(@Query("id") Long id);
 
 

@@ -57,7 +57,7 @@
 
             <TextView
                 android:id="@+id/SendMyOrder_Show_Deatils_TV"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="32dp"
                 android:layout_marginTop="@dimen/dimen_16"

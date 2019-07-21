@@ -50,6 +50,7 @@ public class AskTypeOfOrederActivity extends AppCompatActivity {
 
     private ApiServices apiServices;
     private static final String TAG = AskTypeOfOrederActivity.class.getSimpleName();
+    private List<ShowServiceData> data;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -75,7 +76,7 @@ public class AskTypeOfOrederActivity extends AppCompatActivity {
                     Boolean status = response.body().getStatus();
                     if (status) {
 
-                        List<ShowServiceData> data = response.body().getData();
+                        data = response.body().getData();
 
                         ServiceSelectedToolbarTitleTV.setText( data.get( 0 ).getName() );
 //                        PicSelectedServiceIV.setImageResource( data.get( 0 ).getImage() );
@@ -112,20 +113,22 @@ public class AskTypeOfOrederActivity extends AppCompatActivity {
         switch (view.getId()) {
             case R.id.SendOrder_Option1_BT:
 
-                 //ال intent هنا المفروص يبقى ازاي
-//                Intent intent = new Intent( AskTypeOfOrederActivity.this, OptionSelectedDeatailsActivity.class );
-//                intent.putExtra( "id", );
-//                startActivity( intent );
+//                 ال intent هنا المفروص يبقى ازاي//
+                Intent intent = new Intent( AskTypeOfOrederActivity.this, OptionSelectedDeatailsActivity.class );
+                intent.putExtra( "id", data.get( 0 ).getId() );
+                startActivity( intent );
 
 
                 break;
             case R.id.SendOrder_Option2_BT:
                 Intent intent2 = new Intent( AskTypeOfOrederActivity.this, OptionSelectedDeatailsActivity.class );
+                intent2.putExtra( "id", data.get( 0 ).getId() );
                 startActivity( intent2 );
 
                 break;
             case R.id.SendOrder_Option3_BT:
                 Intent intent3 = new Intent( AskTypeOfOrederActivity.this, ShowTotalServiceActivity.class );
+                intent3.putExtra( "id", data.get( 0 ).getId() );
                 startActivity( intent3 );
 
                 break;

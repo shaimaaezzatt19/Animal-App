@@ -11,6 +11,7 @@ import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
 import android.widget.DatePicker;
 import android.widget.EditText;
+import android.widget.Spinner;
 import android.widget.TextView;
 
 import com.yanzhenjie.album.Action;
@@ -35,6 +36,11 @@ public class HelperMethod {
     private static Calendar myCalendar;
     private static ProgressDialog checkDialog;
 
+    public static int getTextFromSpinner(Spinner spinner) {
+//        String text = spinner.getSelectedItem().toString().trim();
+        int selectedItemPosition = spinner.getSelectedItemPosition();
+        return selectedItemPosition;
+    }
 
     public static void replace(Fragment fragment, FragmentManager supportFragmentManager, int id, TextView toolbar_Title, String title) {
         FragmentTransaction fragmentTransaction = supportFragmentManager.beginTransaction();

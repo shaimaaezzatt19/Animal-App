@@ -1,9 +1,9 @@
 package com.khatab.animalapp.ui.activites;
 
 import android.content.Intent;
+import android.os.Bundle;
 import android.support.constraint.ConstraintLayout;
 import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
@@ -23,10 +23,7 @@ import com.khatab.animalapp.R;
 import com.khatab.animalapp.data.model.SaveOrder.SaveOrder;
 import com.khatab.animalapp.data.model.ShowProducts.ShowProducts;
 import com.khatab.animalapp.data.model.ShowProducts.ShowProductsData;
-import com.khatab.animalapp.data.model.ShowService.ShowService;
-import com.khatab.animalapp.data.model.ShowService.ShowServiceData;
 import com.khatab.animalapp.data.rest.ApiServices;
-
 import java.util.List;
 
 import butterknife.BindView;
@@ -37,14 +34,12 @@ import retrofit2.Callback;
 import retrofit2.Response;
 
 import static com.khatab.animalapp.data.rest.RetrofitGeneral.getClient;
+import static com.khatab.animalapp.helper.HelperMethod.getTextFromSpinner;
 
 public class SendTotalOrderActivity extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
 
-
     @BindView(R.id.odderTotalService_TV_toolbarTitle)
     TextView odderTotalServiceTVToolbarTitle;
-    @BindView(R.id.Constrain)
-    ConstraintLayout Constrain;
     @BindView(R.id.Pic_Selected_Service_IV)
     ImageView PicSelectedServiceIV;
     @BindView(R.id.Option_Selected_Show_Deatils_TV)
@@ -53,121 +48,69 @@ public class SendTotalOrderActivity extends AppCompatActivity implements Adapter
     TextView textView9;
     @BindView(R.id.textView10)
     TextView textView10;
-    @BindView(R.id.LL1_SendOrder)
-    LinearLayout LL1SendOrder;
     @BindView(R.id.textView6)
     TextView textView6;
     @BindView(R.id.Count_SendAllOrder_TV)
     EditText CountSendAllOrderTV;
     @BindView(R.id.SpinnerOne)
     Spinner SpinnerOne;
-    @BindView(R.id.relativeLayout)
-    RelativeLayout relativeLayout;
     @BindView(R.id.SpinnerTWO)
     Spinner SpinnerTWO;
-    @BindView(R.id.relativeLayout2)
-    RelativeLayout relativeLayout2;
     @BindView(R.id.SpinnerThree)
     Spinner SpinnerThree;
-    @BindView(R.id.relativeLayout3)
-    RelativeLayout relativeLayout3;
     @BindView(R.id.Notes_TV)
     TextView NotesTV;
     @BindView(R.id.EnterNote)
     EditText EnterNote;
     @BindView(R.id.Total)
     TextView Total;
-    @BindView(R.id.OrderTotalService_BT)
-    Button OrderTotalServiceBT;
-    @BindView(R.id.Constrain2)
-    ConstraintLayout Constrain2;
     @BindView(R.id.Selected_item_Back_IB)
     ImageView SelectedItemBackIB;
-    @BindView(R.id.scrollView2)
-    ScrollView scrollView2;
 
     private ApiServices apiServices;
+
     private static final String TAG = SendTotalOrderActivity.class.getSimpleName();
+    private String name;
+    private Long price;
+    private long id;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate( savedInstanceState );
         setContentView( R.layout.activity_send_total_order );
-
-        Spinner spinner1 = findViewById( R.id.SpinnerOne );
-        Spinner spinner2 = findViewById( R.id.SpinnerTWO );
-        Spinner spinner3 = findViewById( R.id.SpinnerThree );
-
-
-        ArrayAdapter<CharSequence> adapter1 = ArrayAdapter.createFromResource( this,
-                R.array.Spinner1, android.R.layout.simple_spinner_item );
-        adapter1.setDropDownViewResource( android.R.layout.simple_spinner_dropdown_item );
-        spinner1.setAdapter( adapter1 );
-        spinner1.setOnItemSelectedListener( this );
-
-
-        ArrayAdapter<CharSequence> adapter2 = ArrayAdapter.createFromResource( this,
-                R.array.Spinner2, android.R.layout.simple_spinner_item );
-        adapter2.setDropDownViewResource( android.R.layout.simple_spinner_dropdown_item );
-        spinner2.setAdapter( adapter2 );
-        spinner2.setOnItemSelectedListener( this );
-
-
-        ArrayAdapter<CharSequence> adapter3 = ArrayAdapter.createFromResource( this,
-                R.array.Spinner3, android.R.layout.simple_spinner_item );
-        adapter3.setDropDownViewResource( android.R.layout.simple_spinner_dropdown_item );
-        spinner3.setAdapter( adapter2 );
-        spinner3.setOnItemSelectedListener( this );
-
-
         ButterKnife.bind( this );
         apiServices = getClient().create( ApiServices.class );
+
+        setSpinnerView( SpinnerOne, R.array.Spinner1 );
+        setSpinnerView( SpinnerTWO, R.array.Spinner2 );
+        setSpinnerView( SpinnerThree, R.array.Spinner3 );
+
         Intent i = getIntent();
         if (i != null && i.hasExtra( "id" )) {
-            Long id = i.getExtras().getLong( "id" );
-//            Integer id = i.getExtras().getInt( "id" );
-            SendTotalorder( id );
+            id = i.getExtras().getLong( "id" );
+            getProductDetails( id );
 
         }
 
 
-        EditText Count = (EditText) findViewById( R.id.Count_SendAllOrder_TV );
-        String CountNumber = Count.getText().toString();
-
-
-        Spinner SpinnerOne = (Spinner) findViewById( R.id.SpinnerOne );
-        String SpinnerOneDeatils = Count.getText().toString();
-
-        Spinner SpinnerTwo = (Spinner) findViewById( R.id.SpinnerTWO );
-        String SpinnerTWODeatils = Count.getText().toString();
-
-        Spinner SpinnerThree = (Spinner) findViewById( R.id.SpinnerThree );
-        String SpinnerThreeDeatils = Count.getText().toString();
-
-        EditText Notes = (EditText) findViewById( R.id.EnterNote );
-        String EnterNotes = Count.getText().toString();
     }
 
-//         odderTotalServiceTVToolbarTitle.setText( data.get( 0 ).getName() );
-//                        Glide.with( SendTotalOrderActivity.this ).load( data.get( 0 ).getImage() ).into( PicSelectedServiceIV );
-
-    public void SendTotalorder(Long id) {
+    public void getProductDetails(Long id)
+    {
         apiServices.getProductsDeatils( id ).enqueue( new Callback<ShowProducts>() {
             @Override
             public void onResponse(Call<ShowProducts> call, Response<ShowProducts> response) {
-
                 if (response.isSuccessful()) {
                     Boolean status = response.body().getStatus();
                     if (status) {
                         List<ShowProductsData> data = response.body().getData();
+                        name = data.get( 0 ).getName();
+                        price = data.get( 0 ).getPrice();
 
-                        odderTotalServiceTVToolbarTitle.setText( data.get( 0 ).getName() );
-                        textView10.setText( data.get( 0 ).getPrice().toString() );
-
+                        odderTotalServiceTVToolbarTitle.setText( name );
+                        textView10.setText( price.toString() );
                         Glide.with( SendTotalOrderActivity.this ).load( data.get( 0 ).getImage() ).into( PicSelectedServiceIV );
-
                         Log.i( "hhh", "done stauts true" );
-
                     } else {
                         Log.i( "hhh", "staus false" );
                     }
@@ -184,43 +127,31 @@ public class SendTotalOrderActivity extends AppCompatActivity implements Adapter
         } );
     }
 
-    public void sendTotalorder() {
-
-        String Count = CountSendAllOrderTV.getText().toString();
-        String spinner1 = SpinnerOne.toString();
-        String spinner2 = SpinnerTWO.toString();
-        String spinner3 = SpinnerThree.toString();
-
-        String notes = EnterNote.toString();
+    public void sendTotalorder()
+    {
+        String CountNumber = CountSendAllOrderTV.getText().toString();
+        String EnterNotes = EnterNote.getText().toString();
+        int sizePostion = getTextFromSpinner( SpinnerOne );
+        int readyPostion = getTextFromSpinner( SpinnerTWO );
+        int cutPostion = getTextFromSpinner( SpinnerThree );
 
         apiServices.SendAllDetailsToSaveOrder( "",
-                "", "", "", "", ""
+                "", name, CountNumber, "", ""
                 , "", "", ""
                 , "", "", "" ).enqueue( new Callback<SaveOrder>() {
             @Override
             public void onResponse(Call<SaveOrder> call, Response<SaveOrder> response) {
-
                 if (response.isSuccessful()) {
                     Boolean status = response.body().getStatus();
-                    if (status) {
-
-                        String Count = CountSendAllOrderTV.getText().toString();
-                        String spinner1 = SpinnerOne.toString();
-                        String spinner2 = SpinnerTWO.toString();
-                        String spinner3 = SpinnerThree.toString();
-                        String notes = EnterNote.toString();
-
+                    if (status)
+                    {
 
                     }
-
                 }
             }
-
             @Override
             public void onFailure(Call<SaveOrder> call, Throwable t) {
-                Log.i( "hhh", "Onfalliuer : error " + t.getMessage() );
-
-
+                Log.i( "hhh", "Onfailure : " + t.getMessage() );
             }
         } );
 
@@ -239,9 +170,20 @@ public class SendTotalOrderActivity extends AppCompatActivity implements Adapter
     }
 
     @OnClick(R.id.OrderTotalService_BT)
-    public void onViewClicked() {
+    public void onViewClicked()
+    {
+        sendTotalorder();
         Intent intent = new Intent( SendTotalOrderActivity.this, MyCardActivity.class );
         startActivity( intent );
 
+    }
+
+
+    private void setSpinnerView(Spinner spinner, int id) {
+        ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource( this,
+                id, android.R.layout.simple_spinner_item );
+        adapter.setDropDownViewResource( android.R.layout.simple_spinner_dropdown_item );
+        spinner.setAdapter( adapter );
+        spinner.setOnItemSelectedListener( this );
     }
 }

@@ -59,7 +59,8 @@ public class OptionSelectedDeatailsActivity extends AppCompatActivity {
         apiServices = getClient().create( ApiServices.class );
 
         Intent i = getIntent();
-        if (i != null && i.hasExtra( "id" )) {
+        if (i != null && i.hasExtra( "id" ))
+        {
             Long id = i.getExtras().getLong( "id" );
 //            Integer id = i.getExtras().getInt( "id" );
             ProductsDeatils( id );

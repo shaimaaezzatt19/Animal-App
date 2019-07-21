@@ -54,7 +54,6 @@ public class CartAfterOrderingActivity extends AppCompatActivity {
         Button menueicon;
 
 
-
 //
 //        menueicon = (Button) findViewById( R.id.CardAfterOrdering_Menue_IV );
 //        menueicon.setOnClickListener( new View.OnClickListener() {
@@ -85,7 +84,7 @@ public class CartAfterOrderingActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-              //  Cancle(id);
+                //  Cancle(id);
             }
         } );
 
@@ -96,10 +95,10 @@ public class CartAfterOrderingActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                new CountDownTimer( 00000, 60000 ) {
+                new CountDownTimer( 30000, 1000 ) {
                     public void onTick(long millisUntilFinished) {
                         textView.setText( String.valueOf( counter ) );
-                        counter--;
+                        counter++;
                     }
 
                     public void onFinish() {

@@ -85,6 +85,12 @@ public class FullMenueWithIcons extends AppCompatActivity {
 
 
         simpleVideoView = (VideoView) findViewById( R.id.main_Vedio );
+        simpleVideoView.setOnPreparedListener(new MediaPlayer.OnPreparedListener() {
+            @Override
+            public void onPrepared(MediaPlayer mp) {
+                mp.setLooping(true);
+            }
+        });
 
 
         if (mediaControls == null) {

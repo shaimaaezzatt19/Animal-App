@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:background="@drawable/test_background"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="@drawable/test_background">
 
     <include
         android:id="@+id/CofirmOrder_toolbar"
@@ -19,177 +19,96 @@
         android:id="@+id/CofirmOrder_Title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
         android:layout_marginTop="16dp"
         android:fontFamily="@font/cairo"
-        android:gravity="center"
         android:text="@string/ConfirmRequest"
         android:textColor="@color/white"
-        android:textSize="@dimen/dimen_text_20"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:textSize="@dimen/dimen_text_20" />
 
-
-    <LinearLayout
-        android:id="@+id/LL1_ConfirmRequest"
+    <android.support.design.widget.TextInputLayout
+        android:id="@+id/Confirm_Request_phone_TI"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/CofirmOrder_toolbar"
-        android:layout_marginTop="@dimen/album_dp_40"
-        android:orientation="vertical"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/CofirmOrder_Title">
+        android:layout_centerInParent="true"
+        android:layout_marginStart="@dimen/dimen_text_16"
+        android:layout_marginTop="@dimen/dimen_text_16"
+        android:layout_marginEnd="@dimen/dimen_text_16"
+        android:background="@drawable/rectangleredshape">
 
-        <LinearLayout
+        <android.support.design.widget.TextInputEditText
             android:layout_width="match_parent"
-            android:layout_height="@dimen/dimen_90"
-            android:layout_marginStart="@dimen/start_end"
-            android:layout_marginTop="25dp"
-            android:layout_marginEnd="@dimen/start_end"
-            android:orientation="vertical">
+            android:layout_height="@dimen/dimen_40"
+            android:background="@null"
+            android:hint="الجوال" />
+    </android.support.design.widget.TextInputLayout>
 
-
-            <TextView
-                android:id="@+id/ConfirmRequest_TV_Name"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="300dp"
-                android:layout_marginTop="@dimen/durban_dp_10"
-                android:text="@string/name"
-                android:textColor="@color/black"
-                android:textSize="14dp" />
-
-            <android.support.design.widget.TextInputEditText
-                android:id="@+id/ConfirmRequest_ET_Name"
-                android:layout_width="match_parent"
-                android:layout_height="@dimen/dimen_40"
-                android:layout_marginStart="@dimen/start_end"
-                android:layout_marginTop="@dimen/dimen_8"
-                android:layout_marginEnd="@dimen/start_end"
-                android:background="@drawable/rectangleredshape" />
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="@dimen/dimen_90"
-            android:layout_marginStart="@dimen/start_end"
-            android:layout_marginTop="10dp"
-            android:layout_marginEnd="@dimen/start_end"
-            android:orientation="vertical">
-
-
-            <TextView
-                android:id="@+id/ConfirmRequest_TV_phone"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="290dp"
-                android:layout_marginTop="@dimen/durban_dp_10"
-                android:text="@string/phone"
-                android:textColor="@color/black"
-                android:textSize="15dp" />
-
-            <android.support.design.widget.TextInputEditText
-                android:id="@+id/ConfirmRequest_ET_phone"
-                android:layout_width="match_parent"
-                android:layout_height="@dimen/dimen_40"
-                android:layout_marginStart="@dimen/start_end"
-                android:layout_marginTop="8dp"
-                android:layout_marginEnd="@dimen/start_end"
-                android:background="@drawable/rectangleredshape" />
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="@dimen/dimen_90"
-            android:layout_marginStart="@dimen/start_end"
-            android:layout_marginTop="10dp"
-            android:layout_marginEnd="@dimen/start_end"
-            android:orientation="vertical">
-
-
-            <TextView
-                android:id="@+id/ConfirmRequest_TV_Address"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="290dp"
-                android:layout_marginTop="@dimen/durban_dp_10"
-                android:text="@string/address"
-                android:textColor="@color/black"
-                android:textSize="15dp" />
-
-            <android.support.design.widget.TextInputEditText
-                android:id="@+id/ConfirmRequest_ET_Address"
-                android:layout_width="match_parent"
-                android:layout_height="@dimen/dimen_40"
-                android:layout_marginStart="@dimen/start_end"
-                android:layout_marginTop="8dp"
-                android:layout_marginEnd="@dimen/start_end"
-                android:background="@drawable/rectangleredshape" />
-
-        </LinearLayout>
-
-        <Button
-            android:id="@+id/Confirm_Code_Order_BT"
-            android:layout_width="match_parent"
-            android:layout_height="@dimen/dimen_50"
-            android:layout_marginStart="@dimen/album_dp_80"
-            android:layout_marginTop="@dimen/dimen_text_20"
-            android:layout_marginEnd="@dimen/album_dp_80"
-            android:background="@drawable/red_button"
-            android:text="@string/Request"
-            android:textColor="@color/white"
-            android:textSize="@dimen/dimen_text_25"
-            android:layout_marginLeft="@dimen/album_dp_80"
-            android:layout_marginRight="80dp" />
-
-    </LinearLayout>
-
-
-    <!--<ImageView-->
-    <!--android:id="@+id/ConfirmCode_Back_IB"-->
-    <!--android:layout_width="@dimen/dimen_50"-->
-    <!--android:layout_height="@dimen/dimen_50"-->
-    <!--android:layout_marginStart="8dp"-->
-    <!--android:layout_marginLeft="8dp"-->
-    <!--android:layout_marginBottom="64dp"-->
-    <!--android:shadowColor="#41ff4800"-->
-    <!--android:src="@drawable/back_icon"-->
-    <!--app:layout_constraintBottom_toBottomOf="parent"-->
-    <!--app:layout_constraintEnd_toEndOf="parent"-->
-    <!--app:layout_constraintHorizontal_bias="0.084"-->
-    <!--app:layout_constraintStart_toStartOf="parent" />-->
-
-    <RelativeLayout
+    <android.support.design.widget.TextInputLayout
+        android:id="@+id/Confirm_Request_Name_TI"
         android:layout_width="match_parent"
-        android:layout_height="@dimen/album_dp_80"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/Confirm_Request_phone_TI"
+        android:layout_marginStart="@dimen/dimen_text_16"
+        android:layout_marginEnd="@dimen/dimen_text_16"
+        android:layout_marginBottom="@dimen/dimen_text_20"
+        android:background="@drawable/rectangleredshape">
+
+        <android.support.design.widget.TextInputEditText
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dimen_40"
+            android:background="@null"
+            android:hint="الاسم" />
+    </android.support.design.widget.TextInputLayout>
+
+    <android.support.design.widget.TextInputLayout
+        android:id="@+id/Confirm_Request_Address_TI"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/Confirm_Request_phone_TI"
+        android:layout_marginStart="@dimen/dimen_text_16"
+        android:layout_marginTop="@dimen/dimen_text_20"
+        android:layout_marginEnd="@dimen/dimen_text_16"
+        android:background="@drawable/rectangleredshape">
+
+        <android.support.design.widget.TextInputEditText
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dimen_40"
+            android:background="@null"
+            android:hint="العنوان" />
+    </android.support.design.widget.TextInputLayout>
+
+    <Button
+        android:id="@+id/Confirm_Request_Btn_Buy_TI"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dimen_60"
+        android:layout_below="@id/Confirm_Request_Address_TI"
+        android:layout_marginStart="@dimen/dimen_50"
+        android:layout_marginTop="@dimen/dimen_text_20"
+        android:layout_marginEnd="@dimen/dimen_50"
+        android:background="@drawable/red_button"
+        android:text="تأكيد الشراء"
+        android:textColor="@color/white"
+        android:textSize="@dimen/dimen_text_20" />
+
+    <ImageView
+        android:id="@+id/ConfirmCode_Back_IB"
+        android:layout_width="@dimen/dimen_60"
+        android:layout_height="@dimen/dimen_60"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentBottom="true"
         android:layout_marginStart="@dimen/dimen_16"
+        android:layout_marginBottom="@dimen/dimen_text_20"
+        android:src="@drawable/back_icon" />
+
+    <ImageView
+        android:id="@+id/ConfirmCode_Menue_IB"
+        android:layout_width="@dimen/dimen_60"
+        android:layout_height="@dimen/dimen_60"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
         android:layout_marginEnd="@dimen/dimen_16"
-        app:layout_constraintBottom_toBottomOf="parent">
-
-        <ImageView
-            android:id="@+id/ConfirmCode_Back_IB"
-            android:layout_width="@dimen/dimen_60"
-            android:layout_height="@dimen/dimen_60"
-            android:layout_marginStart="@dimen/dimen_16"
-            android:layout_marginLeft="@dimen/dimen_16"
-            android:layout_marginTop="@dimen/dimen_2"
-            android:layout_marginBottom="@dimen/dimen_2"
-            android:src="@drawable/back_icon" />
-
-        <ImageView
-            android:id="@+id/ConfirmCode_Menue_IB"
-            android:layout_width="@dimen/dimen_60"
-            android:layout_height="@dimen/dimen_60"
-            android:layout_alignParentRight="true"
-            android:layout_marginTop="@dimen/dimen_4"
-            android:layout_marginEnd="@dimen/dimen_16"
-            android:layout_marginRight="@dimen/dimen_16"
-            android:src="@drawable/menue_icon" />
-
-    </RelativeLayout>
+        android:layout_marginBottom="@dimen/dimen_text_20"
+        android:src="@drawable/menue_icon" />
 
 
-</android.support.constraint.ConstraintLayout>
+</RelativeLayout>

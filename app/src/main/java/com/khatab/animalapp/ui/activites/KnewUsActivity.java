@@ -27,6 +27,14 @@ public class KnewUsActivity extends AppCompatActivity {
 
         backIcon = (ImageView) findViewById(R.id.KnewUs_IV_BackIcon);
         simpleVideoView = (VideoView) findViewById(R.id.main_Vedio);
+        simpleVideoView.setOnPreparedListener(new MediaPlayer.OnPreparedListener() {
+            @Override
+            public void onPrepared(MediaPlayer mp) {
+                mp.setLooping(true);
+            }
+        });
+
+
         backIcon.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

@@ -44,22 +44,19 @@
 
         <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:layout_marginStart="@dimen/album_dp_10"
             android:layout_marginEnd="@dimen/album_dp_10">
 
             <LinearLayout
                 android:id="@+id/LL1_SendOrder"
-
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_alignParentStart="true"
-                android:layout_alignParentLeft="true"
                 android:layout_alignParentEnd="true"
-                android:layout_alignParentRight="true"
                 android:layout_marginStart="@dimen/album_dp_0"
                 android:layout_marginLeft="@dimen/album_dp_0"
-                android:layout_marginTop="@dimen/album_dp_15"
+                android:layout_marginTop="@dimen/dimen_4"
                 android:orientation="vertical">
 
                 <ImageView
@@ -79,7 +76,7 @@
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
                     android:layout_marginStart="@dimen/dimen_text_20"
-                    android:layout_marginTop="@dimen/dimen_text_20"
+                    android:layout_marginTop="@dimen/dimen_4"
                     android:layout_marginEnd="@dimen/dimen_text_20"
                     android:fontFamily="@font/details_font"
                     android:text="هنا يتواجد النص الذي من المفترض أن يصف الصنف والذي تعبر عنه الصورة المتواجدة بالأعلى "
@@ -88,8 +85,6 @@
                 <android.support.constraint.ConstraintLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="@dimen/durban_dp_10"
-                    android:layout_marginBottom="@dimen/durban_dp_10"
                     android:orientation="horizontal"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent">
@@ -139,11 +134,10 @@
 
             <android.support.constraint.ConstraintLayout
                 android:id="@+id/Constrain2"
-
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
+                android:layout_height="wrap_content"
                 android:layout_below="@id/LL1_SendOrder"
-                android:layout_marginTop="30dp">
+                android:layout_marginTop="-20dp">
 
                 <TextView
                     android:id="@+id/textView6"
@@ -243,7 +237,6 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginEnd="@dimen/dimen_text_20"
-                    android:layout_marginRight="@dimen/dimen_text_20"
                     android:text="@string/Notes"
                     android:textColor="@color/black"
                     android:textSize="20dp"
@@ -255,9 +248,7 @@
                     android:layout_width="270dp"
                     android:layout_height="@dimen/dimen_90"
                     android:layout_marginStart="@dimen/dimen_8"
-                    android:layout_marginLeft="@dimen/dimen_8"
                     android:layout_marginEnd="@dimen/dimen_8"
-                    android:layout_marginRight="@dimen/dimen_8"
                     android:background="@drawable/rectangleredshape"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintHorizontal_bias="0.28"
@@ -268,7 +259,7 @@
                     android:id="@+id/Total"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="@dimen/dimen_16"
+                    android:layout_marginTop="@dimen/dimen_4"
                     android:text="@string/OrderTotal"
                     android:textColor="@color/red"
                     android:textSize="@dimen/dimen_text_25"
@@ -280,7 +271,7 @@
                     android:id="@+id/OrderTotalService_BT"
                     android:layout_width="@dimen/durban_dp_200"
                     android:layout_height="@dimen/dimen_50"
-                    android:layout_marginTop="@dimen/dimen_text_16"
+                    android:layout_marginTop="@dimen/dimen_4"
                     android:layout_marginEnd="@dimen/durban_dp_70"
                     android:layout_marginRight="@dimen/durban_dp_70"
                     android:layout_marginBottom="@dimen/dimen_8"
@@ -299,10 +290,8 @@
                 android:id="@+id/Selected_item_Back_IB"
                 android:layout_width="@dimen/dimen_60"
                 android:layout_height="@dimen/dimen_60"
-                android:layout_below="@+id/Constrain2"
                 android:layout_marginStart="@dimen/dimen_8"
-                android:layout_marginLeft="@dimen/dimen_8"
-                android:layout_marginBottom="@dimen/dimen_8"
+                android:layout_alignParentBottom="true"
                 android:shadowColor="#41ff4800"
                 android:src="@drawable/back_icon" />
 
