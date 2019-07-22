@@ -37,6 +37,8 @@ public class CartAfterOrderingActivity extends AppCompatActivity {
     private CountDownTimer mCountDownTimer;
 
     private boolean mTimerRunning;
+    private Button CancleButton;
+
 
     private long mTimeLeftInMillis = START_TIME_IN_MILLIS;
     private long mEndTime;
@@ -50,43 +52,16 @@ public class CartAfterOrderingActivity extends AppCompatActivity {
         super.onCreate( savedInstanceState );
         setContentView( R.layout.activity_cart_after_ordering );
 
-
-        Button menueicon;
-
-
-//
-//        menueicon = (Button) findViewById( R.id.CardAfterOrdering_Menue_IV );
-//        menueicon.setOnClickListener( new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                Intent menueicon = new Intent( CartAfterOrderingActivity.this, FullMenueWithIcons.class );
-//                startActivity( menueicon );
-//
-//            }
-//        } );
-
-//        Button backIcon;
-//        backIcon = (Button) findViewById( R.id.CardAfterOrdering_Back_IV );
-//        backIcon.setOnClickListener( new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//
-//                Intent backIntent = new Intent( CartAfterOrderingActivity.this, ConfirmCodeActivity.class );
-//                startActivity( backIntent );
-//
-//
-//            }
-//        } );
-
-        Button button;
-        button = (Button) findViewById( R.id.CardCancleOrder );
-        button.setOnClickListener( new View.OnClickListener() {
+        CancleButton = (Button) findViewById( R.id.CardCancleOrder );
+        CancleButton.setOnClickListener( new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
-                //  Cancle(id);
+                MakeCancleorder();
+
             }
         } );
+
 
         textView = (TextView) findViewById( R.id.Card_Timer_Image );
 
@@ -117,35 +92,28 @@ public class CartAfterOrderingActivity extends AppCompatActivity {
             }
 
         } );
+
     }
 
-    public void Cancle(Long id) {
-        apiServices = getClient().create( ApiServices.class );
+    public void MakeCancleorder(Long id) {
         apiServices.MakeCancle( id ).enqueue( new Callback<CancleOrder>() {
             @Override
             public void onResponse(Call<CancleOrder> call, Response<CancleOrder> response) {
-
-                Log.v( TAG, "onResponse: response body: " + response.body().toString() );
                 if (response.isSuccessful()) {
                     Boolean status = response.body().getStatus();
-                    Log.v( "ServiceActivity: ", "status:" + status );
                     if (status) {
-                        Log.e( "hhh", "done" );
 
-
-                    } else {
                     }
                 }
+
             }
 
             @Override
             public void onFailure(Call<CancleOrder> call, Throwable t) {
-
-                Log.e( TAG, " onFailure: error:" + t.getLocalizedMessage() );
+                Log.i( "hhh", "Onfailure : " + t.getMessage() );
 
             }
         } );
-
 
     }
 }

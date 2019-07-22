@@ -69,59 +69,73 @@ public class SendOrderActivity extends AppCompatActivity implements AdapterView.
     @BindView(R.id.AddToCard_Back_IB)
     ImageView AddToCardBackIB;
 
+
     private ApiServices apiServices;
-    private static final String TAG = SendOrderActivity.class.getSimpleName();
+
+    private static final String TAG = SendTotalOrderActivity.class.getSimpleName();
+    private String name;
+    private Long price;
+    private long id;
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate( savedInstanceState );
         setContentView( R.layout.activity_send_order );
 
-        Spinner spinner1 = findViewById( R.id.SpinnerOne );
-        Spinner spinner2 = findViewById( R.id.SpinnerTWO );
-
-
-        ArrayAdapter<CharSequence> adapter1 = ArrayAdapter.createFromResource( this,
-                R.array.Spinner1, android.R.layout.simple_spinner_item );
-        adapter1.setDropDownViewResource( android.R.layout.simple_spinner_dropdown_item );
-        spinner1.setAdapter( adapter1 );
-        spinner1.setOnItemSelectedListener( this );
-
-
-        ArrayAdapter<CharSequence> adapter2 = ArrayAdapter.createFromResource( this,
-                R.array.Spinner2, android.R.layout.simple_spinner_item );
-        adapter2.setDropDownViewResource( android.R.layout.simple_spinner_dropdown_item );
-        spinner2.setAdapter( adapter2 );
-        spinner2.setOnItemSelectedListener( this );
-
+//        Spinner spinner1 = findViewById( R.id.SpinnerOne );
+//        Spinner spinner2 = findViewById( R.id.SpinnerTWO );
+//
+//
+//        ArrayAdapter<CharSequence> adapter1 = ArrayAdapter.createFromResource( this,
+//                R.array.Spinner1, android.R.layout.simple_spinner_item );
+//        adapter1.setDropDownViewResource( android.R.layout.simple_spinner_dropdown_item );
+//        spinner1.setAdapter( adapter1 );
+//        spinner1.setOnItemSelectedListener( this );
+//
+//
+//        ArrayAdapter<CharSequence> adapter2 = ArrayAdapter.createFromResource( this,
+//                R.array.Spinner2, android.R.layout.simple_spinner_item );
+//        adapter2.setDropDownViewResource( android.R.layout.simple_spinner_dropdown_item );
+//        spinner2.setAdapter( adapter2 );
+//        spinner2.setOnItemSelectedListener( this );
+//
+//
+//        ButterKnife.bind( this );
+//        apiServices = getClient().create( ApiServices.class );
 
         ButterKnife.bind( this );
         apiServices = getClient().create( ApiServices.class );
+        setSpinnerView( SpinnerOne, R.array.Spinner1 );
+        setSpinnerView( SpinnerTWO, R.array.Spinner2 );
+
 
 
         Intent i = getIntent();
         if (i != null && i.hasExtra( "id" )) {
-            Long id = i.getExtras().getLong( "id" );
-//            Integer id = i.getExtras().getInt( "id" );
+            id = i.getExtras().getLong( "id" );
             Sendorder( id );
+
+
         }
 
-
-        EditText Count = (EditText) findViewById( R.id.SendMyOrder_Count_ET );
-        String CountNumber = Count.getText().toString();
-
-
-        Spinner SpinnerOne = (Spinner) findViewById( R.id.SpinnerOne );
-        String SpinnerOneDeatils = Count.getText().toString();
-
-        Spinner SpinnerTwo = (Spinner) findViewById( R.id.SpinnerTWO );
-        String SpinnerTWODeatils = Count.getText().toString();
-
-        EditText Notes = (EditText) findViewById( R.id.WriteYourNotes_ET );
-        String EnterNotes = Count.getText().toString();
-
-
     }
+//        EditText Count = (EditText) findViewById( R.id.SendMyOrder_Count_ET );
+//        String CountNumber = Count.getText().toString();
+//
+//
+//        Spinner SpinnerOne = (Spinner) findViewById( R.id.SpinnerOne );
+//        String SpinnerOneDeatils = Count.getText().toString();
+//
+//        Spinner SpinnerTwo = (Spinner) findViewById( R.id.SpinnerTWO );
+//        String SpinnerTWODeatils = Count.getText().toString();
+//
+//        EditText Notes = (EditText) findViewById( R.id.WriteYourNotes_ET );
+//        String EnterNotes = Count.getText().toString();
+//
+//
+//    }
 
     public void Sendorder(Long id) {
         apiServices.getProductsDeatils( id ).enqueue( new Callback<ShowProducts>() {
@@ -165,19 +179,20 @@ public class SendOrderActivity extends AppCompatActivity implements AdapterView.
         String spinner2 = SpinnerTWO.toString();
         String notes = NotesTV.toString();
 
-        apiServices.SendAllDetailsToSaveOrder( "", "", "", "",
-                "", "", "", ""
-                , "", "", "", "" ).enqueue( new Callback<SaveOrder>() {
+        apiServices.SendAllDetailsToSaveOrder( "", "",
+                "", "",
+                "", "",
+                "", ""
+                , "", "",
+                "", "" )
+                .enqueue( new Callback<SaveOrder>() {
             @Override
             public void onResponse(Call<SaveOrder> call, Response<SaveOrder> response) {
                 if (response.isSuccessful()) {
                     Boolean status = response.body().getStatus();
                     if (status) {
 
-                        String Count = SendMyOrderCountET.getText().toString();
-                        String spinner1 = SpinnerOne.toString();
-                        String spinner2 = SpinnerTWO.toString();
-                        String notes = NotesTV.toString();
+
 
 
                     }
@@ -187,6 +202,7 @@ public class SendOrderActivity extends AppCompatActivity implements AdapterView.
 
             @Override
             public void onFailure(Call<SaveOrder> call, Throwable t) {
+                Log.i( "hhh", "Onfailure : " + t.getMessage() );
 
             }
         } );
@@ -204,6 +220,13 @@ public class SendOrderActivity extends AppCompatActivity implements AdapterView.
 
     }
 
+    private void setSpinnerView(Spinner spinner, int id) {
+        ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource( this,
+                id, android.R.layout.simple_spinner_item );
+        adapter.setDropDownViewResource( android.R.layout.simple_spinner_dropdown_item );
+        spinner.setAdapter( adapter );
+        spinner.setOnItemSelectedListener( this );
+    }
 
     @OnClick({R.id.AddToCard_BT, R.id.AddToCard_Back_IB})
     public void onViewClicked(View view) {

@@ -78,9 +78,10 @@ public class SendTotalOrderActivity extends AppCompatActivity implements Adapter
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate( savedInstanceState );
         setContentView( R.layout.activity_send_total_order );
+
+
         ButterKnife.bind( this );
         apiServices = getClient().create( ApiServices.class );
-
         setSpinnerView( SpinnerOne, R.array.Spinner1 );
         setSpinnerView( SpinnerTWO, R.array.Spinner2 );
         setSpinnerView( SpinnerThree, R.array.Spinner3 );
@@ -134,11 +135,14 @@ public class SendTotalOrderActivity extends AppCompatActivity implements Adapter
         int sizePostion = getTextFromSpinner( SpinnerOne );
         int readyPostion = getTextFromSpinner( SpinnerTWO );
         int cutPostion = getTextFromSpinner( SpinnerThree );
-
-        apiServices.SendAllDetailsToSaveOrder( "",
-                "", name, CountNumber, "", ""
-                , "", "", ""
-                , "", "", "" ).enqueue( new Callback<SaveOrder>() {
+"", "",
+                ""
+                apiServices.SendAllDetailsToSaveOrder( "",
+                        "", name, CountNumber,
+                        "", ""
+                        ,
+                        , "", "",
+                "" ).enqueue( new Callback<SaveOrder>() {
             @Override
             public void onResponse(Call<SaveOrder> call, Response<SaveOrder> response) {
                 if (response.isSuccessful()) {
