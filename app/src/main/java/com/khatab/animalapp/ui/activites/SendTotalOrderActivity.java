@@ -24,6 +24,7 @@ import com.khatab.animalapp.data.model.SaveOrder.SaveOrder;
 import com.khatab.animalapp.data.model.ShowProducts.ShowProducts;
 import com.khatab.animalapp.data.model.ShowProducts.ShowProductsData;
 import com.khatab.animalapp.data.rest.ApiServices;
+
 import java.util.List;
 
 import butterknife.BindView;
@@ -74,6 +75,9 @@ public class SendTotalOrderActivity extends AppCompatActivity implements Adapter
     private Long price;
     private long id;
 
+    private List<SaveOrder> data;
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate( savedInstanceState );
@@ -96,8 +100,7 @@ public class SendTotalOrderActivity extends AppCompatActivity implements Adapter
 
     }
 
-    public void getProductDetails(Long id)
-    {
+    public void getProductDetails(Long id) {
         apiServices.getProductsDeatils( id ).enqueue( new Callback<ShowProducts>() {
             @Override
             public void onResponse(Call<ShowProducts> call, Response<ShowProducts> response) {
@@ -128,31 +131,30 @@ public class SendTotalOrderActivity extends AppCompatActivity implements Adapter
         } );
     }
 
-    public void sendTotalorder()
-    {
+    public void sendTotalorder() {
         String CountNumber = CountSendAllOrderTV.getText().toString();
         String EnterNotes = EnterNote.getText().toString();
         int sizePostion = getTextFromSpinner( SpinnerOne );
         int readyPostion = getTextFromSpinner( SpinnerTWO );
         int cutPostion = getTextFromSpinner( SpinnerThree );
-"", "",
+
+        apiServices.SendAllDetailsToSaveOrder( "",
+                "", name, CountNumber,
+                "", ""
+                , "", "",
                 ""
-                apiServices.SendAllDetailsToSaveOrder( "",
-                        "", name, CountNumber,
-                        "", ""
-                        ,
-                        , "", "",
+                , "", "",
                 "" ).enqueue( new Callback<SaveOrder>() {
             @Override
             public void onResponse(Call<SaveOrder> call, Response<SaveOrder> response) {
                 if (response.isSuccessful()) {
                     Boolean status = response.body().getStatus();
-                    if (status)
-                    {
+                    if (status) {
 
                     }
                 }
             }
+
             @Override
             public void onFailure(Call<SaveOrder> call, Throwable t) {
                 Log.i( "hhh", "Onfailure : " + t.getMessage() );
@@ -174,10 +176,11 @@ public class SendTotalOrderActivity extends AppCompatActivity implements Adapter
     }
 
     @OnClick(R.id.OrderTotalService_BT)
-    public void onViewClicked()
-    {
+    public void onViewClicked() {
         sendTotalorder();
-        Intent intent = new Intent( SendTotalOrderActivity.this, MyCardActivity.class );
+
+        Intent intent = new Intent( SendTotalOrderActivity.this, ConfirmRequestActivity.class );
+        intent.putExtra( "id", data.get( 0 ).getData() );
         startActivity( intent );
 
     }

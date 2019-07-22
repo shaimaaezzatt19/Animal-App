@@ -13,7 +13,11 @@ import android.widget.TextView;
 
 import com.khatab.animalapp.R;
 import com.khatab.animalapp.data.model.Code.Code;
+import com.khatab.animalapp.data.model.SaveOrder.SaveOrder;
+import com.khatab.animalapp.data.model.ShowService.ShowServiceData;
 import com.khatab.animalapp.data.rest.ApiServices;
+
+import java.util.List;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -48,6 +52,8 @@ public class ConfirmCodeActivity extends AppCompatActivity {
 
     private ApiServices apiServices;
     private static final String TAG = ConfirmCodeActivity.class.getSimpleName();
+    private List<Code> data;
+    private Long data1;
 
 
     @Override
@@ -87,15 +93,53 @@ public class ConfirmCodeActivity extends AppCompatActivity {
                 Log.e( TAG, " onFailure: error:" + t.getLocalizedMessage() );
 
             }
+
+            public void SaveOrderCode() {
+                apiServices.SendAllDetailsToSaveOrder( "", ""
+                        , "", "", "", "", "" +
+                                "", "", "", "",
+                        "", "" ).enqueue( new Callback<SaveOrder>() {
+                    @Override
+                    public void onResponse(Call<SaveOrder> call, Response<SaveOrder> response) {
+                        if (response.isSuccessful()) {
+                            Boolean status = response.body().getStatus();
+                            if (status) {
+
+                                data1 = response.body().getData();
+
+                                Log.i( "hhh", "done stauts true" );
+
+                            } else {
+                                Log.i( "hhh", "staus false" );
+                            }
+                        } else {
+                            Log.i( "hhh", "onResponse: response ok but fail" );
+                        }
+                    }
+
+                    @Override
+                    public void onFailure(Call<SaveOrder> call, Throwable t) {
+                        Log.i( "hhh", "Onfalliuer : error " + t.getMessage() );
+
+                    }
+                } );
+            }
         } );
+
+
     }
 
     @OnClick({R.id.SendConfirmCode_BT, R.id.ConfirmCode_Back_IB})
     public void onViewClicked(View view) {
         switch (view.getId()) {
             case R.id.SendConfirmCode_BT:
-                Intent intent1 = new Intent( ConfirmCodeActivity.this, CartAfterOrderingActivity.class );
-                startActivity( intent1 );
+                ConfirmCode();
+
+                Intent intent = new Intent( ConfirmCodeActivity.this, CartAfterOrderingActivity.class );
+                intent.putExtra( "id", data.get( 0 ).getData() );
+                startActivity( intent );
+
+
                 break;
 
             case R.id.ConfirmCode_Back_IB:

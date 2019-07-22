@@ -76,7 +76,7 @@ public class SendOrderActivity extends AppCompatActivity implements AdapterView.
     private String name;
     private Long price;
     private long id;
-
+    private List<SaveOrder> data;
 
 
     @Override
@@ -109,7 +109,6 @@ public class SendOrderActivity extends AppCompatActivity implements AdapterView.
         apiServices = getClient().create( ApiServices.class );
         setSpinnerView( SpinnerOne, R.array.Spinner1 );
         setSpinnerView( SpinnerTWO, R.array.Spinner2 );
-
 
 
         Intent i = getIntent();
@@ -186,26 +185,24 @@ public class SendOrderActivity extends AppCompatActivity implements AdapterView.
                 , "", "",
                 "", "" )
                 .enqueue( new Callback<SaveOrder>() {
-            @Override
-            public void onResponse(Call<SaveOrder> call, Response<SaveOrder> response) {
-                if (response.isSuccessful()) {
-                    Boolean status = response.body().getStatus();
-                    if (status) {
+                    @Override
+                    public void onResponse(Call<SaveOrder> call, Response<SaveOrder> response) {
+                        if (response.isSuccessful()) {
+                            Boolean status = response.body().getStatus();
+                            if (status) {
 
 
-
+                            }
+                        }
 
                     }
-                }
 
-            }
+                    @Override
+                    public void onFailure(Call<SaveOrder> call, Throwable t) {
+                        Log.i( "hhh", "Onfailure : " + t.getMessage() );
 
-            @Override
-            public void onFailure(Call<SaveOrder> call, Throwable t) {
-                Log.i( "hhh", "Onfailure : " + t.getMessage() );
-
-            }
-        } );
+                    }
+                } );
 
     }
 
@@ -233,11 +230,15 @@ public class SendOrderActivity extends AppCompatActivity implements AdapterView.
         switch (view.getId()) {
 
             case R.id.AddToCard_BT:
+                sendorder();
+                Intent intent = new Intent( SendOrderActivity.this, ConfirmRequestActivity.class );
+                intent.putExtra( "id", data.get( 0 ).getData() );
+                startActivity( intent );
+
 
                 // هنا هحط اسم الميثود
                 //وكمان هعمل intent بالحاجات اللي اختارتها
-                Intent intent1 = new Intent( SendOrderActivity.this, ConfirmRequestActivity.class );
-                startActivity( intent1 );
+
                 break;
             case R.id.AddToCard_Back_IB:
                 Intent intent2 = new Intent( SendOrderActivity.this, MyCardActivity.class );

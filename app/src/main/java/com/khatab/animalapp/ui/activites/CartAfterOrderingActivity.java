@@ -52,65 +52,68 @@ public class CartAfterOrderingActivity extends AppCompatActivity {
         super.onCreate( savedInstanceState );
         setContentView( R.layout.activity_cart_after_ordering );
 
-        CancleButton = (Button) findViewById( R.id.CardCancleOrder );
-        CancleButton.setOnClickListener( new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
 
-                MakeCancleorder();
+        apiServices = getClient().create( ApiServices.class );
 
-            }
-        } );
+        Intent i = getIntent();
+        if (i != null && i.hasExtra( "id" )) {
+            final Long id = i.getExtras().getLong( "id" );
+//            Integer id = i.getExtras().getInt( "id" );
+            MakeCancleorder( id );
 
 
-        textView = (TextView) findViewById( R.id.Card_Timer_Image );
+            CancleButton = (Button) findViewById( R.id.CardCancleOrder );
+            CancleButton.setOnClickListener( new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
 
-        textView.setOnClickListener( new View.OnClickListener() {
+                    MakeCancleorder( id );
 
-            @Override
-            public void onClick(View v) {
+                }
+            } );
 
-                new CountDownTimer( 30000, 1000 ) {
-                    public void onTick(long millisUntilFinished) {
-                        textView.setText( String.valueOf( counter ) );
-                        counter++;
-                    }
+            textView = (TextView) findViewById( R.id.Card_Timer_Image );
 
-                    public void onFinish() {
-                        textView.setText( "انتهى الوقت لايمكنك الغاء الطلب" );
-                    }
-                }.start();
+            textView.setOnClickListener( new View.OnClickListener() {
 
-                new Handler().postDelayed( new Runnable() {
-                    @Override
-                    public void run() {
-                        Intent intent = new Intent( CartAfterOrderingActivity.this, ExampleCardViewActivity.class );
-                        CartAfterOrderingActivity.this.startActivity( intent );
-                        CartAfterOrderingActivity.this.finish();
-                    }
-                }, splash_Display_Length );
-            }
+                @Override
+                public void onClick(View v) {
 
-        } );
+                    new CountDownTimer( 30000, 1000 ) {
+                        public void onTick(long millisUntilFinished) {
+                            textView.setText( String.valueOf( counter ) );
+                            counter++;
+                        }
 
+                        public void onFinish() {
+                            textView.setText( "انتهى الوقت لايمكنك الغاء الطلب" );
+                        }
+                    }.start();
+
+                    new Handler().postDelayed( new Runnable() {
+                        @Override
+                        public void run() {
+                            Intent intent = new Intent( CartAfterOrderingActivity.this, ExampleCardViewActivity.class );
+                            CartAfterOrderingActivity.this.startActivity( intent );
+                            CartAfterOrderingActivity.this.finish();
+                        }
+                    }, splash_Display_Length );
+                }
+
+            } );
+
+        }
     }
 
-    public void MakeCancleorder(Long id) {
+    private void MakeCancleorder(Long id) {
         apiServices.MakeCancle( id ).enqueue( new Callback<CancleOrder>() {
             @Override
             public void onResponse(Call<CancleOrder> call, Response<CancleOrder> response) {
-                if (response.isSuccessful()) {
-                    Boolean status = response.body().getStatus();
-                    if (status) {
-
-                    }
-                }
 
             }
 
             @Override
             public void onFailure(Call<CancleOrder> call, Throwable t) {
-                Log.i( "hhh", "Onfailure : " + t.getMessage() );
 
             }
         } );

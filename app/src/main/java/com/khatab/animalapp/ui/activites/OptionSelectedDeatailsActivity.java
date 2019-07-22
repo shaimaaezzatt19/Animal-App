@@ -14,6 +14,7 @@ import com.bumptech.glide.Glide;
 import com.khatab.animalapp.R;
 import com.khatab.animalapp.data.model.ShowProducts.ShowProducts;
 import com.khatab.animalapp.data.model.ShowProducts.ShowProductsData;
+import com.khatab.animalapp.data.model.ShowService.ShowServiceData;
 import com.khatab.animalapp.data.rest.ApiServices;
 
 import java.util.List;
@@ -48,6 +49,7 @@ public class OptionSelectedDeatailsActivity extends AppCompatActivity {
 
     private ApiServices apiServices;
     private static final String TAG = OptionSelectedDeatailsActivity.class.getSimpleName();
+    private List<ShowProductsData> data;
 
 
     @Override
@@ -59,8 +61,7 @@ public class OptionSelectedDeatailsActivity extends AppCompatActivity {
         apiServices = getClient().create( ApiServices.class );
 
         Intent i = getIntent();
-        if (i != null && i.hasExtra( "id" ))
-        {
+        if (i != null && i.hasExtra( "id" )) {
             Long id = i.getExtras().getLong( "id" );
 //            Integer id = i.getExtras().getInt( "id" );
             ProductsDeatils( id );
@@ -74,13 +75,16 @@ public class OptionSelectedDeatailsActivity extends AppCompatActivity {
     public void onViewClicked(View view) {
         switch (view.getId()) {
             case R.id.Service_Selected_Order_BT:
-                Intent intent1 = new Intent( OptionSelectedDeatailsActivity.this, AskTypeOfOrederActivity.class );
-                startActivity( intent1 );
+
+                Intent intent = new Intent( OptionSelectedDeatailsActivity.this, SendOrderActivity.class );
+                intent.putExtra( "id", data.get( 0 ).getId() );
+                startActivity( intent );
                 break;
 
             case R.id.Selected_item_Back_IB:
-                Intent intent2 = new Intent( OptionSelectedDeatailsActivity.this, ServicesActivity.class );
-                startActivity( intent2 );
+                Intent intentback = new Intent( OptionSelectedDeatailsActivity.this, ServicesActivity.class );
+                intentback.putExtra( "id", data.get( 0 ).getId() );
+                startActivity( intentback );
                 break;
         }
     }

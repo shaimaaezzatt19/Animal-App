@@ -49,6 +49,8 @@ public class ShowTotalServiceActivity extends AppCompatActivity {
     RelativeLayout RLShowTotalServices;
 
     private ApiServices apiServices;
+    private List<ShowProductsData> data;
+
     private static final String TAG = ShowTotalServiceActivity.class.getSimpleName();
 
 
@@ -62,14 +64,13 @@ public class ShowTotalServiceActivity extends AppCompatActivity {
         Intent i = getIntent();
         if (i != null && i.hasExtra( "id" )) {
             Long id = i.getExtras().getLong( "id" );
-            Log.i( "hhh2", "id value from intent : "+id );
+            Log.i( "hhh2", "id value from intent : " + id );
             ProductsAllDeatils( id );
         }
 
     }
 
-    public void ShowProductsDeatils(Long id)
-    {
+    public void ShowProductsDeatils(Long id) {
         apiServices.getProductsDeatils( id ).enqueue( new Callback<ShowProducts>() {
             @Override
             public void onResponse(Call<ShowProducts> call, Response<ShowProducts> response) {
@@ -96,7 +97,8 @@ public class ShowTotalServiceActivity extends AppCompatActivity {
     @OnClick(R.id.ShowTotalServices_BT_Requset)
     public void onViewClicked() {
         Intent intent = new Intent( ShowTotalServiceActivity.this, SendTotalOrderActivity.class );
-        startActivity( intent );
+        intent.putExtra( "id", data.get( 0 ).getId() );
+        startActivity( intent );;
     }
 
     public void ProductsAllDeatils(Long id) {
@@ -112,9 +114,9 @@ public class ShowTotalServiceActivity extends AppCompatActivity {
                         List<ShowProductsData> data = response.body().getData();
                         SendMyOrderTitle.setText( data.get( 0 ).getName() );
                         ShowServiceServiceNotesTV.setText( data.get( 0 ).getDescription() );
-                        ShowTotsalServices1TV.setText( ": صغير "+data.get( 0 ).getPrice().toString() );
-                        ShowTotsalServices2TV.setText( ": متوسط "+data.get( 0 ).getPrice().toString() );
-                        ShowTotsalServices3TV.setText( ": كبير "+data.get( 0 ).getPrice().toString() );
+                        ShowTotsalServices1TV.setText( " صغير: " + data.get( 0 ).getPrice().toString() );
+                        ShowTotsalServices2TV.setText( " متوسط: " + data.get( 0 ).getPrice().toString() );
+                        ShowTotsalServices3TV.setText( " كبير :" + data.get( 0 ).getPrice().toString() );
                         Glide.with( ShowTotalServiceActivity.this ).load( data.get( 0 ).getImage() ).into( ImageServiceIV );
                     } else {
                         Log.i( "hhh2", "staus false" );

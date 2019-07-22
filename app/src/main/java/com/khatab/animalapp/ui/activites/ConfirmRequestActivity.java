@@ -10,7 +10,10 @@ import android.widget.TextView;
 
 import com.khatab.animalapp.R;
 import com.khatab.animalapp.data.model.SaveOrder.SaveOrder;
+import com.khatab.animalapp.data.model.ShowProducts.ShowProductsData;
 import com.khatab.animalapp.data.rest.ApiServices;
+
+import java.util.List;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -36,6 +39,7 @@ public class ConfirmRequestActivity extends AppCompatActivity {
     TextInputLayout ConfirmRequestNameTI;
     @BindView(R.id.Confirm_Request_Address_TI)
     TextInputLayout ConfirmRequestAddressTI;
+    private List<SaveOrder> data;
 
 
     private ApiServices apiServices;
@@ -51,14 +55,17 @@ public class ConfirmRequestActivity extends AppCompatActivity {
     }
 
     @OnClick({R.id.Confirm_Request_Btn_Buy_TI, R.id.ConfirmCode_Back_IB, R.id.ConfirmCode_Menue_IB})
-    public void onViewClicked(View view)
-    {
+    public void onViewClicked(View view) {
         switch (view.getId()) {
             case R.id.Confirm_Request_Btn_Buy_TI:
                 confirmRequest();
+                Intent intent = new Intent( ConfirmRequestActivity.this, ConfirmCodeActivity.class );
+                intent.putExtra( "id", data.get( 0 ).getData() );
+                startActivity( intent );
+
                 break;
             case R.id.ConfirmCode_Back_IB:
-                Intent i = new Intent( ConfirmRequestActivity.this, ConfirmCodeActivity.class );
+                Intent i = new Intent( ConfirmRequestActivity.this, ServicesActivity.class );
                 startActivity( i );
                 break;
             case R.id.ConfirmCode_Menue_IB:

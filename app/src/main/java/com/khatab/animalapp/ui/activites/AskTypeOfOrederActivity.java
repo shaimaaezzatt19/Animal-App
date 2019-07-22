@@ -57,6 +57,7 @@ public class AskTypeOfOrederActivity extends AppCompatActivity {
         super.onCreate( savedInstanceState );
         setContentView( R.layout.activity_ask_type_of_oreder );
         ButterKnife.bind( this );
+
         apiServices = getClient().create( ApiServices.class );
 
         Intent i = getIntent();
@@ -77,7 +78,13 @@ public class AskTypeOfOrederActivity extends AppCompatActivity {
                     if (status) {
 
                         data = response.body().getData();
+                  if(data!=null)
+                  {
 
+                  } else
+                      {
+
+                      }
                         ServiceSelectedToolbarTitleTV.setText( data.get( 0 ).getName() );
 //                        PicSelectedServiceIV.setImageResource( data.get( 0 ).getImage() );
                         Glide.with( AskTypeOfOrederActivity.this ).load( data.get( 0 ).getImage() ).into( PicSelectedServiceIV );
